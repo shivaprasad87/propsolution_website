@@ -27,18 +27,24 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="keywords" content="<?= $keywords ?>">
 <meta name="description" content="<?= $description ?>"> 
-<link rel="stylesheet" type="text/css" href="<?=base_url('assets/');?>css1/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="<?=base_url('assets/');?>css1/font-awesome.min.css">
-<link rel="stylesheet" type="text/css" href="<?=base_url('assets/');?>css1/reality-icon.css">
-<link rel="stylesheet" type="text/css" href="<?=base_url('assets/');?>css1/bootsnav.css">
-<link rel="stylesheet" type="text/css" href="<?=base_url('assets/');?>css1/jquery.fancybox.css">
-<link rel="stylesheet" type="text/css" href="<?=base_url('assets/');?>css1/owl.carousel.css">
-<link rel="stylesheet" type="text/css" href="<?=base_url('assets/');?>css1/owl.transitions.css">
-<link rel="stylesheet" type="text/css" href="<?=base_url('assets/');?>css1/cubeportfolio.min.css">
-<link rel="stylesheet" type="text/css" href="<?=base_url('assets/');?>css1/settings.css">
-<link rel="stylesheet" type="text/css" href="<?=base_url('assets/');?>css1/range-Slider.min.css">
-<link rel="stylesheet" type="text/css" href="<?=base_url('assets/');?>css1/search.css">
-<link rel="stylesheet" type="text/css" href="<?=base_url('assets/');?>css1/style.css">
+<link rel="stylesheet" type="text/css" href="<?=base_url('assets/');?>css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="<?=base_url('assets/');?>css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="<?=base_url('assets/');?>css/reality-icon.css">
+<link rel="stylesheet" type="text/css" href="<?=base_url('assets/');?>css/bootsnav.css">
+<link rel="stylesheet" type="text/css" href="<?=base_url('assets/');?>css/jquery.fancybox.css">
+<link rel="stylesheet" type="text/css" href="<?=base_url('assets/');?>css/owl.carousel.css">
+<link rel="stylesheet" type="text/css" href="<?=base_url('assets/');?>css/owl.transitions.css">
+<link rel="stylesheet" type="text/css" href="<?=base_url('assets/');?>css/cubeportfolio.min.css">
+<link rel="stylesheet" type="text/css" href="<?=base_url('assets/');?>css/settings.css">
+<link rel="stylesheet" type="text/css" href="<?=base_url('assets/');?>css/range-Slider.min.css">
+<link rel="stylesheet" type="text/css" href="<?=base_url('assets/');?>css/search.css">
+<link rel="stylesheet" type="text/css" href="<?=base_url('assets/');?>css/style.css">
+
+<link rel="stylesheet" href="<?=base_url('assets/');?>themes/admin/css/admin.css">
+<link rel="stylesheet" href="<?=base_url('assets/');?>themes/admin/css/summernote-bs3.css">
+<link rel="stylesheet" type="text/css" href="<?=base_url('assets/');?>themes/admin/css/adminlte.css">
+<link rel="stylesheet" type="text/css" href="<?=base_url('assets/');?>themes/admin/css/__all-skins.min.css">
+<link rel="stylesheet" type="text/css" href="<?=base_url('assets/');?>themes/admin/css/bootstrap-tagsinput.css">
 <link rel="icon" href="images/icon.png">
 
 <style>
