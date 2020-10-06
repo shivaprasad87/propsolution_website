@@ -1,7 +1,8 @@
 <?php
 if (!defined('BASEPATH'))
   exit('No direct script access allowed');
-class numbertowordconvertsconver {
+
+class Numbertowordconvertsconver {
     function convert_number($number) {
         if (($number < 0) || ($number > 999999999)) {
             throw new Exception("Number is out of range");
