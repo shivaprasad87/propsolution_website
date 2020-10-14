@@ -50,12 +50,15 @@ class SocialMedia extends Admin_Controller {
                     'dribble' => $this->input->post('dribble'),
                     'linked_in' => $this->input->post('linked_in'),
                     'instagram' => $this->input->post('instagram'),
-                    'google' => $this->input->post('google')
+                    'google' => $this->input->post('google'),
+                    'whatsapp' => $this->input->post('whatsapp')
                     );
                 $this->aboutUs_model->updateWhere(array('status' =>1), $data, 'social_media');
                 $this->session->set_flashdata('success', 'Social Media Links Updated Successfully');
-                redirect(site_url('admin/socialMedia'));
+                //redirect(site_url('admin/socialMedia'));
         }
+       //else
+       // echo "no post";die;
 
         $social = $this->aboutUs_model->getAll('social_media');
         // setup page header data

@@ -30,20 +30,16 @@ class Home extends Public_Controller
      */
     function index()
     {
-         $this->data['keyword'] = $this->input->post('keyword') ? $this->input->post('keyword') : ''; 
-        
+        $this->data['keyword'] = $this->input->post('keyword') ? $this->input->post('keyword') : ''; 
         $this->session->unset_userdata('content');
         $this->data['meta'] = array('title' => 'Prop Solutions: Best Property Portal in India', 'description' => 'Buy Residential Properties in India at Prop Solutions, the best property agent in India. Choose from the list of top Real Estate Properties in India.  ','keywords' =>'Real Estate Websites in India, Property Sites in India, Property Portal in India, Property for Sale in India, Real Estate India, Properties in India, India Real Estate, Residential Properties in India, Property Agent in India, Apartments, Plots, Villas, Real Estate, India Property');
         $location_where = array('status' => 1);
         if($this->session->userdata('city_id')){
             $location_where["city_id"] = $this->session->userdata('city_id');
         }
-        $this->data['locations'] = $this->home_model->getWhere($location_where, 'locations');
-        //$this->data['testimonials'] = $this->home_model->getWherelimit(array('status' => 1), 'testimonials', 20,1);
+        $this->data['locations'] = $this->home_model->getWhere($location_where, 'locations'); 
         $this->data['testimonials'] = $this->home_model->get_testimonials();
-        $this->data['achievements'] = $this->home_model->getWhere(array('status' => 1), 'achievements');
-      //  $this->data['nri'] = $this->home_model->getWhere(array('status' => 1), 'nri');
-       
+        $this->data['achievements'] = $this->home_model->getWhere(array('status' => 1), 'achievements'); 
         $this->data['amenities'] = $this->home_model->getWhere(array('status' => 1), 'amenities');
         $this->data['properties'] = $this->home_model->getProperties('properties', 7);
         $this->data['sliders'] = $this->home_model->order_by('id', 'desc')->getWhere(array('status' => 1, 'type'=>'H','banner_type'=>'desk'), 'sliders');
@@ -54,11 +50,10 @@ class Home extends Public_Controller
         $this->data['blog_count'] = $this->home_model->countWhere(array('status' => 1), 'blog');
         $this->data['display_images'] = $this->home_model->getOneWhere(array('status' => 1), 'display_images');
         $this->data['city_count'] = count($this->data['cities']);
-        $this->data['price_range'] = $this->home_model->getPriceRanges();
-        // load views
-         $content=$this->session->userdata('content');
-          $total      = $this->home_model->loadProperties(0, 0, true, $content);
-           $this->data['total'] = $total;
+        $this->data['price_range'] = $this->home_model->getPriceRanges(); 
+        $content=$this->session->userdata('content');
+        $total      = $this->home_model->loadProperties(0, 0, true, $content);
+        $this->data['total'] = $total;
         $this->data['view_page'] = 'index';
         $this->load->view('template', $this->data);
     }
@@ -113,10 +108,10 @@ class Home extends Public_Controller
               
         }
         //echo "<script>alert(".$content.")</script>";
-       // print_r($content);die;
-        $content['bhk_range'] = explode(';', $content['bhk']);
-        $content['price_range'] = explode(';', $content['price']);
-        $content['baths_range'] = explode(';', $content['baths']);
+       // print_r($content);die; 
+        // $content['bhk_range'] = explode(';', $content['bhk']);
+        // $content['price_range'] = explode(';', $content['price']);
+        // $content['baths_range'] = explode(';', $content['baths']);
         if($this->input->get('builder')!='' && (string)$this->input->get('builder') ) {
             $total      = $this->home_model->loadPropertiesUsingBuilder(0, 0, true, $this->input->get('builder'));
             $properties = $this->home_model->loadPropertiesUsingBuilder($perpage, $page, false, $this->input->get('builder'));

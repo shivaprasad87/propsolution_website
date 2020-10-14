@@ -1,15 +1,18 @@
-
-
-
-
 <!--Slider-->
 <div class="rev_slider_wrapper">
   <div id="rev_eight" class="rev_slider"  data-version="5.0">
     <ul>
       <!-- SLIDE  -->
+      <?php $desk = 0;
+        foreach ($sliders as $slider) {
+            $img=array();
+            $img=explode('.', $slider->image);
+           
+        ?>
       <li data-transition="fade">
-        <img src="<?=base_url('assets/')?>images/home8-banner1.jpg" alt="" data-bgposition="center center" data-bgfit="cover">
-        <div class=" tp-caption tp-resizeme"
+        
+        <img src="<?= base_url('uploads/sliders/' .  $slider->image) ?>" alt="" data-bgposition="center center" data-bgfit="cover">
+        <!-- <div class=" tp-caption tp-resizeme"
           data-start="1300"
           data-x="['left','center','center','center']" data-hoffset="['0','0','0','15']" 
           data-y="['center','center','center','center']" data-voffset="['0','0','0','0']" 
@@ -41,9 +44,12 @@
               <p> <i class="icon-icons74"></i>Lorem Ipsum ,Bangalore</p>
             </div>
           </div>
-        </div>
+        </div> -->
       </li>
-      <li data-transition="fade">
+      <?php $desk++;
+        
+            } ?>
+<!--       <li data-transition="fade">
         <img src="<?=base_url('assets/')?>images/home8-banner2.jpg" alt="" data-bgposition="center center" data-bgfit="cover">
         <div class="tp-caption tp-resizeme"
           data-x="['left','center','center','center']" data-hoffset="['0','0','0','15']" 
@@ -114,7 +120,7 @@
             </div>
           </div>
         </div>
-      </li>
+      </li> -->
     </ul>
     
   </div>
@@ -546,7 +552,7 @@
 
 
         <div class="col-xs-12 text-center">
-          <a href="listing.html" class="cd-see-all btn-white border_radius margin40"><i class="fa fa-th" aria-hidden="true"></i>view all</a>
+          <a href="<?=base_url();?>listing" class="cd-see-all btn-white border_radius margin40"><i class="fa fa-th" aria-hidden="true"></i>view all</a>
         </div>
         </div>
         <!-- Row ends -->

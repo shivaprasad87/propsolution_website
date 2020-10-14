@@ -64,6 +64,7 @@ class User extends Public_Controller {
             else
             {
                 $logged_in_user = $this->session->userdata('logged_in');
+                //echo $logged_in_user;die;
                 if ($logged_in_user['is_admin'])
                 {
                    // log_message('logging logs', 'user login.');

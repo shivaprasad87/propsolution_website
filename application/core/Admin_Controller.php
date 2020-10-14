@@ -12,9 +12,11 @@ class Admin_Controller extends MY_Controller {
     {
         parent::__construct();
 
-        // must be logged in
+        // must be logged in\
+         //print_r($this->user);die;
         if ( ! $this->user)
         {
+
             if (current_url() != base_url())
             {
                 //store requested URL to session - will load once logged in
@@ -71,7 +73,7 @@ protected function paginate($perpage, $total, $base_url, $uri_segment, $class = 
     $config["num_links"] = 4;
     $config['use_page_numbers'] = true;
         //config for bootstrap pagination class integration
-    $config['full_tag_open'] = '<ul class="pagination">';
+    $config['full_tag_open'] = '<ul class="pager">';
     $config['full_tag_close'] = '</ul>';
     $config['first_link'] = false;
     $config['last_link'] = false;

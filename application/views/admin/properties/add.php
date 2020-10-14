@@ -674,7 +674,7 @@ else echo "unchecked";
                         <div class="form-group">
                             <label class="control-label" for="map">Location Map</label>
                             <div class=" <?= form_error('map') ? 'has-error' : '' ?>">
-                                <input type="file" id="map" accept="image/*" class="form-control" name="map">
+                                <input type="file" id="map" accept="image/*" class="form-control" name="map" style="height: 38px !important;">
                             </div>
                         </div>
                     </div>

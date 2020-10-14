@@ -8,7 +8,7 @@
         <div class="row">
           <div class="col-md-3 col-sm-12">
             <div class="logo">
-            <a href="index.html"><img alt="" src="<?=base_url('assets/')?>images/logo-white.png" class="img-responsive"></a>
+            <a href="<?= base_url();?>"><img alt="" src="<?=base_url('assets/')?>images/logo-white.png" class="img-responsive"></a>
             </div>
           </div>
         <!--Info Box-->
@@ -23,7 +23,7 @@
             <div class="info-box">
             <div class="icons"><i class="icon-icons74"></i></div>
             <ul>
-              <li><strong>Lorem Ipsum,</strong></li>
+              <li><strong>City</strong></li>
               <li>Bangalore</li>
             </ul>
           </div>
@@ -31,7 +31,7 @@
               <div class="icons"><i class="icon-icons142"></i></div>
               <ul>
                 <li><strong>Email Address</strong></li>
-                <li><a href="#.">info@csomething.com</a></li>
+                <li><a href="#.">info@propsolutions.com</a></li>
               </ul>
             </div>
           </div>
@@ -42,9 +42,9 @@
       <div class="container">
             <div class="attr-nav">
               <ul class="social_share clearfix">
-              <li><a href="#." class="facebook"><i class="fa fa-facebook"></i></a></li>
-              <li><a href="#." class="twitter"><i class="fa fa-twitter"></i></a></li>
-              <li><a href="#." class="google"><i class="icon-whatsapp"></i></a></li>
+              <li><a href="<?= $social_links->facebook ?>" class="facebook"><i class="fa fa-facebook"></i></a></li>
+              <li><a href="<?= $social_links->twitter ?>" class="twitter"><i class="fa fa-twitter"></i></a></li>
+              <li><a href="https://api.whatsapp.com/send?phone=<?= $social_links->whatsapp ?>&text=Hi, I am Intrested in propsolutions" class="google"><i class="icon-whatsapp"></i></a></li>
               </ul>
             </div> 
               
@@ -53,11 +53,11 @@
               <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
                   <i class="fa fa-bars"></i>
               </button>
-              <a class="navbar-brand sticky_logo" href="index8.html"><img src="<?=base_url('assets/')?>images/logo.png" class="logo" alt=""></a>
+              <a class="navbar-brand sticky_logo" href="<?=base_url();?>"><img src="<?=base_url('assets/')?>images/logo.png" class="logo" alt=""></a>
           </div><!-- End Header Navigation -->
             <div class="collapse navbar-collapse" id="navbar-menu">
             <ul class="nav navbar-nav" data-in="fadeIn" data-out="fadeOut">
-              <li><a href="index.html">Home</a></li>
+              <li><a href="<?= base_url();?>">Home</a></li>
               
                 <li class="dropdown megamenu-fw">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown">Listing</a>
@@ -68,8 +68,8 @@
                           <h5 class="title">PROPERTIES LIST</h5>
                           <div class="content">
                             <ul class="menu-col">
-                              <li><a href="listing.html">Properties List</a></li>
-                              <li><a href="property_detail.html">Single Property</a></li>
+                              <li><a href="<?= base_url('listing');?>">Properties List</a></li>
+                              <!-- <li><a href="property_detail.html">Single Property</a></li> -->
                               
                             </ul>
                           </div>
@@ -173,7 +173,7 @@
                            
                               
                               <li><a href="404.html">404 Error</a></li>
-                              <li><a href="contact.html">Contact Us</a></li>
+                              <li><a href="<?= base_url('contact');?>">Contact Us</a></li>
                               <li><a href="testimonial.html">Testimonials</a></li>
                             </ul>
                           </div>
@@ -194,7 +194,7 @@
                       <li><a href="404.html">404 Error </a></li>
                   </ul>
                 </li>
-                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="<?= base_url('contact');?>">Contact Us</a></li>
                
               </ul>
           </div>
