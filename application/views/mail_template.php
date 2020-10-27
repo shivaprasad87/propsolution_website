@@ -68,9 +68,9 @@ foreach ($post as $title => $value) {
                                                 </td>
                                                 <td class="m_7833591651013642041actions"
                                                     style="font:14px/1.4285714 Arial,sans-serif;text-align:right;padding:10px 0 0;border-top:1px solid #cccccc;line-height:1">
-                                                    <a href="https://www.soarmorrow.com/demo/fullbasket"
+                                                    <a href="#"
                                                        style="color:#3572b0;text-decoration:none" target="_blank">
-                                                        copyright &copy; Full Basket</a>
+                                                        copyright &copy; Porpsolutions</a>
                                                 </td>
                                             </tr>
 
