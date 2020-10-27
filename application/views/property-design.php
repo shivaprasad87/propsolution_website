@@ -161,11 +161,11 @@ if (($images = $this->properties_model->getWhere(array('property_id' => $propert
                       {
                         if($i>0)
                           echo "</div>";
-                        
+
                         echo '<div class="col-md-4 col-sm-6 col-xs-12"><ul class="pro-list">';
                       }
                             echo '<li>'.ucwords($amenity->name).'</li>';
-                      if($i==4 || $i==8 || $i==12 || $i==16 || $i==20 || $i==24 )
+                      if($i==3 || $i==7 || $i==11 || $i==15 || $i==19 || $i==23 )
                       {
                         echo '</ul></div>';
                       } 
