@@ -983,7 +983,8 @@ class Home extends Public_Controller
             $city = $this->input->post('city');
             if($city=='Hyderabad')
                  $this->data['image']= "thankyou-images/3.jpg"; 
-            redirect(base_url('thankyou?builder='.$builder['name'].'&location='.$property->area.'&property='.$property->slug.'&title='.$property->title.'&city='.$city));
+            // redirect(base_url('thankyou?builder='.$builder['name'].'&location='.$property->area.'&property='.$property->slug.'&title='.$property->title.'&city='.$city));
+              redirect(base_url('thankyou'));
         }
         $property->amenities = $this->properties_model->getAmenities($property->id);
         $property->gallery = $this->properties_model->getGallery($property->id);

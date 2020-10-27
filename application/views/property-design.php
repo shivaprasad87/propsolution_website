@@ -457,13 +457,13 @@ if (($images = $this->properties_model->getWhere(array('property_id' => $propert
             </div></div>
           </div> -->
           
-          <div class="col-sm-12 text-center heading_space">
+          <!-- <div class="col-sm-12 text-center heading_space">
             <ul class="pager">
               <li><a href="#.">1</a></li>
               <li class="active"><a href="#.">2</a></li>
               <li><a href="#.">3</a></li>
             </ul>
-          </div>
+          </div> -->
       </div>
       <aside class="col-md-4 col-xs-12">
         <div class="property-query-area clearfix">
