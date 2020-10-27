@@ -243,7 +243,7 @@ if (($images = $this->properties_model->getWhere(array('property_id' => $propert
         <h2 class="text-uppercase bottom20">Contact Us</h2>
        
         <div class="col-sm-12 bottom40">
-            <form action="<?= site_url('home/send') ?>" method="post" class="callus">
+            <form action="" method="post" class="callus">
               <div class="row">
                 <div class="col-sm-6">
                   <div class="form-group">

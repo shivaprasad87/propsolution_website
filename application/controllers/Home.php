@@ -214,9 +214,9 @@ class Home extends Public_Controller
 
         $this->email->from($this->input->post('name'), $this->input->post('email'));
 //        $this->email->to('vineeth@soarmorrow.com');
-        $this->email->to('sales@Propsolutions .test-google-a.com');
+        $this->email->to('shivas8787@gmail.com');
 
-        //$this->email->subject('New Notification from Propsolutions property');
+        $this->email->subject('New Notification from Propsolutions property');
         $this->email->subject('Resale property Submitted');
         $post = array();
         foreach ($this->input->post() as $key => $value) {
