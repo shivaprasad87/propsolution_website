@@ -467,7 +467,7 @@ class Home extends Public_Controller
             $data = array(
                 'post' => array(
                     'email' => $email,
-                    'message' => $email.'just subscribed to fulllbasket properies.'
+                    'message' => $email.'just subscribed to Propsolutions .'
                 )
             );
             
