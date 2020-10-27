@@ -1,8 +1,5 @@
 <body>
-
-
   <header class="layout_double">
- 
     <div class="header-upper dark">
       <div class="container">
         <div class="row">

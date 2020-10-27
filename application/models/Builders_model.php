@@ -31,10 +31,11 @@ class Builders_model extends MY_Model {
         return $data->result();
     }
     
-    function getBuilderById($params, $clause) {
-        $this->db->select($params);
-        $q = $this->db->get_where('builders', $clause);
-        return $q->row_array();
+    public function getBuilderById($params, $clause) {
+        echo $params;
+        // $this->db->select($params);
+        // $q = $this->db->get_where('builders', $clause);
+        // return $q->row_array();
     }
     
     function getBuildersByLimit($clause, $start, $limit){ 

@@ -92,9 +92,9 @@
         <div class="footer_panel bottom30">
           <h4 class="bottom30 heading">Subscribe</h4>
           <p>Sign up with your email to get latest updates and offers</p>
-          <form class="top30">
-            <input class="search" placeholder="Enter your Email" type="search">
-            <a class="button_s" href="#">
+         <form action="<?= site_url('subscribers') ?>" method="post" id="myForm">
+            <input class="search" placeholder="Enter your Email" type="search" name="email">
+            <a class="button_s" onclick="$('#myForm').submit();">
             <i class="icon-mail-envelope-open"></i>
             </a>
           </form>

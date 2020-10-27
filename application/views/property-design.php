@@ -1,6 +1,32 @@
-<?php
-$this->load->view('inc/head');
-$this->load->view('inc/header');
+<?php 
+$property->gallery = json_decode(json_encode($property->gallery),true);
+$gallery_images = array();
+foreach($property->gallery as $gallery) {
+  array_push($gallery_images, $gallery['image']);
+} 
+if (($images = $this->properties_model->getWhere(array('property_id' => $property->id),
+                                                'property_desktop_banners')) != null ) {
+    if(($m_images = $this->properties_model->getWhere(array('property_id' => $property->id),
+        'property_mobile_banners')) != null)
+    {
+
+    $images = json_decode( json_encode($images), true);
+    $m_images = json_decode( json_encode($m_images), true);
+    $total_images =array_merge($images);
+  //  print_r($m_images);die;
+
+    $ban=0;
+    $side_image='';
+    //print_r($total_images);die;
+    foreach ($total_images as $image) {
+          array_push($gallery_images, $images[$ban]['banner_path']);
+          array_push($gallery_images, $m_images[$ban]['mobile_banner_path']);
+          
+       
+      }
+    }
+  }  
+         $this->load->view('inc/head2'); $this->load->view('inc/header');
 
 ?>
 <!-- Page Banner Start-->
@@ -8,11 +34,11 @@ $this->load->view('inc/header');
   <div class="container">
     <div class="row">
       <div class="col-md-12 text-center">
-        <h1 class="text-uppercase">Property Details </h1>
-        <p> Lorem ipsum dolor sit amet consectetur adipiscing elit.</p>
+        <h1 class="text-uppercase">Property Details </h1><!-- 
+        <p> Lorem ipsum dolor sit amet consectetur adipiscing elit.</p> -->
         <ol class="breadcrumb text-center">
-          <li><a href="#.">Home</a></li>
-          <li><a href="#.">Properties</a></li>
+          <li><a href="<?=base_url();?>">Home</a></li>
+          <li><a href="<?=base_url('listing');?>">Properties</a></li>
           <li class="active">Property Details </li>
         </ol>
       </div>
@@ -28,25 +54,27 @@ $this->load->view('inc/header');
   <div class="container">
     <div class="row">
       <div class="col-md-8 listing1 property-details">
-        <h2 class="text-uppercase">987 Cantebury Drive</h2>
-        <p class="bottom30">Lorem Ipsum, Banglore</p>
+        <h2 class="text-uppercase"><?= $property->title ? $property->title : '' ?></h2>
+        <p class="bottom30"><?= $property->location . ', ' . $property->city_name ?></p>
         <div id="property-d-1" class="owl-carousel">
-          <div class="item"><img src="images/property-details/property-d-1-1.jpg" alt="image"/></div>
-          <div class="item"><img src="images/property-details/property-d-1-1.jpg" alt="image"/></div>
-          <div class="item"><img src="images/property-details/property-d-1-1.jpg" alt="image"/></div>
-          <div class="item"><img src="images/property-details/property-d-1-1.jpg" alt="image"/></div>
-          <div class="item"><img src="images/property-details/property-d-1-1.jpg" alt="image"/></div>
-          <div class="item"><img src="images/property-details/property-d-1-1.jpg" alt="image"/></div>
-          <div class="item"><img src="images/property-details/property-d-1-1.jpg" alt="image"/></div>
+          <?php
+          foreach ($gallery_images as $key => $value) {
+            ?>
+          <div class="item"><img src="<?=base_url($value);?>" alt="image" style="width: 100px !important;height: 100px !important;"/></div>
+
+            <?php
+          }
+          ?> 
         </div>
         <div id="property-d-1-2" class="owl-carousel">
-          <div class="item" ><img src="images/property-details/property-d-s-1-1.jpg" alt="image"/></div>
-          <div class="item" ><img src="images/property-details/property-d-s-1-2.jpg" alt="image"/></div>
-          <div class="item" ><img src="images/property-details/property-d-s-1-3.jpg" alt="image"/></div>
-          <div class="item" ><img src="images/property-details/property-d-s-1-4.jpg" alt="image"/></div>
-          <div class="item" ><img src="images/property-details/property-d-s-1-5.jpg" alt="image"/></div>
-          <div class="item" ><img src="images/property-details/property-d-s-1-1.jpg" alt="image"/></div>
-          <div class="item" ><img src="images/property-details/property-d-s-1-2.jpg" alt="image"/></div>
+          <?php
+           foreach ($gallery_images as $key => $value) {
+            ?>
+          <div class="item"><img src="<?=base_url($value);?>" alt="image"/></div>
+
+            <?php
+          }
+          ?> 
         </div>
         <div class="property_meta bg-black bottom40">
           <span><i class="icon-select-an-objecto-tool"></i>4800 sq ft</span>
@@ -56,11 +84,10 @@ $this->load->view('inc/header');
           <span><i class="icon-garage"></i>1 Garage</span>
         </div>
         <h2 class="text-uppercase">Property Description</h2>
-        <p class="bottom30">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras et dui vestibulum, bibendum purus sit amet, vulputate mauris. Ut adipiscing gravida tincidunt. Duis euismod placerat rhoncus. Phasellus mollis imperdiet placerat. Sed ac turpis nisl. Mauris at ante mauris. Aliquam posuere fermentum lorem, a aliquam mauris rutrum a. Curabitur sit amet pretium lectus, nec consequat orci.</p>
-        <p class="bottom30">Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Duis et metus in libero sollicitudin venenatis eu sed enim. Nam felis lorem, suscipit ac nisl ac, iaculis dapibus tellus. Cras ante justo, aliquet quis placerat nec, molestie id turpis. </p>
-        <div class="text-it-p bottom40">
+        <p class="bottom30"><?= $property->description?$property->description:''; ?> </p>
+        <!-- <div class="text-it-p bottom40">
           <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam power nonummy nibh tempor cum soluta nobis eleifend option congue nihil imperdiet doming Lorem ipsum dolor sit amet. consectetuer elit sed diam power nonummy</p>
-        </div>
+        </div> -->
         <h2 class="text-uppercase bottom20">Quick Summary</h2>
         <div class="row property-d-table bottom40">
           <div class="col-md-6 col-sm-6 col-xs-12">
@@ -125,115 +152,111 @@ $this->load->view('inc/header');
           </div>
         </div>
         <h2 class="text-uppercase bottom20">Features</h2>
-        <div class="row bottom40">
-          <div class="col-md-4 col-sm-6 col-xs-12">
-            <ul class="pro-list">
-              <li> Air Conditioning</li>
-              <li> Barbeque</li>
-              <li> Dryer</li>
-              <li> Laundry</li>
-            </ul>
-          </div>
-          <div class="col-md-4 col-sm-6 col-xs-12">
-            <ul class="pro-list">
-              <li>Microwave</li>
-              <li>Outdoor Shower</li>
-              <li>Refrigerator</li>
-              <li>Swimming Pool</li>
-            </ul>
-          </div>
-          <div class="col-md-4 col-sm-6 col-xs-12">
-            <ul class="pro-list">
-              <li> Quiet Neighbourhood</li>
-              <li> TV Cable & WIFI</li>
-              <li> Window Coverings</li>
-            </ul>
-          </div>
+        <div class="row bottom40"> 
+            <?php
+            $i=0;
+              if (isset($property->amenities) && $property->amenities) {
+                  foreach ($property->amenities as $amenity) {
+                      if($i==0 || $i==4 || $i==8 || $i==12 || $i==16 || $i==20 || $i==24 )
+                      {
+                        if($i>0)
+                          echo "</div>";
+                        echo '<div class="col-md-4 col-sm-6 col-xs-12"><ul class="pro-list">';
+                      }
+                            echo '<li>'.ucwords($amenity->name).'</li>';
+                      if($i==4 || $i==8 || $i==12 || $i==16 || $i==20 || $i==24 )
+                      {
+                        echo '</ul></div>';
+                      } 
+                      $i++;
+                  }
+              }
+              ?> 
         </div>
         <h2 class="text-uppercase">Features</h2>
-        <p class="bottom20">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras et dui vestibulum, bibendum purus sit amet, 
-          vulputate mauris. Ut adipiscing gravida tincidunt.
+        <p class="bottom20">Amenities and Features of <?= $property->title ? $property->title : '' ?>
         </p>
         <div class="row bottom40">
+           <?php
+            if (isset($property->amenities) && $property->amenities) {
+                foreach ($property->amenities as $amenity) {
+                    ?>
           <div class="col-md-4 col-sm-4 col-xs-12">
             <div class="pro-img">
               <figure class="wpf-demo-gallery">
-                <img src="images/property-details/property-d-1-f-1.jpg" alt="image"/>
+                <img src="<?= base_url('uploads/amenities/' . $amenity->image) ?>" alt="image"/>
                 <figcaption class="view-caption">    
-                  <a data-fancybox-group="gallery" class="fancybox" href="images/property-details/property-d-1-f-1.jpg"><i class="icon-focus"></i></a>
+                  <a data-fancybox-group="gallery" class="fancybox" href="<?= base_url('uploads/amenities/' . $amenity->image) ?>"><i class="icon-focus"></i></a>
                 </figcaption>
               </figure>
             </div>
-          </div>
-          <div class="col-md-4 col-sm-4 col-xs-12">
-            <div class="pro-img">
-              <figure class="wpf-demo-gallery">
-                <img src="images/property-details/property-d-1-f-2.jpg" alt="image"/>
-                <figcaption class="view-caption">    
-                  <a data-fancybox-group="gallery" class="fancybox" href="images/property-details/property-d-1-f-1.jpg"><i class="icon-focus"></i></a>
-                </figcaption>
-              </figure>
-            </div>
-          </div>
-          <div class="col-md-4 col-sm-4 col-xs-12">
-            <div class="pro-img">
-              <figure class="wpf-demo-gallery">
-                <img src="images/property-details/property-d-1-f-3.jpg" alt="image"/>
-                <figcaption class="view-caption">    
-                  <a data-fancybox-group="gallery" class="fancybox" href="images/property-details/property-d-1-f-1.jpg"><i class="icon-focus"></i></a>
-                </figcaption>
-              </figure>
-            </div>
-          </div>
+          </div> 
+          <?php } } ?> 
         </div>
+        <?php
+        if($property->walkthrough)
+        {
+            ?>
         <h2 class="text-uppercase bottom20">Video Presentation</h2>
         <div class="row bottom40">
           <div class="col-md-12 padding-b-20">
-            <div class="pro-video">
+            
+              <div>
+             <iframe width="100%" height="450" src="https://www.youtube.com/embed/<?= getYoutubeVideoId($property->walkthrough) ?>?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
+              </div>
+              
+            <!-- <div class="pro-video">
               <figure class="wpf-demo-gallery">
                 <video  class="video" controls>
                   <source src="video/video.mp4" type="video/mp4">
                   <source src="video/video.html" type="video/ogg">
                 </video>
               </figure>
-            </div>
+            </div> -->
           </div>
         </div>
+        <?php
+          }
+              ?>
         <h2 class="text-uppercase bottom20">Property Map</h2>
         <div class="row bottom40">
           <div class="col-md-12 bottom20">
             <div class="property-list-map">
+            <img src="<?= base_url("uploads/$property->slug/map/$property->map") ?>" class="small-map" alt="<?= $property->location_alt?>" style="width: 100% !important;    height: 100% !important;">
+          </div>
+            <!-- <div class="property-list-map">
               <div id="property-listing-map" class="multiple-location-map" style="width:100%;height:430px;"></div>
-            </div>
+            </div> -->
           </div>
           <div class="social-networks">
             <div class="social-icons-2">
               <span class="share-it">Share this Property</span>
-              <span><a href="#."><i class="fa fa-facebook" aria-hidden="true"></i> Facebook</a></span>
-              <span><a href="#."><i class="fa fa-twitter" aria-hidden="true"></i> Twitter</a></span>
-              <span><a href="#."><i class="fa fa-whatsapp" aria-hidden="true"></i> Whatsapp </a></span>
+              <span><a href="https://www.facebook.com/sharer/sharer.php?u=<?=current_url();?>"><i class="fa fa-facebook" aria-hidden="true"></i> Facebook</a></span>
+              <span><a href="https://twitter.com/share?url=<?=current_url();?>"><i class="fa fa-twitter" aria-hidden="true"></i> Twitter</a></span>
+              <span><a href="https://api.whatsapp.com/send?phone=<?= $social_links->whatsapp ?>&text=Hi, I am Intrested in propsolutions. <?=current_url();?> "><i class="fa fa-whatsapp" aria-hidden="true"></i> Whatsapp </a></span>
             </div>
           </div>
         </div>
+        <div class="clearfix"></div>
         <h2 class="text-uppercase bottom20">Contact Us</h2>
        
         <div class="col-sm-12 bottom40">
-            <form class="callus">
+            <form action="<?= site_url('home/send') ?>" method="post" class="callus">
               <div class="row">
                 <div class="col-sm-6">
                   <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Name">
+                    <input type="text" class="form-control" name="name" placeholder="Name">
                   </div>
                   <div class="form-group">
-                    <input type="tel" class="form-control" placeholder="Phone Number">
+                    <input type="tel" class="form-control" name="phone" placeholder="Phone Number" >
                   </div>
                   <div class="form-group">
-                    <input type="email" class="form-control" placeholder="Email">
+                    <input type="email" name="email" class="form-control" placeholder="Email">
                   </div>
                 </div>
                 <div class="col-sm-6">
                   <div class="form-group">
-                    <textarea class="form-control" placeholder="Message"></textarea>
+                    <textarea class="form-control" name="sugg" placeholder="Message"></textarea>
                   </div>
                 </div>
                 <div class="col-sm-12 row">

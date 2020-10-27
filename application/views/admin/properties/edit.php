@@ -719,7 +719,7 @@ value="Cents">Cents
         ?>
         <span class="remove_file">remove file</span>
         <div class=" <?= form_error('map') ? 'has-error' : '' ?>">
-            <input type="file" id="map" accept="image/*" class="form-control" name="map">
+            <input type="file" id="map" accept="image/*" class="form-control" name="map" style="height: 38px !important;">
         </div>
 
     </div>

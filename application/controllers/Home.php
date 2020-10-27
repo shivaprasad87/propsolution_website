@@ -188,7 +188,7 @@ class Home extends Public_Controller
 
         $this->email->from($name, $email);
 //         $this->email->to('vineeth@soarmorrow.com');
-        $this->email->to('sales@fullbasketproperty.com.test-google-a.com');
+        $this->email->to('sales@Propsolutions .test-google-a.com');
 
         $this->email->subject('Enquiry for you');
         $data = array('post' => array('name' => $name, 'email' => $email, 'phone' => $phone, 'message' => $message));
@@ -214,9 +214,9 @@ class Home extends Public_Controller
 
         $this->email->from($this->input->post('name'), $this->input->post('email'));
 //        $this->email->to('vineeth@soarmorrow.com');
-        $this->email->to('sales@fullbasketproperty.com.test-google-a.com');
+        $this->email->to('sales@Propsolutions .test-google-a.com');
 
-        //$this->email->subject('New Notification from fullbasketproperty');
+        //$this->email->subject('New Notification from Propsolutions property');
         $this->email->subject('Resale property Submitted');
         $post = array();
         foreach ($this->input->post() as $key => $value) {
@@ -327,7 +327,7 @@ class Home extends Public_Controller
         $this->data['price_range'] = $this->home_model->getPriceRanges();
         $this->data['amenities'] = $this->home_model->getWhere(array('status' => 1), 'amenities');
         $this->data['meta'] = array(
-            'title' => $city_details->name . ' Based Listing - FULLBASKET',
+            'title' => $city_details->name . ' Based Listing - Propsolutions ',
             'description' => 'Test City Based Listing Page Description'
         );
 
@@ -397,7 +397,7 @@ class Home extends Public_Controller
         $this->data['amenities'] = $this->home_model->getWhere(array('status' => 1), 'amenities');
         $this->data['locations'] = $this->home_model->getWhere(array('status' => 1), 'locations');
         $this->data['meta'] = array(
-            'title' => 'Searched Properties Listing - FULLBASKET',
+            'title' => 'Searched Properties Listing - Propsolutions ',
             'description' => 'Test Search Page Description'
         );
 
@@ -440,7 +440,7 @@ class Home extends Public_Controller
         $this->data['total'] = $total;
         $this->data['perpage'] = $perpage;
         $this->data['meta'] = array(
-            'title' => 'Favouite Properties Listing - FULLBASKET',
+            'title' => 'Favouite Properties Listing - Propsolutions ',
             'description' => 'Favourite Properties Listing Page Description'
         );
 
@@ -460,10 +460,10 @@ class Home extends Public_Controller
         {
             $this->home_model->insertRow(array('email' => $email, 'created_at' => date('Y-m-d H:i:s')), 'subscribers');
             $this->config_email();
-            $this->email->from( 'no-reply@fullbasketproperty.com','Fullbasket WebAdmin');
-            $this->email->to('sales@fullbasketproperty.com.test-google-a.com');
+            $this->email->from( 'no-reply@propsolutions.com','Propsolutions  WebAdmin');
+            $this->email->to('shivas8787@gmail.com');
 
-            $this->email->subject('You received a new subscriber at fullbasket properties.');
+            $this->email->subject('You received a new subscriber at Propsolutions .');
             $data = array(
                 'post' => array(
                     'email' => $email,
@@ -521,7 +521,7 @@ class Home extends Public_Controller
             $this->config_email();
 
             $this->email->from($this->input->post('name'), $this->input->post('email'));
-            $this->email->to('sales@fullbasketproperty.com.test-google-a.com');
+            $this->email->to('shivas8787@gmail.com');
 
             $this->email->subject($this->input->post('name') . ' has an interest in ' . $property->title);
             $data = array(
@@ -571,7 +571,7 @@ class Home extends Public_Controller
 
         $this->email->from($name, $email);
 //        $this->email->to('vineeth@soarmorrow.com');
-        $this->email->to('sales@fullbasketproperty.com.test-google-a.com');
+        $this->email->to('sales@Propsolutions .test-google-a.com');
 
         $this->email->subject("You have received a new enquiry for $property->title");
         $data = array(
@@ -605,8 +605,8 @@ class Home extends Public_Controller
     public function privacy()
     {
         $this->data['meta'] = array(
-            'title'         => 'Privacy Policy - FullBasketProperty.com ', 
-            'description'   => 'Privacy policy of Prop Solutions, a leading property agent in India. For any support and concerns, please connect at support@fullbasketproperty.com ',
+            'title'         => 'Privacy Policy - Propsolutions  ', 
+            'description'   => 'Privacy policy of Prop Solutions, a leading property agent in India. For any support and concerns, please connect at support@Propsolutions.com  ',
             'keywords'      =>'Bangalore Real Estate, Hyderabad Real Estate, Mumbai Real Estate, Pune Real Estate, Real Estate Websites In India, Property Sites In India, Real Estate Agents In India, Property Portals In India, Real Estate, Indian Real Estate '
         );
         $privacy = $this->home_model->getAll('terms');
@@ -623,8 +623,8 @@ class Home extends Public_Controller
     public function disclaimer()
     {
         $this->data['meta'] = array(
-            'title'         => 'Disclaimer - FullBasketProperty.com ', 
-            'description'   => 'FullBasketProperty.com provides information regarding the Real Estate Projects in India.  ',
+            'title'         => 'Disclaimer - Propsolutions  ', 
+            'description'   => 'Propsolutions  provides information regarding the Real Estate Projects in India.  ',
             'keywords'      =>'Bangalore Real Estate, Hyderabad Real Estate, Mumbai Real Estate, Pune Real Estate, Property Portals In Bangalore, Property Portals In Pune, Property Portals In Hyderabad, Property Portals In Mumbai, Real Estate, Indian Real Estate '
         );
         $privacy = $this->home_model->getAll('disclaimer');
@@ -643,8 +643,8 @@ class Home extends Public_Controller
     public function vastu()
     {
         $this->data['meta'] = array(
-            'title'         => 'vastu - FullBasketProperty.com ', 
-            'description'   => 'FullBasketProperty.com provides information regarding the Real Estate Projects in India.  ',
+            'title'         => 'vastu - Propsolutions  ', 
+            'description'   => 'Propsolutions  provides information regarding the Real Estate Projects in India.  ',
             'keywords'      =>'Bangalore Real Estate, Hyderabad Real Estate, Mumbai Real Estate, Pune Real Estate, Property Portals In Bangalore, Property Portals In Pune, Property Portals In Hyderabad, Property Portals In Mumbai, Real Estate, Indian Real Estate '
         );
         $privacy =  $this->home_model->getAll('vasthu');
@@ -726,7 +726,7 @@ class Home extends Public_Controller
     {
         $this->data['meta'] = array(
             'title'         => 'Prop Solutions Contact and Address Details', 
-            'description'   => 'Want to buy a home or looking for property advice? Contact us at FullBasketProperty.com, best property portal in India. Find our contact details across India. ',
+            'description'   => 'Want to buy a home or looking for property advice? Contact us at Propsolutions , best property portal in India. Find our contact details across India. ',
             'keywords'      =>'Prop Solutions Contact Details, Prop Solutions Address, Real Estate Bangalore, Real Estate Hyderabad, Real Estate Pune, Real Estate Mumbai, Real Estate Agent in Bangalore, Real Estate Agent in Hyderabad, Real Estate Agent in Pune, Real Estate Agent in Mumbai'
         );
         
@@ -743,11 +743,11 @@ class Home extends Public_Controller
             $message = $this->input->post('message');
 
             $this->email->from($name, $email);
-            $this->email->to('sales@fullbasketproperty.com.test-google-a.com');
+            $this->email->to('sales@Propsolutions .test-google-a.com');
 //            $this->email->to('vineeth@soarmorrow.com');
 
 
-            $this->email->subject("You have received a new enquiry for fullbasket properties");
+            $this->email->subject("You have received a new enquiry for Propsolutions ");
             $data = array(
                 'post' => array(
                     'name' => $name,
@@ -777,7 +777,7 @@ class Home extends Public_Controller
     public function careers()
     {
         $this->data['meta'] = array(
-            'title'         => 'Find Jobs – FullBasketProperty.com ', 
+            'title'         => 'Find Jobs – Propsolutions  ', 
             'description'   => 'Career opportunities at Prop Solutions. Begin your journey in the world of Real Estate at a place where you can implement your ideas and make a difference.   ',
             'keywords'      =>'Bangalore Real Estate, Hyderabad Real Estate, Mumbai Real Estate, Pune Real Estate, Jobs in Bangalore, Jobs in Hyderabad, Jobs in Pune, Jobs in Mumbai, Job Vacancies, Job Search, Real Estate Career, Career Opportunities in Real Estate, Find Jobs Real Estate'
         );
@@ -806,11 +806,11 @@ class Home extends Public_Controller
                 $address = $this->input->post('address');
 
                 $this->email->from($name, $email);
-                $this->email->to('sales@fullbasketproperty.com.test-google-a.com');
+                $this->email->to('sales@Propsolutions .test-google-a.com');
 //                $this->email->to('vineeth@soarmorrow.com');
 
 
-                $this->email->subject("You have received a new career request at fullbasket properties");
+                $this->email->subject("You have received a new career request at Propsolutions ");
 
                 $data = array(
                     'post' => array(
@@ -893,7 +893,7 @@ class Home extends Public_Controller
             $this->config_email();
 
             $this->email->from($this->input->post('name'), $this->input->post('email'));
-            $this->email->to('sales@fullbasketproperty.com.test-google-a.com');
+            $this->email->to('sales@Propsolutions .test-google-a.com');
 
             $this->email->subject($this->input->post('name') . ' has an interest in ' . $property->title);
             $data = array(
@@ -950,7 +950,7 @@ class Home extends Public_Controller
             $this->config_email();
 
             $this->email->from($this->input->post('name'), $this->input->post('email'));
-            $this->email->to('sales@fullbasketproperty.com.test-google-a.com');
+            $this->email->to('shivas8787@gmail.com');
 
             $this->email->subject($this->input->post('name') . ' has an interest in ' . $property->title);
             $c_code =$this->input->post('countrycode') ? $this->input->post('countrycode') :'+91';
@@ -1047,7 +1047,7 @@ class Home extends Public_Controller
             $this->config_email();
 
             $this->email->from($this->input->post('name'), $this->input->post('email'));
-            $this->email->to('sales@fullbasketproperty.com.test-google-a.com');
+            $this->email->to('sales@Propsolutions .test-google-a.com');
 
             $this->email->subject($this->input->post('name') . ' has Requested callback ' );
             $c_code =$this->input->post('countrycode') ? $this->input->post('countrycode') :'+91';
@@ -1072,7 +1072,7 @@ class Home extends Public_Controller
             $this->config_email();
 
             $this->email->from($this->input->post('name'), $this->input->post('email'));
-            $this->email->to('sales@fullbasketproperty.com.test-google-a.com');
+            $this->email->to('sales@Propsolutions .test-google-a.com');
 
             $this->email->subject($this->input->post('name') . ' has Requested callback ' );
             $c_code =$this->input->post('countrycode') ? $this->input->post('countrycode') :'+91';
@@ -1102,7 +1102,7 @@ class Home extends Public_Controller
     $this->data['meta'] = array(
         'title'         => 'Prop Solutions Achivements | Latest Property Updates and Trends', 
         'description'   => 'Get the latest real estate property updates, news, opinions and trends in India. Expert insights to the events in the Indian Real Estate Market. ',
-        'keywords'      =>'Fullbasket property achivements'
+        'keywords'      =>'Propsolutions  achivements'
     );
       //  $content = $this->input->get('content');
         $this->data['achievements'] = $this->achievements_model->loadAchievements($perpage, $page, FALSE, $content);
@@ -1116,7 +1116,7 @@ class Home extends Public_Controller
     $this->data['meta'] = array(
         'title'         => 'Prop Solutions NRI | Latest Property Updates and Trends', 
         'description'   => 'Get the latest real estate property updates, news, opinions and trends in India. Expert insights to the events in the Indian Real Estate Market. ',
-        'keywords'      =>'Fullbasket property NRI'
+        'keywords'      =>'Propsolutions  NRI'
     );  
         $this->data['view_page'] = 'nri';
         $this->load->view('template', $this->data);
