@@ -670,7 +670,7 @@
       <div class="col-sm-8 bottom30">
         <h2>We Don’t Just Find <br> <span class="t_yellow">Great Deals</span> We Create Them</h2>
         <h4 class="top20">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</h4>
-        <a href="listing4.html" class="text-uppercase btn-white top20">view all listings</a>
+        <a href="<?=base_url('listing');?>" class="text-uppercase btn-white top20">view all listings</a>
 
       </div>
     </div>
@@ -691,24 +691,35 @@
     <div class="row">
       <div class="col-md-12">
         <div id="testinomial-slider" class="owl-carousel">
+          <?php  
+          if(count($testimonials)>0)
+          {
+          foreach ($testimonials as $testimonial) { 
+          ?>
           <div class="item">
             <div class="testinomial_content text-center">
+              <img src="<?= base_url('uploads/testimonials/' . $testimonial->image) ?>" alt="happy client" class="bottom15">
+              <h4 class="uppercase"> <?= $testimonial->name ?></h4>
+              <span class="smmery bottom15">( <?=$testimonial->job_desc?> )</span>
+              <img src="<?=base_url('assets/')?>images/stars.png" alt="rating" class="bottom30">
+              <?php echo '<p>'.$testimonial->comment.'</p>'; ?>
+            </div>
+          </div>
+        <?php }
+        }
+        else{
+
+         ?>
+           <div class="item">
+            <div class="testinomial_content text-center">
               <img src="<?=base_url('assets/')?>images/author.png" alt="happy client" class="bottom15">
-              <h4 class="uppercase"> SAM NICHOLSON</h4>
+              <h4 class="uppercase"> SAM dfdfsdf</h4>
               <span class="smmery bottom15">( NorthMarq Capital  )</span>
               <img src="<?=base_url('assets/')?>images/stars.png" alt="rating" class="bottom30">
               <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh tempor cum soluta nobis consectetuer adipiscing. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla convallis egestas rhoncus. Donec facilisis fermentum sem, ac viverra ante luctus vel.</p>
             </div>
           </div>
-          <div class="item">
-            <div class="testinomial_content text-center">
-              <img src="<?=base_url('assets/')?>images/author.png" alt="happy client" class="bottom15">
-              <h4 class="uppercase"> SAM NICHOLSON</h4>
-              <span class="smmery bottom15">( NorthMarq Capital  )</span>
-              <img src="<?=base_url('assets/')?>images/stars.png" alt="rating" class="bottom30">
-              <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh tempor cum soluta nobis consectetuer adipiscing. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla convallis egestas rhoncus. Donec facilisis fermentum sem, ac viverra ante luctus vel.</p>
-            </div>
-          </div>
+        <?php } ?>
         </div>
       </div>
     </div>

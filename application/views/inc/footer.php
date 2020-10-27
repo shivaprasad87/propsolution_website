@@ -50,11 +50,11 @@
               <tr>
                 <td>
                   <ul class="links">
-                     <li><a href="About.html"><i></i>About</a></li>
+                     <li><a href="<?=base_url('about');?>"><i></i>About</a></li>
                    
-                   <li><a href="contact.html"> <i></i>Contacts</a></li>
-                   <li><a href="testimonial.html"><i></i>Testimonials</a></li>
-                     <li><a href="faq.html"><i></i>Faq</a></li>
+                   <li><a href="<?=base_url('contact');?>"> <i></i>Contacts</a></li>
+                   <li><a href="<?=base_url('testimonials');?>"><i></i>Testimonials</a></li>
+                     <li><a href="#"><i></i>Faq</a></li>
                   </ul>
                 </td>
                 <td class="text-right">
@@ -145,15 +145,15 @@
 <script src="<?=base_url('assets/');?>js/custom.js"></script>
 <script src="<?=base_url('assets/');?>js/functions.js"></script>
 <!---listing starts---->
-<script src="js/revolution.extension.layeranimation.min.js"></script>
-<script src="js/revolution.extension.navigation.min.js"></script>
-<script src="js/revolution.extension.parallax.min.js"></script>
-<script src="js/revolution.extension.slideanims.min.js"></script>
-<script src="js/revolution.extension.video.min.js"></script>
-<script src="js/neary-by-place.js"></script> 
+<script src="<?=base_url('assets/');?>js/revolution.extension.layeranimation.min.js"></script>
+<script src="<?=base_url('assets/');?>js/revolution.extension.navigation.min.js"></script>
+<script src="<?=base_url('assets/');?>js/revolution.extension.parallax.min.js"></script>
+<script src="<?=base_url('assets/');?>js/revolution.extension.slideanims.min.js"></script>
+<script src="<?=base_url('assets/');?>js/revolution.extension.video.min.js"></script>
+<script src="<?=base_url('assets/');?>js/neary-by-place.js"></script> 
 <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyAOBKD6V47-g_3opmidcmFapb3kSNAR70U&amp;libraries=places"></script> 
-<script src="js/google-map.js"></script> 
-<script src="js/jquery.fancybox.js"></script>
+<script src="<?=base_url('assets/');?>js/google-map.js"></script> 
+<script src="<?=base_url('assets/');?>js/jquery.fancybox.js"></script>
 <!--- listing end-s-->
 
 
