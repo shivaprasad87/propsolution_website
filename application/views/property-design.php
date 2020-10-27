@@ -167,13 +167,14 @@ if (($images = $this->properties_model->getWhere(array('property_id' => $propert
                             echo '<li>'.ucwords($amenity->name).'</li>';
                       if($i==3 || $i==7 || $i==11 || $i==15 || $i==19 || $i==23 )
                       {
-                        echo '</ul></div>';
+                        echo '</ul>';
                       } 
                       $i++;
                   }
               }
               ?> 
         </div>
+      </div>
         <h2 class="text-uppercase">Features</h2>
         <p class="bottom20">Amenities and Features of <?= $property->title ? $property->title : '' ?>
         </p>
