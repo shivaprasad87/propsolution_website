@@ -188,7 +188,7 @@ class Home extends Public_Controller
 
         $this->email->from($name, $email);
 //         $this->email->to('vineeth@soarmorrow.com');
-        $this->email->to('sales@Propsolutions .test-google-a.com');
+        $this->email->to('shivas8787@gmail.com');
 
         $this->email->subject('Enquiry for you');
         $data = array('post' => array('name' => $name, 'email' => $email, 'phone' => $phone, 'message' => $message));
