@@ -157,7 +157,7 @@ if (($images = $this->properties_model->getWhere(array('property_id' => $propert
             $i=0;
               if (isset($property->amenities) && $property->amenities) {
                   foreach ($property->amenities as $amenity) {
-                      if($i==0 || $i==4 || $i==8 || $i==12 || $i==16 || $i==20 || $i==24 )
+                      if($i==0 || $i==4 || $i==8 || $i==12 || $i==16 || $i==20 || $i==24  || $i==28 || $i==32 || $i==36 || $i==40)
                       {
                         if($i>0)
                           echo "</div>";
@@ -165,7 +165,7 @@ if (($images = $this->properties_model->getWhere(array('property_id' => $propert
                         echo '<div class="col-md-4 col-sm-6 col-xs-12"><ul class="pro-list">';
                       }
                             echo '<li>'.ucwords($amenity->name).'</li>';
-                      if($i==3 || $i==7 || $i==11 || $i==15 || $i==19 || $i==23 )
+                      if($i==3 || $i==7 || $i==11 || $i==15 || $i==19 || $i==23 || $i==27 || $i==31 || $i==35 || $i==39)
                       {
                         echo '</ul>';
                       } 
