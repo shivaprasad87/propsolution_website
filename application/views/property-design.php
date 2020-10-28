@@ -60,7 +60,7 @@ if (($images = $this->properties_model->getWhere(array('property_id' => $propert
           <?php
           foreach ($gallery_images as $key => $value) {
             ?>
-          <div class="item"><img src="<?=base_url($value);?>" alt="image" style="width: 100px !important;height: 100px !important;"/></div>
+          <div class="item"><img src="<?=base_url($value);?>" alt="image" style="width: 100%!important;height: 100%!important;"/></div>
 
             <?php
           }
@@ -183,7 +183,7 @@ if (($images = $this->properties_model->getWhere(array('property_id' => $propert
             if (isset($property->amenities) && $property->amenities) {
                 foreach ($property->amenities as $amenity) {
                     ?>
-          <div class="col-md-4 col-sm-4 col-xs-12">
+          <div class="col-md-4 col-sm-4 col-xs-4">
             <div class="pro-img">
               <figure class="wpf-demo-gallery">
                 <img src="<?= base_url('uploads/amenities/' . $amenity->image) ?>" alt="image"/>

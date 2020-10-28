@@ -1952,6 +1952,7 @@ i.icon-safety-shower{font-size:16px !important;}
     color: #FFF;
     border-radius:0;
     text-align: center;
+    height: 400px;
 }
 #property-d-1 .item > img {
   width:100%;
@@ -1975,6 +1976,7 @@ i.icon-safety-shower{font-size:16px !important;}
 #property-d-1-2 .item > img {
   opacity: 0.4;
   width: 100%;
+  height: 120px;
 }
 #property-d-1-2 .item h1{ font-size: 18px;}
 #property-d-1-2 .synced .item img{ opacity: 1;}
@@ -2601,6 +2603,10 @@ i.icon-safety-shower{font-size:16px !important;}
   transform: translate3d(0, 0, 0) scale(1);
 }
 @media only screen and (min-width: 768px) {
+  .wpf-demo-gallery {
+    width: 30%;
+    margin-top: 15px;
+}
   .cd-testimonials-all .cd-testimonials-item {
     width: 46%;
     margin: 0 2% 3em;
@@ -4078,6 +4084,10 @@ header nav.navbar.bootsnav ul.nav > li > a:before, nav.navbar.bootsnav ul.nav > 
 .banner h1 > span{ font-size:24px}
 }
 @media screen and (max-width: 800px) {
+  .wpf-demo-gallery {
+    width: 70%;
+    margin-top: 15px;
+}
 .slider-property {
   top: 130px;
 }
