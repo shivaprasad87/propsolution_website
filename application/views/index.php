@@ -141,23 +141,22 @@
       </div>
     </div>
     <div class="row">
-      <form class="callus">
+      <form class="callus" action="<?=site_url('listing')?>" method="post">
         <div class="col-md-3 col-sm-6">
           <div class="single-query form-group">
-            <input type="text" class="keyword-input" placeholder="Keyword (e.g. 'office')">
+            <input type="text" class="keyword-input" placeholder="Keyword (e.g. 'office')" name="keyword"  value="<?= $keyword ? $keyword : '' ?>">
           </div>
         </div>
         <div class="col-md-3 col-sm-6">
           <div class="single-query form-group">
             <div class="intro">
-              <select>
-                <option selected="" value="any">Location</option>
-                <option>All areas</option>
-                <option>Bayonne </option>
-                <option>Greenville</option>
-                <option>Manhattan</option>
-                <option>Queens</option>
-                <option>The Heights</option>
+              <select name="city" id="city">
+                <option selected="" value="">City</option>
+                <?php
+                foreach ($cities as $cit) {
+                  echo "<option value='".$cit->id."'>".$cit->name."</option>";
+                }
+                ?>
               </select>
             </div>
           </div>
@@ -165,14 +164,13 @@
         <div class="col-md-3 col-sm-6">
           <div class="single-query form-group">
             <div class="intro">
-              <select>
-                <option class="active">Property Type</option>
-                <option>All areas</option>
-                <option>Bayonne </option>
-                <option>Greenville</option>
-                <option>Manhattan</option>
-                <option>Queens</option>
-                <option>The Heights</option>
+              <select name="location">
+                <option selected="" value="">Location</option>
+                <?php
+                foreach ($locations as $loc) {
+                  echo "<option value='".$loc->id."'>".$loc->name."</option>";
+                }
+                ?>
               </select>
             </div>
           </div>
@@ -180,14 +178,27 @@
         <div class="col-md-3 col-sm-6">
           <div class="single-query form-group">
             <div class="intro">
-              <select>
-                <option class="active">Property Status</option>
-                <option>All areas</option>
-                <option>Bayonne </option>
-                <option>Greenville</option>
-                <option>Manhattan</option>
-                <option>Queens</option>
-                <option>The Heights</option>
+              <select name="property_type">
+                <option class="active" value="">Property Type</option>
+               <?php
+                foreach ($property_types as $property_types) {
+                  echo "<option value='".$property_types->id."'>".$property_types->name."</option>";
+                }
+                ?>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <div class="single-query form-group">
+            <div class="intro">
+              <select name="property_status_id">
+                <option class="active" value="">Property Status</option>
+                <?php
+                foreach ($property_status as $property_status) {
+                  echo "<option value='".$property_status->id."'>".$property_status->name."</option>";
+                }
+                ?>
               </select>
             </div>
           </div>
@@ -197,14 +208,14 @@
             <div class="col-md-6 col-sm-6">
               <div class="single-query form-group">
                 <div class="intro">
-                  <select>
-                    <option class="active">Min Beds</option>
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-                    <option>6</option>
+                  <select name="bhk">
+                    <option value="0"class="active">Min BHK</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
                   </select>
                 </div>
               </div>
@@ -212,14 +223,14 @@
             <div class="col-md-6 col-sm-6">
               <div class="single-query form-group">
                 <div class="intro">
-                  <select>
-                    <option class="active">Min Baths</option>
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-                    <option>6</option>
+                  <select name="baths">
+                    <option value="0" class="active">Min Baths</option>
+                   <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
                   </select>
                 </div>
               </div>
@@ -246,10 +257,16 @@
               <div class="single-query-slider">
                 <label>Price Range:</label>
                 <div class="price text-right">
-                  <span>rs</span>
+                  <span>Rs</span>
                   <div class="leftLabel"></div>
-                  <span> to rs</span>
+                  <span> to Rs</span>
                   <div class="rightLabel"></div>
+                  <input type="hidden" name="budget" id="budget" value="">
+                  <script>
+                    var b = $(".leftLabel").text()+"-"+$(".rightLabel").text();
+                    $("#budget").val('b');
+                  </script>
+
                 </div>
                 <div data-range_min="0" data-range_max="1500000" data-cur_min="0" data-cur_max="1500000" class="nstSlider">
                   <div class="bar"></div>
@@ -345,41 +362,61 @@
       </div>
       <div class="row">
         <!-- <div class="three-item owl-carousel"> -->
+                      <?php 
+                      function lt($text, $l) {
+                  if (str_word_count($text, 0) > $l) {
+                      $words = str_word_count($text, 2);
+                      $pos   = array_keys($words);
+                      $text  = substr($text, 0, $pos[$l]) . '...';
+                  }
+                  return $text;
+              }
+$i=0;
+             foreach ($properties
+
+            as $property) { ?>
           <div class="col-lg-4">
           <div class="item feature_item">
-            <div class="image"><a href="#."> <img src="<?=base_url('assets/')?>images/featured1.jpg" alt="Featured Property"></a> 
+            <div class="image"><a href="<?= site_url(url_title($property->city_name)."/".( url_title($property->area) )."/$property->slug") ?>"> <img src="<?= base_url('uploads/' . $property->slug . '/' . $property->image) ?>" alt="Featured Property"></a> 
               <span class="price default_clr">Exclusive</span>
             </div>
             <div class="proerty_content">
               <div class="proerty_text">
-                <h3 class="bottom15"><a href="#.">Park Avenue Apartment</a></h3>
-                <p>nonummy nibh tempor soluta consectetuer adipiscing cum eleifend…</p>
-                <h4 class="top15">Rs 3 Lacs <small>Family Home</small></h4>
+                <h3 class="bottom15"><a href="#."><?= $property->title ?></a></h3>
+                <p><?= lt( $property->description, 10); ?></p>
+                <h4 class="top15"><?php
+                           $flatTypes = $this->properties_model->getPropertyFlatType(null,$property->id);
+                           $flatTypes = json_decode( json_encode($flatTypes), true);
+                            $row = $this->properties_model->getPropertyParam(array('property_id' => $property->id, 'flat_type_id' => $flatTypes[0]['flat_type_id']), 'property_flat_types', null, 'MIN(total) as amount');
+                            echo number_format_short($row->amount) ? number_format_short($row->amount) : 0 ;
+                             
+                            ?> /-</h4>
               </div>
               <table class="table table-responsive">
                 <tbody>
                   <tr>
-                    <td><i class="icon-select-an-objecto-tool"></i>Total Area</td>
-                    <td class="text-right">4800 sq ft</td>
+                    <td><i class="icon-select-an-objecto-tool"></i>Avg Sqft</td>
+                    <td class="text-right">Rs. <?=$property->budget?></td>
                   </tr>
                   <tr>
-                    <td><i class="icon-bed"></i>BadRooms</td>
-                    <td class="text-right">5</td>
+                    <td><i class="icon-bed"></i>BedRooms</td>
+                    <td class="text-right"><?= $property->bedrooms ?></td>
                   </tr>
                   <tr>
-                    <td><i class="icon-safety-shower"></i>BathRooms</td>
-                    <td class="text-right">5</td>
+                    <td><i class="icon-safety-shower"></i>Bathrooms</td>
+                    <td class="text-right"><?= $property->bathrooms ?></td>
                   </tr>
-                  <tr>
+                  <!-- <tr>
                     <td><i class="icon-garage"></i>Garage</td>
                     <td class="text-right">1</td>
-                  </tr>
+                  </tr> -->
                 </tbody>
               </table>
             </div>
           </div>
         </div>
-        <div class="col-lg-4">
+        <?php $i++;} ?>
+        <!-- <div class="col-lg-4">
           <div class="item feature_item">
             <div class="image"><a href="#."> <img src="<?=base_url('assets/')?>images/featured1.jpg" alt="Featured Property"></a> 
               <span class="price default_clr">Exclusive</span>
@@ -412,143 +449,8 @@
               </table>
             </div>
           </div>
-        </div>
-        <div class="col-lg-4">
-          <div class="item feature_item">
-            <div class="image"><a href="#."> <img src="<?=base_url('assets/')?>images/featured1.jpg" alt="Featured Property"></a> 
-              <span class="price default_clr">Exclusive</span>
-            </div>
-            <div class="proerty_content">
-              <div class="proerty_text">
-                <h3 class="bottom15"><a href="#.">Park Avenue Apartment</a></h3>
-                <p>nonummy nibh tempor soluta consectetuer adipiscing cum eleifend…</p>
-                <h4 class="top15">Rs 3 Lacs <small>Family Home</small></h4>
-              </div>
-              <table class="table table-responsive">
-                <tbody>
-                  <tr>
-                    <td><i class="icon-select-an-objecto-tool"></i>Total Area</td>
-                    <td class="text-right">4800 sq ft</td>
-                  </tr>
-                  <tr>
-                    <td><i class="icon-bed"></i>BadRooms</td>
-                    <td class="text-right">5</td>
-                  </tr>
-                  <tr>
-                    <td><i class="icon-safety-shower"></i>BathRooms</td>
-                    <td class="text-right">5</td>
-                  </tr>
-                  <tr>
-                    <td><i class="icon-garage"></i>Garage</td>
-                    <td class="text-right">1</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4">
-          <div class="item feature_item">
-            <div class="image"><a href="#."> <img src="<?=base_url('assets/')?>images/featured1.jpg" alt="Featured Property"></a> 
-              <span class="price default_clr">Exclusive</span>
-            </div>
-            <div class="proerty_content">
-              <div class="proerty_text">
-                <h3 class="bottom15"><a href="#.">Park Avenue Apartment</a></h3>
-                <p>nonummy nibh tempor soluta consectetuer adipiscing cum eleifend…</p>
-                <h4 class="top15">Rs 3 Lacs <small>Family Home</small></h4>
-              </div>
-              <table class="table table-responsive">
-                <tbody>
-                  <tr>
-                    <td><i class="icon-select-an-objecto-tool"></i>Total Area</td>
-                    <td class="text-right">4800 sq ft</td>
-                  </tr>
-                  <tr>
-                    <td><i class="icon-bed"></i>BadRooms</td>
-                    <td class="text-right">5</td>
-                  </tr>
-                  <tr>
-                    <td><i class="icon-safety-shower"></i>BathRooms</td>
-                    <td class="text-right">5</td>
-                  </tr>
-                  <tr>
-                    <td><i class="icon-garage"></i>Garage</td>
-                    <td class="text-right">1</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4">
-          <div class="item feature_item">
-            <div class="image"><a href="#."> <img src="<?=base_url('assets/')?>images/featured1.jpg" alt="Featured Property"></a> 
-              <span class="price default_clr">Exclusive</span>
-            </div>
-            <div class="proerty_content">
-              <div class="proerty_text">
-                <h3 class="bottom15"><a href="#.">Park Avenue Apartment</a></h3>
-                <p>nonummy nibh tempor soluta consectetuer adipiscing cum eleifend…</p>
-                <h4 class="top15">Rs 3 Lacs <small>Family Home</small></h4>
-              </div>
-              <table class="table table-responsive">
-                <tbody>
-                  <tr>
-                    <td><i class="icon-select-an-objecto-tool"></i>Total Area</td>
-                    <td class="text-right">4800 sq ft</td>
-                  </tr>
-                  <tr>
-                    <td><i class="icon-bed"></i>BadRooms</td>
-                    <td class="text-right">5</td>
-                  </tr>
-                  <tr>
-                    <td><i class="icon-safety-shower"></i>BathRooms</td>
-                    <td class="text-right">5</td>
-                  </tr>
-                  <tr>
-                    <td><i class="icon-garage"></i>Garage</td>
-                    <td class="text-right">1</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4">
-          <div class="item feature_item">
-            <div class="image"><a href="#."> <img src="<?=base_url('assets/')?>images/featured1.jpg" alt="Featured Property"></a> 
-              <span class="price default_clr">Exclusive</span>
-            </div>
-            <div class="proerty_content">
-              <div class="proerty_text">
-                <h3 class="bottom15"><a href="#.">Park Avenue Apartment</a></h3>
-                <p>nonummy nibh tempor soluta consectetuer adipiscing cum eleifend…</p>
-                <h4 class="top15">Rs 3 Lacs <small>Family Home</small></h4>
-              </div>
-              <table class="table table-responsive">
-                <tbody>
-                  <tr>
-                    <td><i class="icon-select-an-objecto-tool"></i>Total Area</td>
-                    <td class="text-right">4800 sq ft</td>
-                  </tr>
-                  <tr>
-                    <td><i class="icon-bed"></i>BadRooms</td>
-                    <td class="text-right">5</td>
-                  </tr>
-                  <tr>
-                    <td><i class="icon-safety-shower"></i>BathRooms</td>
-                    <td class="text-right">5</td>
-                  </tr>
-                  <tr>
-                    <td><i class="icon-garage"></i>Garage</td>
-                    <td class="text-right">1</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
+        </div> -->
+        
 
 
         <div class="col-xs-12 text-center">

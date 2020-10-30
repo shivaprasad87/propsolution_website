@@ -18,6 +18,9 @@ class Home extends Public_Controller
 
         // $this->session->unset_userdata('city');
         $this->data['property_types'] = $this->home_model->getWhere(array('status' => 1), 'property_types');
+        $this->data['locations'] = $this->home_model->getWhere(array('status' => 1), 'locations'); 
+        $this->data['property_status'] = $this->home_model->getWhere(array('status' => 1), 'property_status');
+        $this->data['cities'] = $this->home_model->getWhere(array('status' => 1), 'cities'); 
         //$this->data['property_type'] = $this->home_model->getWhere(array('status' => 1), 'property_type');
         $this->data['blog_type'] = $this->home_model->getWhere(array('status' => 1), 'blog_type');
         $this->load->vars($data);
@@ -37,11 +40,11 @@ class Home extends Public_Controller
         if($this->session->userdata('city_id')){
             $location_where["city_id"] = $this->session->userdata('city_id');
         }
-        $this->data['locations'] = $this->home_model->getWhere($location_where, 'locations'); 
+        
         $this->data['testimonials'] = $this->home_model->get_testimonials();
         $this->data['achievements'] = $this->home_model->getWhere(array('status' => 1), 'achievements'); 
         $this->data['amenities'] = $this->home_model->getWhere(array('status' => 1), 'amenities');
-        $this->data['properties'] = $this->home_model->getProperties('properties', 7);
+        $this->data['properties'] = $this->home_model->getProperties('properties', 6);
         $this->data['sliders'] = $this->home_model->order_by('id', 'desc')->getWhere(array('status' => 1, 'type'=>'H','banner_type'=>'desk'), 'sliders');
         $this->data['mobilesliders'] = $this->home_model->order_by('id', 'desc')->getWhere(array('status' => 1, 'type'=>'H','banner_type'=>'mobile'), 'sliders');
         $this->data['builder_count'] = $this->home_model->countWhere(array('status' => 1), 'builders');
@@ -77,7 +80,7 @@ class Home extends Public_Controller
 
     function listing()
     {
-
+       
         $perpage = 10;
         $base_url = site_url('listing');
         $uri_segment = 2;
@@ -107,8 +110,8 @@ class Home extends Public_Controller
               $content=$this->session->userdata('content');
               
         }
-        //echo "<script>alert(".$content.")</script>";
-       // print_r($content);die; 
+      //echo "<script>alert(".$content.")</script>";
+      //  print_r($content);die; 
         // $content['bhk_range'] = explode(';', $content['bhk']);
         // $content['price_range'] = explode(';', $content['price']);
         // $content['baths_range'] = explode(';', $content['baths']);
@@ -119,10 +122,13 @@ class Home extends Public_Controller
         elseif (!empty($place)) {
              $total      = $this->home_model->loadProperties(0, 0, true, $place);
             $properties = $this->home_model->loadProperties($perpage, $page, false, $place);
+
+        
         }
         else {
             $total      = $this->home_model->loadProperties(0, 0, true, $content);
             $properties = $this->home_model->loadProperties($perpage, $page, false, $content);
+            //echo $this->db->last_query();die;
         }
         //print_r($content);
         // echo $content['price'];

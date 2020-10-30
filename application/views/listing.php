@@ -29,8 +29,8 @@
         <div class="row">
           <?php 
           $i=1;
-         // print_r($properties);die;
-
+          if(count($properties)>0)
+          {
           foreach ($properties as $property) { ?>
           <div class="col-sm-6">
             <div class="property_item heading_space">
@@ -73,13 +73,17 @@
                   <p><?php echo $property->area.", ".$property->city_name; ?></p>
                 </div>
                 <div class="property_meta transparent"> 
-                  <span><i class="icon-select-an-objecto-tool"></i>4800 sq ft</span> 
-                  <span><i class="icon-bed"></i>2 Office Rooms</span> 
-                  <span><i class="icon-safety-shower"></i>1 Bathroom</span>   
+                  <span><i class="icon-select-an-objecto-tool"></i>Rs. <?=$property->budget?></span> 
+                  <span><i class="icon-bed"></i><?= $property->prop_type ?></span> 
+                  <span><i class="icon-safety-shower"></i><?= $property->builder ?></span>   
                 </div>
                 <div class="property_meta transparent bottom30">
-                  <span><i class="icon-old-television"></i>TV Lounge</span>
-                  <span><i class="icon-garage"></i>1 Garage</span>
+                  <span><i class="icon-old-television"></i><?php
+                                                    if($property->possession_date!='0000-00-00')
+                                                    echo  date('M, Y', strtotime($property->possession_date));
+                                                    else 
+                                                    echo "Ready"; ?></span>
+                  <!-- <span><i class="icon-garage"></i>1 Garage</span> -->
                   <span></span>
                 </div>
                 <div class="favroute clearfix">
@@ -99,7 +103,11 @@
               </div>
             </div>
           </div> 
-        <?php } ?>
+        <?php }
+        }
+        else{
+          echo "No Property Found";
+        } ?>
         </div>
         <div class="padding_bottom text-center">
           <!-- <ul class="pager">
@@ -115,47 +123,56 @@
           <div class="col-md-12">
             <h3 class="text-uppercase bottom20 top15">Advanced Search</h3>
           </div>
-          <form class="callus">
+          <form class="callus" action="<?=site_url('listing')?>" method="post">
             <div class="single-query form-group col-sm-12">
               <input type="text" class="keyword-input" placeholder="Keyword (e.g. 'office')">
             </div>
             <div class="single-query form-group col-sm-12">
               <div class="intro">
-                <select>
-                  <option selected="" value="any">Location</option>
-                  <option>All areas</option>
-                  <option>Bayonne </option>
-                  <option>Greenville</option>
-                  <option>Manhattan</option>
-                  <option>Queens</option>
-                  <option>The Heights</option>
-                </select>
+                <select name="city" id="city">
+                <option selected="" value="">City</option>
+                <?php
+                foreach ($cities as $cit) {
+                  echo "<option value='".$cit->id."'>".$cit->name."</option>";
+                }
+                ?>
+              </select>
+              </div>
+            </div>
+             <div class="single-query form-group col-sm-12">
+              <div class="intro">
+                <select name="location">
+                <option selected="" value="">Location</option>
+                <?php
+                foreach ($locations as $loc) {
+                  echo "<option value='".$loc->id."'>".$loc->name."</option>";
+                }
+                ?>
+              </select>
               </div>
             </div>
             <div class="single-query form-group col-sm-12">
               <div class="intro">
-                <select>
-                  <option class="active">Property Type</option>
-                  <option>All areas</option>
-                  <option>Bayonne </option>
-                  <option>Greenville</option>
-                  <option>Manhattan</option>
-                  <option>Queens</option>
-                  <option>The Heights</option>
-                </select>
+                <select name="property_type">
+                <option class="active" value="">Property Type</option>
+               <?php
+                foreach ($property_types as $property_types) {
+                  echo "<option value='".$property_types->id."'>".$property_types->name."</option>";
+                }
+                ?>
+              </select>
               </div>
             </div>
             <div class="single-query form-group col-sm-12">
               <div class="intro">
-                <select>
-                  <option class="active">Property Status</option>
-                  <option>All areas</option>
-                  <option>Bayonne </option>
-                  <option>Greenville</option>
-                  <option>Manhattan</option>
-                  <option>Queens</option>
-                  <option>The Heights</option>
-                </select>
+                <select name="property_status_id" >
+                <option class="active" value="">Property Status</option>
+                <?php
+                foreach ($property_status as $property_status) {
+                  echo "<option value='".$property_status->id."'>".$property_status->name."</option>";
+                }
+                ?>
+              </select>
               </div>
             </div>
             <div class="search-2 col-sm-12">
@@ -163,30 +180,30 @@
                 <div class="col-sm-6">
                   <div class="single-query form-group">
                     <div class="intro">
-                      <select>
-                        <option class="active">Min Beds</option>
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
-                        <option>6</option>
-                      </select>
+                      <select name="bhk">
+                    <option value="0"class="active">Min BHK</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                  </select>
                     </div>
                   </div>
                 </div>
                 <div class="col-sm-6">
                   <div class="single-query form-group">
                     <div class="intro">
-                      <select>
-                        <option class="active">Min Baths</option>
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
-                        <option>6</option>
-                      </select>
+                     <select name="baths">
+                    <option value="0" class="active">Min Baths</option>
+                   <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                  </select>
                     </div>
                   </div>
                 </div>
