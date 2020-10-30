@@ -55,17 +55,18 @@
                    <li><a href="<?=base_url('contact');?>"> <i></i>Contacts</a></li>
                    <li><a href="<?=base_url('testimonials');?>"><i></i>Testimonials</a></li>
                      <li><a href="#"><i></i>Faq</a></li>
+                      <li class="active"><a href="#."><i></i>Careers</a></li>
                   </ul>
                 </td>
-                <td class="text-right">
+                <!-- <td class="text-right">
                   <ul class="links text-left">
-                    <!-- <li><a href="#."><i></i>Services</a></li> -->
+                     <li><a href="#."><i></i>Services</a></li> 
                     <li class="active"><a href="#."><i></i>Careers</a></li>
                     
-                    <!-- <li><a href="#."><i></i>Shop</a></li> -->
-                    <!-- <li><a href="#."><i></i>Our approach</a></li> -->
+                     <li><a href="#."><i></i>Shop</a></li> 
+                    <li><a href="#."><i></i>Our approach</a></li> 
                   </ul>
-                </td>
+                </td> -->
               </tr>
             </tbody>
           </table>
