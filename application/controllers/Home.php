@@ -963,22 +963,23 @@ class Home extends Public_Controller
                         'message' => $this->input->post('name') . "(" . $c_code." ".$this->input->post('phone') . ") has just showed an interest in the listed property <a href='" . site_url("property/$property->slug") . "'>" . $property->title . "</a> ($property->id)."
                     )
             );
-            // $units = '';
-            // if ($this->input->post('flat_types')){
-            //     foreach ($this->input->post('flat_types') as $i => $id){
-            //         $flat_type = $this->home_model->getWhere(compact('id'),'property_flat_types');
-            //         if ($flat_type){
-            //             $units .= ($i+1).". ".$flat_type->name." (". $flat_type->size ." ". $flat_type->unit .")<br />";
-            //         }
-            //     }
-            // }
-            // if ($units){
-            //     $data['post']['units_interested'] = $units;
-            // }
+                // $units = '';
+                // if ($this->input->post('flat_types')){
+                //     foreach ($this->input->post('flat_types') as $i => $id){
+                //         $flat_type = $this->home_model->getWhere(compact('id'),'property_flat_types');
+                //         if ($flat_type){
+                //             $units .= ($i+1).". ".$flat_type->name." (". $flat_type->size ." ". $flat_type->unit .")<br />";
+                //         }
+                //     }
+                // }
+                // if ($units){
+                //     $data['post']['units_interested'] = $units;
+                // }
             $this->email->message($this->load->view('mail_template.php', $data, true));
 
             if ($this->email->send()) {
-                $this->data['mail_sent'] = true;
+                //$this->data['mail_sent'] = true;
+                redirect(base_url('thankyou'));
             }
             // $city = $this->input->post('city');
             // if($city=='Hyderabad')
