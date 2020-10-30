@@ -97,29 +97,41 @@ if (($images = $this->properties_model->getWhere(array('property_id' => $propert
           <div class="col-md-6 col-sm-6 col-xs-12">
             <table class="table table-striped table-responsive">
               <tbody>
-                <tr>
+                <!-- <tr>
                   <td><b>Property Id</b></td>
                   <td class="text-right">5456</td>
-                </tr>
+                </tr> -->
                 <tr>
                   <td><b>Price</b></td>
-                  <td class="text-right">rs 32 l</td>
+                  <td class="text-right">Rs <?=$property->price_per_unit;?></td>
                 </tr>
-                <tr>
+               <!--  <tr>
                   <td><b>Property Size</b></td>
                   <td class="text-right">5,500 ft2</td>
-                </tr>
+                </tr> -->
                 <tr>
                   <td><b>Bedrooms</b></td>
-                  <td class="text-right">5</td>
+                  <td class="text-right"><?=$property->bedrooms;?></td>
                 </tr>
                 <tr>
                   <td><b>Bathrooms</b></td>
-                  <td class="text-right">3</td>
+                  <td class="text-right"><?=$property->bathrooms;?></td>
                 </tr>
                 <tr>
                   <td><b>Available From</b></td>
-                  <td class="text-right">22-04-2020</td>
+                  <td class="text-right"><?php
+                if($property->possession_date!='0000-00-00')
+                {
+                    $date1 = date("Y-m-d");
+                    $date2 = date("Y-m-d", strtotime($property->possession_date)); 
+                    if($date1 > $date2)
+                        echo "Ready";
+                    else
+                echo  date('M, Y', strtotime($property->possession_date));
+                }
+                else 
+                echo "Ready"; 
+                ?></td>
                 </tr>
               </tbody>
             </table>
@@ -129,28 +141,28 @@ if (($images = $this->properties_model->getWhere(array('property_id' => $propert
               <tbody>
                 <tr>
                   <td><b>Status</b></td>
-                  <td class="text-right">Rent</td>
+                  <td class="text-right"><?=$property->issue_date;?></td>
                 </tr>
                 <tr>
                   <td><b>Year Built</b></td>
-                  <td class="text-right">1991</td>
+                  <td class="text-right"><?=$property->build;?></td>
                 </tr>
-                <tr>
+                <!-- <tr>
                   <td><b>Garages</b></td>
                   <td class="text-right">1</td>
                 </tr>
                 <tr>
                   <td><b>Cross Streets</b></td>
                   <td class="text-right">Nordoff</td>
-                </tr>
+                </tr> -->
                 <tr>
                   <td><b>Floors</b></td>
-                  <td class="text-right">Carpet - Ceramic Tile</td>
+                  <td class="text-right"><?=$property->floors;?></td>
                 </tr>
-                <tr>
+                <!-- <tr>
                   <td><b>Plumbing</b></td>
                   <td class="text-right">Full Copper Plumbing</td>
-                </tr>
+                </tr> -->
               </tbody>
             </table>
           </div>
