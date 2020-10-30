@@ -132,7 +132,7 @@
 
         
 <!-- Property Search area Start -->
-<section class="property-query-area">
+<!-- <section class="property-query-area">
   <div class="container">
     <div class="row">
       <div class="col-md-12 text-center">
@@ -346,7 +346,7 @@
       </div>
     </div>
   </div>
-</section>
+</section> -->
 <!-- Property Search area End -->
 
 
@@ -356,7 +356,7 @@
     <div class="container">
       <div class="row">
         <div class="col-sm-10">
-          <h2 class="uppercase">Best Deal Properties</h2>
+          <h2 class="uppercase">Featured Properties</h2>
           <p class="heading_space">We have Properties in these Areas View a list of Featured Properties.</p>
         </div>
       </div>
@@ -402,11 +402,11 @@ $i=0;
                     <td><i class="icon-bed"></i>BedRooms</td>
                     <td class="text-right"><?= $property->bedrooms ?></td>
                   </tr>
-                  <tr>
+               <!--   <tr>
                     <td><i class="icon-safety-shower"></i>Bathrooms</td>
                     <td class="text-right"><?= $property->bathrooms ?></td>
                   </tr>
-                  <!-- <tr>
+                   <tr>
                     <td><i class="icon-garage"></i>Garage</td>
                     <td class="text-right">1</td>
                   </tr> -->
@@ -565,7 +565,7 @@ $i=0;
 <!--Deals ends-->
 
 
-<!--Parallax-->
+<!--Parallax
 <section id="parallax_four" class="padding">
   <div class="container">
     <div class="row">
@@ -581,7 +581,7 @@ $i=0;
 <!--About Owner ends-->
 
 <!-- Testimonials -->
-<!--Testinomials-->
+<!--Testinomials--
 <section id="testinomial" class="padding">
   <div class="container">
     <div class="row">
@@ -629,7 +629,7 @@ $i=0;
   </div>
 </section>
 
-<!--Partners-->
+<!--Partners--
 <section id="logos">
   <div class="container partner2 padding">
     <div class="row">

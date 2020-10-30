@@ -59,11 +59,11 @@
                 </td>
                 <td class="text-right">
                   <ul class="links text-left">
-                    <li><a href="#."><i></i>Services</a></li>
+                    <!-- <li><a href="#."><i></i>Services</a></li> -->
                     <li class="active"><a href="#."><i></i>Careers</a></li>
                     
-                    <li><a href="#."><i></i>Shop</a></li>
-                    <li><a href="#."><i></i>Our approach</a></li>
+                    <!-- <li><a href="#."><i></i>Shop</a></li> -->
+                    <!-- <li><a href="#."><i></i>Our approach</a></li> -->
                   </ul>
                 </td>
               </tr>
@@ -73,7 +73,7 @@
       </div>
       <div class="col-md-3 col-sm-6">
         <div class="footer_panel bottom30">
-          <h4 class="bottom30 heading">Latest News</h4>
+          <h4 class="bottom30 heading">Latest Blogs</h4>
           <div class="media bottom30">
             <div class="media-body">
               <a href="#.">Nearest mall in high tech Goes google map your villa</a>

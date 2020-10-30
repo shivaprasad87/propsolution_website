@@ -118,7 +118,7 @@
           <?= isset($pagination) && $pagination ? $pagination : '' ?>
         </div>
       </div>
-      <aside class="col-md-4 col-xs-12">
+   <!--    <aside class="col-md-4 col-xs-12">
         <div class="property-query-area clearfix">
           <div class="col-md-12">
             <h3 class="text-uppercase bottom20 top15">Advanced Search</h3>
@@ -377,7 +377,7 @@
             </div>
           </div>
         </div>
-      </aside>
+      </aside> -->
     </div>
   </div>
 </section>
