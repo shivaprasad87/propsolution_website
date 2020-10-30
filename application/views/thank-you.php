@@ -191,7 +191,7 @@ p ,a ,a:hover{
 		 </div> 
 		 <p>For assistance please call</p>
 		 <a href="tel:888888888"><p>+91 88888888888</p></a>
-		 <a class="htlfndr-more-link text-center" href="">Back to homepage</a>
+		 <a class="htlfndr-more-link text-center" href="<?=base_url();?>">Back to homepage</a>
 		 
  </div> 
 
