@@ -325,6 +325,7 @@ $(".highlight").change(function(){
     });
 })
 
+
 $(".banner").dropzone({
         url: "upload_files",
         maxFilesize: 1000,

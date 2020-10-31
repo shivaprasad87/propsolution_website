@@ -351,7 +351,6 @@
 
 
 <!-- Latest Property -->
-
   <section id="deals" class="padding bg_light">
     <div class="container">
       <div class="row">
@@ -372,9 +371,7 @@
                   return $text;
               }
 $i=0;
-             foreach ($properties
-
-            as $property) { ?>
+             foreach ($properties as $property) { ?>
           <div class="col-lg-4">
           <div class="item feature_item">
             <div class="image"><a href="<?= site_url(url_title($property->city_name)."/".( url_title($property->area) )."/$property->slug") ?>"> <img src="<?= base_url('uploads/' . $property->slug . '/' . $property->image) ?>" alt="Featured Property"></a> 
@@ -401,59 +398,14 @@ $i=0;
                   <tr>
                     <td><i class="icon-bed"></i>BedRooms</td>
                     <td class="text-right"><?= $property->bedrooms ?></td>
-                  </tr>
-               <!--   <tr>
-                    <td><i class="icon-safety-shower"></i>Bathrooms</td>
-                    <td class="text-right"><?= $property->bathrooms ?></td>
-                  </tr>
-                   <tr>
-                    <td><i class="icon-garage"></i>Garage</td>
-                    <td class="text-right">1</td>
-                  </tr> -->
+                  </tr> 
                 </tbody>
               </table>
             </div>
           </div>
         </div>
-        <?php $i++;} ?>
-        <!-- <div class="col-lg-4">
-          <div class="item feature_item">
-            <div class="image"><a href="#."> <img src="<?=base_url('assets/')?>images/featured1.jpg" alt="Featured Property"></a> 
-              <span class="price default_clr">Exclusive</span>
-            </div>
-            <div class="proerty_content">
-              <div class="proerty_text">
-                <h3 class="bottom15"><a href="#.">Park Avenue Apartment</a></h3>
-                <p>nonummy nibh tempor soluta consectetuer adipiscing cum eleifend…</p>
-                <h4 class="top15">Rs 3 Lacs <small>Family Home</small></h4>
-              </div>
-              <table class="table table-responsive">
-                <tbody>
-                  <tr>
-                    <td><i class="icon-select-an-objecto-tool"></i>Total Area</td>
-                    <td class="text-right">4800 sq ft</td>
-                  </tr>
-                  <tr>
-                    <td><i class="icon-bed"></i>BadRooms</td>
-                    <td class="text-right">5</td>
-                  </tr>
-                  <tr>
-                    <td><i class="icon-safety-shower"></i>BathRooms</td>
-                    <td class="text-right">5</td>
-                  </tr>
-                  <tr>
-                    <td><i class="icon-garage"></i>Garage</td>
-                    <td class="text-right">1</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div> -->
-        
-
-
-        <div class="col-xs-12 text-center">
+        <?php $i++;} ?> 
+         <div class="col-xs-12 text-center">
           <a href="<?=base_url();?>listing" class="cd-see-all btn-white border_radius margin40"><i class="fa fa-th" aria-hidden="true"></i>view all</a>
         </div>
         </div>
@@ -478,86 +430,42 @@ $i=0;
     </div>
     <div class="row">
       <div id="two-col-slider" class="owl-carousel">
+        <?php
+        foreach ($bestdeal_properties as $property) { 
+          ?>
         <div class="item">
           <div class="listing_full">
             <div class="image">
-              <img alt="image" src="<?=base_url('assets/')?>images/b-d-property.jpg">
+              <img alt="image" src="<?= base_url('uploads/' . $property->slug . '/' . $property->image) ?>">
               <span class="tag_t">For Sale</span>
             </div>
             <div class="listing_full_bg">
               <div class="listing_inner_full">
                 <span><a href="#."><i class="icon-like"></i></a></span>
-                <a href="property_detail.html">
-                  <h3>Park Avenue Apartment</h3>
-                  <p>Lorem Ipsum</p>
+                <a href="<?= site_url(url_title($property->city_name)."/".( url_title($property->area) )."/$property->slug") ?>">
+                  <h3><?= $property->title ?></h3>
+                  <p><?= $property->location . ', ' . $property->city_name ?></p>
                 </a>
                 <div class="favroute clearfix">
-                  <div class="property_meta"><span><i class="icon-select-an-objecto-tool"></i>4800 sq ft</span><span><i class=" icon-bed"></i>3 Bedrooms</span><span><i class="icon-safety-shower"></i>2 Bedrooms</span><span class="border-l">rs 38 lacs</span></div>
+                  <div class="property_meta"><span><i class="icon-select-an-objecto-tool"></i><?= $property->prop_type ?></span><span><i class=" icon-bed"></i><?php
+                                                    if($property->possession_date!='0000-00-00')
+                                                    echo  date('M, Y', strtotime($property->possession_date));
+                                                    else 
+                                                    echo "Ready"; ?></span><span><i class="icon-safety-shower"></i><?=$property->bedrooms;?></span><span class="border-l"><?php
+                           $flatTypes = $this->properties_model->getPropertyFlatType(null,$property->id);
+                           $flatTypes = json_decode( json_encode($flatTypes), true);
+                            $row = $this->properties_model->getPropertyParam(array('property_id' => $property->id, 'flat_type_id' => $flatTypes[0]['flat_type_id']), 'property_flat_types', null, 'MIN(total) as amount');
+                            echo number_format_short($row->amount) ? number_format_short($row->amount) : 0 ;
+                             
+                            ?> /-</span></div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-        <div class="item">
-          <div class="listing_full">
-            <div class="image">
-              <img alt="image" src="<?=base_url('assets/')?>images/b-d-property2.jpg">
-              <span class="tag_t">For Sale</span>
-            </div>
-            <div class="listing_full_bg">
-              <div class="listing_inner_full">
-                <span><a href="#."><i class="icon-like"></i></a></span>
-                <a href="property_detail2.html">
-                  <h3>Park Avenue Apartment</h3>
-                  <p>Lorem Ipsum</p>
-                </a>
-                <div class="favroute clearfix">
-                  <div class="property_meta"><span><i class="icon-select-an-objecto-tool"></i>4800 sq ft</span><span><i class=" icon-bed"></i>3 Bedrooms</span><span><i class="icon-safety-shower"></i>2 Bedrooms</span><span class="border-l">rs 38 lacs</span></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="item">
-          <div class="listing_full">
-            <div class="image">
-              <img alt="image" src="<?=base_url('assets/')?>images/b-d-property3.jpg">
-              <span class="tag_t">For Sale</span>
-            </div>
-            <div class="listing_full_bg">
-              <div class="listing_inner_full">
-                <span><a href="#."><i class="icon-like"></i></a></span>
-                <a href="property_detail3.html">
-                  <h3>Park Avenue Apartment</h3>
-                  <p>Lorem Ipsum</p>
-                </a>
-                <div class="favroute clearfix">
-                  <div class="property_meta"><span><i class="icon-select-an-objecto-tool"></i>4800 sq ft</span><span><i class=" icon-bed"></i>3 Bedrooms</span><span><i class="icon-safety-shower"></i>2 Bedrooms</span><span class="border-l">rs 38 lacs</span></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="item">
-          <div class="listing_full">
-            <div class="image">
-              <img alt="image" src="<?=base_url('assets/')?>images/b-d-property4.jpg">
-              <span class="tag_t">For Sale</span>
-            </div>
-            <div class="listing_full_bg">
-              <div class="listing_inner_full">
-                <span><a href="#."><i class="icon-like"></i></a></span>
-                <a href="property_detail.html">
-                  <h3>Park Avenue Apartment</h3>
-                  <p>Lorem Ipsum</p>
-                </a>
-                <div class="favroute clearfix">
-                  <div class="property_meta"><span><i class="icon-select-an-objecto-tool"></i>4800 sq ft</span><span><i class=" icon-bed"></i>3 Bedrooms</span><span><i class="icon-safety-shower"></i>2 Bedrooms</span><span class="border-l">rs 38 lacs</span></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        </div> 
+        <?php
+      }
+      ?>
       </div>
     </div>
   </div>

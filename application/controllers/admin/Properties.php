@@ -66,7 +66,7 @@ class Properties extends Admin_Controller
         $data = $this->includes;
         // set content data
         $content_data = $this->data;
-
+        // print_r($content_data);die;
         $data['content'] = $this->load->view('admin/properties/index', $content_data, true);
         $this->load->view($this->template, $data);
     }
@@ -1046,6 +1046,14 @@ $img = $this->properties_model->getWhere(array("property_id"=>$id),"property_log
         $id = $this->input->post('id');
         $locations = $this->properties_model->updateWhere(array('id' => $id),
             array('highlight' => $this->input->post('val')), 'properties');
+        echo true;
+    }
+        public function manage_best_deal()
+    {
+        $id = $this->input->post('id');
+        $locations = $this->properties_model->updateWhere(array('id' => $id),
+            array('best_deal' => $this->input->post('val')), 'properties');
+        //echo $this->db->last_query();
         echo true;
     }
 

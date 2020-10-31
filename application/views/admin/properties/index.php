@@ -36,6 +36,7 @@
                                 <th>Area</th>
                                 <th>Image</th>
                                 <th>Highlight</th>
+                                <th>Best Deal</th>
                                 <th>Actions</th>
                             </tr>
                         </thead>
@@ -55,6 +56,7 @@
                                         <td><?= $value->area ?></td>
                                         <td><img style="height: 90px; width: 90px;" src="<?= base_url('uploads/'.$value->slug.'/' . $value->image) ?>"></td>
                                         <td><input <?= $value->highlight ? 'checked' : '' ?> type="checkbox" value="<?= $value->id ?>" class="highlight"></td>
+                                        <td><input <?= $value->best_deal ? 'checked' : '' ?> type="checkbox" value="<?= $value->id ?>" onclick="bestdeal(this.value);" id="bestdeal"></td>
                                         <td><a href="<?= site_url('admin/properties/favourites/'.$value->id) ?>">Favourites</a></td>
                                         <td style="width:10%;">
                                             <a href="<?= site_url('admin/properties/delete/' . $value->id) ?>" onclick="return confirm('Are you sure you want to delete the property <?= $value->title ?>');" class="btn btn-danger btn-sm"><i class="fa fa-trash-o"></i></a>
@@ -89,3 +91,24 @@
     </div>
     <!-- /.row -->
 </section>
+<script>
+    function bestdeal(id){  
+        var checked = document.getElementById("bestdeal").checked;
+
+    if (checked) {
+        var val = 1;
+    }else{
+        var val = 0;
+    }
+   // alert(val);
+    $.ajax({
+        type: 'POST',
+        url: "properties/manage_best_deal",
+        data: {id: id, val:val},
+        success: function (data) {
+
+        }
+    });
+    }
+
+</script>

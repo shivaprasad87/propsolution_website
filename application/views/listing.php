@@ -35,7 +35,7 @@
           <div class="col-sm-6">
             <div class="property_item heading_space">
               <div class="image">
-                <a href="#."><img src="<?= base_url('uploads/'.$property->slug.'/'.$property->image) ?>" alt="latest property" class="img-responsive"></a>
+                <a href="<?=site_url(url_title($property->city_name)."/".( url_title($property->area) )."/$property->slug/")?>"><img src="<?= base_url('uploads/'.$property->slug.'/'.$property->image) ?>" alt="latest property" class="img-responsive"></a>
                 <div class="price clearfix"> 
                   <span class="tag pull-right">
                     <?php
@@ -73,7 +73,7 @@
                   <p><?php echo $property->area.", ".$property->city_name; ?></p>
                 </div>
                 <div class="property_meta transparent"> 
-                  <span><i class="icon-select-an-objecto-tool"></i>Rs. <?=$property->budget?></span> 
+                  <span><i class="icon-select-an-objecto-tool"></i><?=$property->rera_number?$property->rera_number:'Not Updated'?></span> 
                   <span><i class="icon-bed"></i><?= $property->prop_type ?></span> 
                   <span><i class="icon-safety-shower"></i><?= $property->builder ?></span>   
                 </div>

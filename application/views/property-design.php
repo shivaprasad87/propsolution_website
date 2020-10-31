@@ -29,13 +29,13 @@ if (($images = $this->properties_model->getWhere(array('property_id' => $propert
          $this->load->view('inc/head2'); $this->load->view('inc/header');
 
 ?>
-<!-- Page Banner Start-->
+<!-- Page Banner Start--
 <section class="page-banner padding">
   <div class="container">
     <div class="row">
       <div class="col-md-12 text-center">
         <h1 class="text-uppercase">Property Details </h1><!-- 
-        <p> Lorem ipsum dolor sit amet consectetur adipiscing elit.</p> -->
+        <p> Lorem ipsum dolor sit amet consectetur adipiscing elit.</p> --
         <ol class="breadcrumb text-center">
           <li><a href="<?=base_url();?>">Home</a></li>
           <li><a href="<?=base_url('listing');?>">Properties</a></li>
@@ -77,9 +77,24 @@ if (($images = $this->properties_model->getWhere(array('property_id' => $propert
           ?> 
         </div>
         <div class="property_meta bg-black bottom40">
-          <span><i class="icon-select-an-objecto-tool"></i>Rs. <?=$property->budget?></span>
+          <span><i class="icon-select-an-objecto-tool"></i><?=$property->issue_date;?><!--Rs.$property->budget--></span>
           <span><i class=" icon-microphone"></i><?= $property->prop_type ?></span>
-          <span><i class="icon-safety-shower"></i><?= $property->builder ?></span>
+          <?php
+          if (($flatTypes = $this->properties_model->getPropertyFlatType(null,
+                                                        $property->id)) != null) {
+    $bhk='';
+    $i=0;
+    foreach ($flatTypes as $flatType) {
+        if($i==0)
+            $bhk.=$flatType->flat_type;
+        else
+        $bhk.=', '.$flatType->flat_type;
+    $i++;
+    }
+} 
+$propType   = $this->properties_model->getPropertyType(['id'=>$property->property_type_id]);
+?>
+          <span><i class="icon-safety-shower"></i><?= $bhk/*.' '.$propType['name']*/?></span>
           <span><i class="icon-old-television"></i><?php
                                                     if($property->possession_date!='0000-00-00')
                                                     echo  date('M, Y', strtotime($property->possession_date));
@@ -101,22 +116,64 @@ if (($images = $this->properties_model->getWhere(array('property_id' => $propert
                   <td><b>Property Id</b></td>
                   <td class="text-right">5456</td>
                 </tr> -->
-                <tr>
-                  <td><b>Price</b></td>
-                  <td class="text-right">Rs <?=$property->price_per_unit;?></td>
-                </tr>
-               <!--  <tr>
-                  <td><b>Property Size</b></td>
-                  <td class="text-right">5,500 ft2</td>
-                </tr> -->
+                <?php
+                        if (($flatTypes = $this->properties_model->getPropertyFlatType(null,
+                                $property->id)) != null) {
+                            foreach ($flatTypes as $flatType) {
+                                ?>
+                                <tr>
+                                  <td><b><?= $flatType->flat_type ?></b></td>
+                                  <td class="text-right">
+                                    <?= $this->properties_model->getPropertyRange(array(
+                    'property_id' => $property->id,
+                    'flat_type_id' => $flatType->flat_type_id
+                ), 'property_flat_types',
+                    'size') ?>
+                                        <?= $this->properties_model->getPropertyParam(array(
+                    'property_id' => $property->id,
+                    'flat_type_id' => $flatType->flat_type_id
+                ), 'property_flat_types', 'unit') ?>
+                                </td> 
+
+                                  <tr>
+                                    <td><b>Price</b></td>
+                                    <td class="text-right">
+                                    <?php
+                if ($flatType->price_on_request) {
+                    echo "Price on Request";
+                } else {
+                    ?> 
+                                        <?= (($row = $this->properties_model->getPropertyParam(array(
+                            'property_id' => $property->id,
+                            'flat_type_id' => $flatType->flat_type_id
+                        ), 'property_flat_types', null,
+                            'MIN(total) as amount')) != null) ? number_format_short($row->amount) : 0 ?>
+                                            -
+                                            <?= (($row = $this->properties_model->getPropertyParam(array(
+                            'property_id' => $property->id,
+                            'flat_type_id' => $flatType->flat_type_id
+                        ), 'property_flat_types', null,
+                            'MAX(total) as amount')) != null) ? number_format_short($row->amount) : 0 ?>
+                                                <?php
+                }
+                ?>
+                                </td>
+
+                                
+                            </tr>
+                            <?php
+    }
+}  
+?> 
                 <tr>
                   <td><b>Bedrooms</b></td>
                   <td class="text-right"><?=$property->bedrooms;?></td>
-                </tr>
+                </tr> 
                 <tr>
-                  <td><b>Bathrooms</b></td>
-                  <td class="text-right"><?=$property->bathrooms;?></td>
+                  <td><b>No. Floors</b></td>
+                  <td class="text-right"><?=$property->floors;?></td>
                 </tr>
+                
                 <tr>
                   <td><b>Available From</b></td>
                   <td class="text-right"><?php
@@ -144,22 +201,26 @@ if (($images = $this->properties_model->getWhere(array('property_id' => $propert
                   <td class="text-right"><?=$property->issue_date;?></td>
                 </tr>
                 <tr>
-                  <td><b>Year Built</b></td>
-                  <td class="text-right"><?=$property->build;?></td>
-                </tr>
-                <!-- <tr>
-                  <td><b>Garages</b></td>
-                  <td class="text-right">1</td>
+                  <td><b>Type</b></td>
+                  <td class="text-right"><?= $bhk?></td>
+                </tr> 
+                <tr>
+                  <td><b>Towers</b></td>
+                  <td class="text-right"> <?=$property->towers?></td>
                 </tr>
                 <tr>
-                  <td><b>Cross Streets</b></td>
-                  <td class="text-right">Nordoff</td>
-                </tr> -->
+                  <td><b>Location</b></td>
+                  <td class="text-right"><?= $property->location . ', ' . $property->city_name ?></td>
+                </tr>  
                 <tr>
+                  <td><b>RERA</b></td>
+                  <td class="text-right"><?=$property->rera_number?$property->rera_number:'Not Updated'?></td>
+                </tr> 
+             <!--    <tr>
                   <td><b>Floors</b></td>
                   <td class="text-right"><?=$property->floors;?></td>
                 </tr>
-                <!-- <tr>
+                <tr>
                   <td><b>Plumbing</b></td>
                   <td class="text-right">Full Copper Plumbing</td>
                 </tr> -->
@@ -167,7 +228,7 @@ if (($images = $this->properties_model->getWhere(array('property_id' => $propert
             </table>
           </div>
         </div>
-        <h2 class="text-uppercase bottom20">Features</h2>
+        <h2 class="text-uppercase bottom20">Amenities</h2>
         <div class="row bottom40"> 
             <?php
             $i=0;
@@ -191,10 +252,10 @@ if (($images = $this->properties_model->getWhere(array('property_id' => $propert
               ?> 
         </div>
       </div>
-        <h2 class="text-uppercase">Features</h2>
+      <!--  <h2 class="text-uppercase">Features</h2>
         <p class="bottom20">Amenities and Features of <?= $property->title ? $property->title : '' ?>
         </p>
-        <div class="row bottom40">
+         <div class="row bottom40">
            <?php
             if (isset($property->amenities) && $property->amenities) {
                 foreach ($property->amenities as $amenity) {
@@ -210,7 +271,7 @@ if (($images = $this->properties_model->getWhere(array('property_id' => $propert
             </div>
           </div> 
           <?php } } ?> 
-        </div>
+        </div> -->
         <?php
         if($property->walkthrough)
         {

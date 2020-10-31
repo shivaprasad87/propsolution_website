@@ -1,5 +1,5 @@
 <footer class="footer_third">
-  <div class="container contacts">
+<!--   <div class="container contacts">
     <div class="row">
       <div class="col-sm-4 text-center">
         <div class="info-box first">
@@ -29,12 +29,12 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
   <div class="container padding_top">
     <div class="row">
-      <div class="col-md-3 col-sm-6">
+      <div class="col-md-4 col-sm-6">
         <div class="footer_panel bottom30">
-          <a href="#." class="logo bottom30"><img src="<?=base_url('assets/');?>images/logo-white.png" alt="logo"></a>
+          <a href="<?=base_url();?>" class="logo bottom30"><img src="<?=base_url('assets/');?>images/logo-white.png" alt="logo"></a>
           <p class="bottom15">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh 
             tempor cum consectetuer 
             adipiscing.
@@ -42,7 +42,7 @@
           <p class="bottom15">If you are interested in test do not wait and <a href="#.">BUY IT NOW!</a></p>
         </div>
       </div>
-      <div class="col-md-3 col-sm-6">
+      <div class="col-md-4 col-sm-6">
         <div class="footer_panel bottom30">
           <h4 class="bottom30 heading">Search by Area</h4>
           <table style="width:100%;">
@@ -72,7 +72,7 @@
           </table>
         </div>
       </div>
-      <div class="col-md-3 col-sm-6">
+      <!-- <div class="col-md-3 col-sm-6">
         <div class="footer_panel bottom30">
           <h4 class="bottom30 heading">Latest Blogs</h4>
           <div class="media bottom30">
@@ -88,8 +88,8 @@
             </div>
           </div>
         </div>
-      </div>
-      <div class="col-md-3 col-sm-6">
+      </div> -->
+      <div class="col-md-4 col-sm-6">
         <div class="footer_panel bottom30">
           <h4 class="bottom30 heading">Subscribe</h4>
           <p>Sign up with your email to get latest updates and offers</p>

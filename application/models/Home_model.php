@@ -22,6 +22,19 @@ class Home_model extends MY_Model {
                 ->get()
                 ->result();
     }
+        public function getBestdealProperties() {
+        return $this->db->select('p.*, c.name as city_name, pt.name as prop_type, b.name as builder, l.name as location')
+                ->from('properties p')
+                ->join('cities c', 'p.city_id = c.id', 'LEFT')
+                ->join('property_types pt', 'p.property_type_id = pt.id', 'LEFT')
+                ->join('builders b', 'p.builder_id = b.id', 'LEFT')
+                ->join('locations l', 'p.location_id = l.id', 'LEFT')
+                ->where('p.status', 1)
+                ->where('p.best_deal', 1)
+                ->order_by("p.id", "DESC") 
+                ->get()
+                ->result();
+    }
 
     public function getPriceRanges(){
         return $this->db->select('MAX(budget) as max, MIN(budget) as min')
