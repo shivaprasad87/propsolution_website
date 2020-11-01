@@ -30,6 +30,8 @@
 .icon-icons215:before {
     content: "\e901";
 }
+
+/* house icon */
 .icon-icons100:before {
     content: "\e902";
 }
@@ -81,6 +83,7 @@
 .icon-icons206:before {
     content: "\e912";
 }
+/* Calender */
 .icon-icons228:before {
     content: "\e913";
 }

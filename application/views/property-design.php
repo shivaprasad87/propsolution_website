@@ -76,24 +76,24 @@ if (($images = $this->properties_model->getWhere(array('property_id' => $propert
           }
           ?> 
         </div>
-        <div class="property_meta bg-black bottom40">
-          <span><i class="icon-select-an-objecto-tool"></i><?=$property->issue_date;?><!--Rs.$property->budget--></span>
+        <!-- <div class="property_meta bg-black bottom40">
+          <span><i class="icon-select-an-objecto-tool"></i><?=$property->issue_date;?></span>
           <span><i class=" icon-microphone"></i><?= $property->prop_type ?></span>
           <?php
           if (($flatTypes = $this->properties_model->getPropertyFlatType(null,
                                                         $property->id)) != null) {
-    $bhk='';
-    $i=0;
-    foreach ($flatTypes as $flatType) {
-        if($i==0)
-            $bhk.=$flatType->flat_type;
-        else
-        $bhk.=', '.$flatType->flat_type;
-    $i++;
-    }
-} 
-$propType   = $this->properties_model->getPropertyType(['id'=>$property->property_type_id]);
-?>
+              $bhk='';
+              $i=0;
+              foreach ($flatTypes as $flatType) {
+                  if($i==0)
+                      $bhk.=$flatType->flat_type;
+                  else
+                  $bhk.=', '.$flatType->flat_type;
+              $i++;
+              }
+          } 
+          $propType   = $this->properties_model->getPropertyType(['id'=>$property->property_type_id]);
+          ?>
           <span><i class="icon-safety-shower"></i><?= $bhk/*.' '.$propType['name']*/?></span>
           <span><i class="icon-old-television"></i><?php
                                                     if($property->possession_date!='0000-00-00')
@@ -101,13 +101,13 @@ $propType   = $this->properties_model->getPropertyType(['id'=>$property->propert
                                                     else 
                                                     echo "Ready"; ?></span>
           <span><i class="icon-garage"></i>Garage</span>
-        </div>
+        </div> -->
         <h2 class="text-uppercase">Property Description</h2>
         <p class="bottom30"><?= $property->description?$property->description:''; ?> </p>
         <!-- <div class="text-it-p bottom40">
           <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam power nonummy nibh tempor cum soluta nobis eleifend option congue nihil imperdiet doming Lorem ipsum dolor sit amet. consectetuer elit sed diam power nonummy</p>
         </div> -->
-        <h2 class="text-uppercase bottom20">Quick Summary</h2>
+        <h2 class="text-uppercase bottom20">Project Highlights</h2>
         <div class="row property-d-table bottom40">
           <div class="col-md-6 col-sm-6 col-xs-12">
             <table class="table table-striped table-responsive">
@@ -121,8 +121,13 @@ $propType   = $this->properties_model->getPropertyType(['id'=>$property->propert
                                 $property->id)) != null) {
                             foreach ($flatTypes as $flatType) {
                                 ?>
+
+                        <tr>
+                          <td><b>Type</b></td>
+                          <td class="text-right"><?= $bhk?></td>
+                        </tr>
                                 <tr>
-                                  <td><b><?= $flatType->flat_type ?></b></td>
+                                  <td><b>Configuration</b></td>
                                   <td class="text-right">
                                     <?= $this->properties_model->getPropertyRange(array(
                     'property_id' => $property->id,
@@ -161,21 +166,22 @@ $propType   = $this->properties_model->getPropertyType(['id'=>$property->propert
 
                                 
                             </tr>
+                            <tr>
+                  <td><b>Location</b></td>
+                  <td class="text-right"><?= $property->location . ', ' . $property->city_name ?></td>
+                </tr>  
                             <?php
     }
 }  
 ?> 
-                <tr>
+                <!-- <tr>
                   <td><b>Bedrooms</b></td>
                   <td class="text-right"><?=$property->bedrooms;?></td>
-                </tr> 
-                <tr>
-                  <td><b>No. Floors</b></td>
-                  <td class="text-right"><?=$property->floors;?></td>
-                </tr>
+                </tr>  -->
+               
                 
-                <tr>
-                  <td><b>Available From</b></td>
+                <!-- <tr>
+                  <td><b>possession_date</b></td>
                   <td class="text-right"><?php
                 if($property->possession_date!='0000-00-00')
                 {
@@ -189,31 +195,32 @@ $propType   = $this->properties_model->getPropertyType(['id'=>$property->propert
                 else 
                 echo "Ready"; 
                 ?></td>
-                </tr>
+                </tr> -->
+               
               </tbody>
             </table>
           </div>
           <div class="col-md-6 col-sm-6 col-xs-12">
             <table class="table table-striped table-responsive">
               <tbody>
+               
+              <tr>
+                  <td><b>No. Of Floors</b></td>
+                  <td class="text-right"><?=$property->floors;?></td>
+                </tr>
+
+                <tr>
+                  <td><b>No. Of Towers</b></td>
+                  <td class="text-right"> <?=$property->towers?></td>
+                </tr>
                 <tr>
                   <td><b>Status</b></td>
                   <td class="text-right"><?=$property->issue_date;?></td>
                 </tr>
+               
+              
                 <tr>
-                  <td><b>Type</b></td>
-                  <td class="text-right"><?= $bhk?></td>
-                </tr> 
-                <tr>
-                  <td><b>Towers</b></td>
-                  <td class="text-right"> <?=$property->towers?></td>
-                </tr>
-                <tr>
-                  <td><b>Location</b></td>
-                  <td class="text-right"><?= $property->location . ', ' . $property->city_name ?></td>
-                </tr>  
-                <tr>
-                  <td><b>RERA</b></td>
+                  <td><b>RERA No.</b></td>
                   <td class="text-right"><?=$property->rera_number?$property->rera_number:'Not Updated'?></td>
                 </tr> 
              <!--    <tr>
@@ -239,7 +246,7 @@ $propType   = $this->properties_model->getPropertyType(['id'=>$property->propert
                         if($i>0)
                           echo "</div>";
 
-                        echo '<div class="col-md-4 col-sm-6 col-xs-12"><ul class="pro-list">';
+                        echo '<div class="col-md-4 col-sm-6 col-xs-6"><ul class="pro-list">';
                       }
                             echo '<li>'.ucwords($amenity->name).'</li>';
                       if($i==3 || $i==7 || $i==11 || $i==15 || $i==19 || $i==23 || $i==27 || $i==31 || $i==35 || $i==39)
@@ -276,6 +283,10 @@ $propType   = $this->properties_model->getPropertyType(['id'=>$property->propert
         if($property->walkthrough)
         {
             ?>
+
+
+
+
         <h2 class="text-uppercase bottom20">Video Presentation</h2>
         <div class="row bottom40">
           <div class="col-md-12 padding-b-20">
@@ -297,7 +308,130 @@ $propType   = $this->properties_model->getPropertyType(['id'=>$property->propert
         <?php
           }
               ?>
-        <h2 class="text-uppercase bottom20">Property Map</h2>
+
+
+          
+      <div class="mb-30 Gallery">
+        <h2 class="text-uppercase">Gallery</h2>
+        <p class="bottom20">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras et dui vestibulum, bibendum purus sit amet, 
+          vulputate mauris. Ut adipiscing gravida tincidunt.
+        </p>
+
+        
+        <div class="row">
+
+          <ul class="nav nav-tabs mytab" role="tablist" style="margin-top: 20px;">
+
+              <li role="presentation" class="active">
+                  <a href="#General" aria-controls="settings" role="tab"
+                      data-toggle="tab" aria-expanded="false">Elevation
+                  </a>
+              </li>
+
+             
+
+              <li role="presentation" class="">
+                  <a href="#floorplan" aria-controls="profile" role="tab"
+                      data-toggle="tab" aria-expanded="true"> Floorplan
+                  </a>
+              </li>
+
+              <li role="presentation" class="">
+                  <a href="#Masterplan" aria-controls="profile" role="tab"
+                      data-toggle="tab" aria-expanded="true">Masterplan
+                  </a>
+              </li>
+
+          </ul>
+
+          <div class="tab-content delay-09s animated animated" style="visibility: visible; ">
+              <!-- General -->
+              <div role="tabpanel" class="tab-pane fade active in" id="General">
+
+                <div class="row">
+                  <div class="col-md-4 col-sm-4 col-xs-12">
+                    <div class="pro-img">
+                      <figure class="wpf-demo-gallery">
+                        <img src="../../../../assets/images/property-details/property-d-1-f-1.jpg" alt="image"/>
+                        <figcaption class="view-caption">    
+                          <a data-fancybox-group="gallery" class="fancybox" href="../../../../assets/images/property-details/property-d-1-f-1.jpg"><i class="icon-focus"></i></a>
+                        </figcaption>
+                      </figure>
+                    </div>
+                  </div>
+                  <div class="col-md-4 col-sm-4 col-xs-12">
+                    <div class="pro-img">
+                      <figure class="wpf-demo-gallery">
+                        <img src="../../../../assets/images/property-details/property-d-1-f-2.jpg" alt="image"/>
+                        <figcaption class="view-caption">    
+                          <a data-fancybox-group="gallery" class="fancybox" href="../../../../assets/images/property-details/property-d-1-f-1.jpg"><i class="icon-focus"></i></a>
+                        </figcaption>
+                      </figure>
+                    </div>
+                  </div>
+                  <div class="col-md-4 col-sm-4 col-xs-12">
+                    <div class="pro-img">
+                      <figure class="wpf-demo-gallery">
+                        <img src="../../../../assets/images/property-details/property-d-1-f-3.jpg" alt="image"/>
+                        <figcaption class="view-caption">    
+                          <a data-fancybox-group="gallery" class="fancybox" href="../../../../assets/images/property-details/property-d-1-f-1.jpg"><i class="icon-focus"></i></a>
+                        </figcaption>
+                      </figure>
+                    </div>
+                  </div>
+                  
+                </div>
+              </div>
+
+              <!-- Masterplan -->
+              <div role="tabpanel" class="tab-pane fade  " id="Masterplan">
+                <div class="row">
+
+                    <div class="col-md-6 col-sm-4 col-xs-12">
+                      <div class="pro-img">
+                        <figure class="wpf-demo-gallery">
+                          <img src="../../../../assets/images/property-details/property-d-1-f-3.jpg" alt="image"/>
+                          <figcaption class="view-caption">    
+                            <a data-fancybox-group="gallery" class="fancybox" href="../../../../assets/images/property-details/property-d-1-f-1.jpg"><i class="icon-focus"></i></a>
+                          </figcaption>
+                        </figure>
+                      </div>
+                    </div>
+
+                </div>
+              </div>
+
+            <!-- floorplan -->
+              <div role="tabpanel" class="tab-pane fade  " id="floorplan">
+                 <div class="row">
+                    <div class="col-md-6 col-sm-4 col-xs-12">
+                      <div class="pro-img">
+                        <figure class="wpf-demo-gallery">
+                          <img src="../../../../assets/images/property-details/property-d-1-f-3.jpg" alt="image"/>
+                          <figcaption class="view-caption">    
+                            <a data-fancybox-group="gallery" class="fancybox" href="../../../../assets/images/property-details/property-d-1-f-1.jpg"><i class="icon-focus"></i></a>
+                          </figcaption>
+                        </figure>
+                      </div>
+                    </div>
+                 </div>
+
+              </div>
+
+
+          </div>
+
+          
+        </div>
+        <!-- End of gallery row -->
+
+      </div>
+
+      <!-- End of Gallery -->
+      <div class="clearflix"></div>
+
+
+        <h2 class="text-uppercase bottom20">Location Map</h2>
         <div class="row bottom40">
           <div class="col-md-12 bottom20">
             <div class="property-list-map">
@@ -317,7 +451,7 @@ $propType   = $this->properties_model->getPropertyType(['id'=>$property->propert
           </div>
         </div>
         <div class="clearfix"></div>
-        <h2 class="text-uppercase bottom20">Contact Us</h2>
+        <!-- <h2 class="text-uppercase bottom20">Contact Us</h2>
        
         <div class="col-sm-12 bottom40">
             <form action="" method="post" class="callus">
@@ -349,7 +483,7 @@ $propType   = $this->properties_model->getPropertyType(['id'=>$property->propert
             </form>
           </div>
           
-          <!-- <div class="row">
+         <div class="row">
             <div class="col-sm-10">
             <h2 class="text-uppercase top20">Similar Properties</h2>
             <p class="bottom30">We have Properties in these Areas View a list of Featured Properties.</p>
@@ -541,8 +675,8 @@ $propType   = $this->properties_model->getPropertyType(['id'=>$property->propert
               <li><a href="#.">3</a></li>
             </ul>
           </div> -->
-      </div>
-     <!--  <aside class="col-md-4 col-xs-12">
+      </div> 
+    <!--<aside class="col-md-4 col-xs-12">
         <div class="property-query-area clearfix">
           <div class="col-md-12">
             <h3 class="text-uppercase bottom20 top15">Advanced Search</h3>
@@ -733,12 +867,12 @@ $propType   = $this->properties_model->getPropertyType(['id'=>$property->propert
             </div>
           </div>
         </div>
-        <div class="row">
+       <div class="row">
           <div class="col-md-12">
             <h3 class="bottom40 margin40">Featured Properties</h3>
           </div>
-        </div> -->
-        <!-- <div class="row bottom20">
+        </div> 
+         <div class="row bottom20">
           <div class="col-md-4 col-sm-4 col-xs-6 p-image">
             <img src="images/f-p-1.png" alt="image"/>
           </div>
@@ -802,9 +936,61 @@ $propType   = $this->properties_model->getPropertyType(['id'=>$property->propert
           </div>
         </div> 
       </aside> -->
+
+      <aside id="contactSideForm" class="col-md-4 col-xs-12 container1">
+        <div class="property-query-area clearfix">
+          <div class="col-md-12">
+            <h3 class="text-uppercase text-center bottom20 top15">Contact Us</h3>
+          </div>
+          <form class="callus" action="" method="post">
+            <div class="single-query form-group col-sm-12">
+              <input type="text" class="keyword-input" placeholder="Your Name">
+            </div>
+            <div class="single-query form-group col-sm-12">
+              <input type="tel" class="keyword-input" placeholder="Your Phone Number">
+            </div>
+            <div class="single-query form-group col-sm-12">
+              <input type="email" class="keyword-input" placeholder="Your Email">
+            </div>
+          
+            <div class="single-query form-group col-sm-12">
+              <textarea type="subject" class="keyword-input" name="sugg" placeholder="Your Message"></textarea>
+            </div>
+            
+           
+           
+            <div class="col-sm-12 form-group text-center">
+              <button type="submit" class="btn-blue border_radius">Submit</button>
+            </div>
+          </form>
+         
+         
+        </div>
+      </aside>
     </div>
   </div>
 </section>
+
+<script>
+			window.onscroll = function () { myFunction() };
+
+			function myFunction() {
+        console.log("here" +window.pageYOffset)
+				if (window.pageYOffset > 190) {
+					document.getElementById("contactSideForm").classList.remove("container1")
+					document.getElementById("contactSideForm").classList.add("fixed-container")
+					
+        }else{
+					document.getElementById("contactSideForm").classList.remove("fixed-container")
+					document.getElementById("contactSideForm").classList.add("container1")
+					
+				}
+
+
+			}
+
+
+		</script>
 <!-- Property Detail End -->
 <?php
 $this->load->view('inc/footer'); 

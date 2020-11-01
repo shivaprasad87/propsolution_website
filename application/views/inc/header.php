@@ -17,7 +17,7 @@
                 <li>+91 123456789</li>
               </ul>
             </div>
-            <div class="info-box">
+            <div class="info-box hidden-sm">
             <div class="icons"><i class="icon-icons74"></i></div>
             <ul>
               <li><strong>City</strong></li>
@@ -57,12 +57,12 @@
               <li><a href="<?= base_url();?>">Home</a></li>
               
                 <li>
-                  <a href="<?= base_url('listing');?>" class="dropdown-toggle" data-toggle="dropdown">Listing</a>
+                  <a href="<?= base_url('listing');?>" s>Listing</a>
                 
                 </li>
 
                 <li>
-                  <a href="<?= base_url('about');?>" class="dropdown-toggle" data-toggle="dropdown">About Us</a>
+                  <a href="<?= base_url('about');?>" >About Us</a>
                 
                 </li>
                

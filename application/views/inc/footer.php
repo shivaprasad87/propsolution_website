@@ -44,18 +44,18 @@
       </div>
       <div class="col-md-4 col-sm-6">
         <div class="footer_panel bottom30">
-          <h4 class="bottom30 heading">Search by Area</h4>
+          <h4 class="bottom30 heading">Useful Links</h4>
           <table style="width:100%;">
             <tbody>
               <tr>
                 <td>
                   <ul class="links">
-                     <li><a href="<?=base_url('about');?>"><i></i>About</a></li>
+                     <li><a href=""><i></i>About</a></li>
                    
-                   <li><a href="<?=base_url('contact');?>"> <i></i>Contacts</a></li>
-                   <li><a href="<?=base_url('testimonials');?>"><i></i>Testimonials</a></li>
-                     <li><a href="#"><i></i>Faq</a></li>
-                      <li class="active"><a href="#."><i></i>Careers</a></li>
+                   <li><a href=""> <i></i>Contacts</a></li>
+                   <li><a href=""><i></i>Testimonials</a></li>
+                     <li><a href="#"><i></i>FAQ</a></li>
+                      <li class=""><a href=""><i></i>Careers</a></li>
                   </ul>
                 </td>
                 <!-- <td class="text-right">
@@ -91,14 +91,28 @@
       </div> -->
       <div class="col-md-4 col-sm-6">
         <div class="footer_panel bottom30">
-          <h4 class="bottom30 heading">Subscribe</h4>
-          <p>Sign up with your email to get latest updates and offers</p>
+          <h4 class="bottom30 heading">Contact</h4>
+          <div class="heading-footer">
+            <div class="row">
+              <div class="col-lg-12">
+              <b>Address:</b> Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh tempor cum consectetuer adipiscing. 
+
+              </div>
+              <div class="col-lg-12">
+              <b>Contact:</b> 1234567890
+                </div>
+                <div class="col-lg-12">
+                <b>Email:</b> info@propsolutions.com
+                </div>
+            </div>
+          </div>
+          <!-- <p>Sign up with your email to get latest updates and offers</p>
          <form action="<?= site_url('subscribers') ?>" method="post" id="myForm">
             <input class="search" placeholder="Enter your Email" type="search" name="email">
             <a class="button_s" onclick="$('#myForm').submit();">
             <i class="icon-mail-envelope-open"></i>
             </a>
-          </form>
+          </form> -->
         </div>
       </div>
     </div>

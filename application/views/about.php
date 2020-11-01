@@ -64,116 +64,98 @@
 <div class="mkdf-row-grid-section-wrapper mkdf-content-aligment-center" style="background-color:#f9f7f6">
   <div class="container">
  
-  <div class="vc_row wpb_row vc_row-fluid vc_custom_1510575966468"><div class="wpb_column vc_column_container vc_col-sm-12"><div class="vc_column-inner"><div class="wpb_wrapper"><div class="mkdf-section-title-holder  mkdf-st-standard mkdf-st-title-center mkdf-st-normal-space ">
-<div class="mkdf-st-inner">
-<h2 class="mkdf-st-title">
-See How It Works </h2>
-<p class="mkdf-st-text" style="font-size: 18px">
-Lorem ipsum dolor sit amet, atqui sanctus delectus in duo. Purto fuisset sed et. </p>
+    <div class="vc_row wpb_row vc_row-fluid vc_custom_1510575966468">
+      <div class="wpb_column vc_column_container vc_col-sm-12">
+        <div class="vc_column-inner"><div class="wpb_wrapper">
+          <div class="mkdf-section-title-holder  mkdf-st-standard mkdf-st-title-center mkdf-st-normal-space ">
+            <div class="mkdf-st-inner">
+              <h2 class="mkdf-st-title">
+              See How It Works </h2>
+              <p class="mkdf-st-text" style="font-size: 18px">
+              Lorem ipsum dolor sit amet, atqui sanctus delectus in duo. Purto fuisset sed et.
+              </p>
+            </div>
+          </div>
+
+          <div class="mkdf-elements-holder   mkdf-three-columns  mkdf-responsive-mode-768 ">
+            <div class="mkdf-eh-item   mkdf-horizontal-alignment-center " data-item-class="mkdf-eh-custom-1369">
+              <div class="mkdf-eh-item-inner">
+                <div class="mkdf-eh-item-content mkdf-eh-custom-1369" style="padding: 63px 7% 0">
+                  <div class="mkdf-process-holder ">
+                    <div class="mkdf-process-image">
+                      <img width="250" height="177" src="<?= base_url('assets/images/');?>home-process-img-1.png" class="attachment-full size-full" alt="a">
+
+
+                    </div>
+                    <div class="mkdf-process-text-inner">
+                      <div class="mkdf-process-title-holder">
+                          <h5 class="mkdf-process-title">
+                          Choose a Category 
+                          </h5>
+                      </div>
+                        <div class="mkdf-process-text">
+                        Feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent
+                        </div>
+                    </div>
+                  </div> 
+                </div>
+              </div>
+          </div>
+
+          <div class="mkdf-eh-item   mkdf-horizontal-alignment-center " data-item-class="mkdf-eh-custom-7113">
+            <div class="mkdf-eh-item-inner">
+              <div class="mkdf-eh-item-content mkdf-eh-custom-7113" style="padding: 63px 7% 0">
+                <div class="mkdf-process-holder ">
+                  <div class="mkdf-process-image">
+                    <img width="250" height="177" src="<?= base_url('assets/images/');?>home-process-img-2.png" class="attachment-full size-full" alt="a"> 
+
+
+                  </div>
+                  <div class="mkdf-process-text-inner">
+                    <div class="mkdf-process-title-holder">
+                      <h5 class="mkdf-process-title">
+                      Find Real Estate 
+                      </h5>
+                    </div>
+                    <div class="mkdf-process-text">
+                        Feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent </div>
+                    </div>
+                  </div> 
+
+                </div>
+              </div>
+            </div>
+
+            <div class="mkdf-eh-item   mkdf-horizontal-alignment-center " data-item-class="mkdf-eh-custom-1159">
+              <div class="mkdf-eh-item-inner">
+                <div class="mkdf-eh-item-content mkdf-eh-custom-1159" style="padding: 63px 7% 0">
+                  <div class="mkdf-process-holder ">
+                    <div class="mkdf-process-image">
+                      <img width="250" height="177" src="<?= base_url('assets/images/');?>home-process-img-3.png" class="attachment-full size-full" alt="a"> 
+                      <div class="mkdf-process-add-text">
+                      3 </div>
+                    </div>
+                    <div class="mkdf-process-text-inner">
+                      <div class="mkdf-process-title-holder">
+                        <h5 class="mkdf-process-title">
+                        Take the Keys </h5>
+                      </div>
+                      <div class="mkdf-process-text">
+                        Feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent </div>
+                      </div>
+
+                    </div> 
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
-</div><div class="mkdf-elements-holder   mkdf-three-columns  mkdf-responsive-mode-768 "><div class="mkdf-eh-item   mkdf-horizontal-alignment-center " data-item-class="mkdf-eh-custom-1369">
-<div class="mkdf-eh-item-inner">
-<div class="mkdf-eh-item-content mkdf-eh-custom-1369" style="padding: 63px 7% 0">
-<div class="mkdf-process-holder ">
-<div class="mkdf-process-image">
-<img width="250" height="177" src="<?= base_url('assets/images/');?>home-process-img-1.png" class="attachment-full size-full" alt="a"> <div class="mkdf-process-add-text">
-1 </div>
-<div class="mkdf-process-border">
-<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="123.535px" height="3.303px" viewBox="0 0 123.535 3.303" enable-background="new 0 0 123.535 3.303" xml:space="preserve">
-<g>
-<path d="M1.597,0C0.671,0,0,0.694,0,1.651c0,0.942,0.679,1.652,1.579,1.652c0.925,0,1.597-0.694,1.597-1.652
-                                C3.176,0.694,2.511,0,1.597,0z"></path>
-<path d="M16.642,0c-0.926,0-1.598,0.694-1.598,1.651c0,0.942,0.679,1.652,1.579,1.652c0.925,0,1.597-0.694,1.597-1.652
-                                C18.22,0.694,17.556,0,16.642,0z"></path>
-<path d="M31.687,0c-0.926,0-1.598,0.694-1.598,1.651c0,0.942,0.679,1.652,1.579,1.652c0.925,0,1.597-0.694,1.597-1.652
-                                C33.265,0.694,32.601,0,31.687,0z"></path>
-<path d="M46.732,0c-0.926,0-1.598,0.694-1.598,1.651c0,0.942,0.679,1.652,1.579,1.652c0.925,0,1.597-0.694,1.597-1.652
-                                C48.31,0.694,47.646,0,46.732,0z"></path>
-<path d="M61.777,0c-0.926,0-1.598,0.694-1.598,1.651c0,0.942,0.679,1.652,1.579,1.652c0.926,0,1.598-0.694,1.598-1.652
-                                C63.355,0.694,62.691,0,61.777,0z"></path>
-<path d="M76.822,0c-0.926,0-1.598,0.694-1.598,1.651c0,0.942,0.678,1.652,1.578,1.652c0.926,0,1.598-0.694,1.598-1.652
-                                C78.4,0.694,77.736,0,76.822,0z"></path>
-<path d="M91.867,0c-0.926,0-1.598,0.694-1.598,1.651c0,0.942,0.679,1.652,1.578,1.652c0.926,0,1.598-0.694,1.598-1.652
-                                C93.445,0.694,92.781,0,91.867,0z"></path>
-<path d="M106.912,0c-0.926,0-1.598,0.694-1.598,1.651c0,0.942,0.679,1.652,1.578,1.652c0.926,0,1.598-0.694,1.598-1.652
-                                C108.49,0.694,107.826,0,106.912,0z"></path>
-<path d="M121.957,0c-0.926,0-1.598,0.694-1.598,1.651c0,0.942,0.679,1.652,1.578,1.652c0.926,0,1.598-0.694,1.598-1.652
-                                C123.535,0.694,122.871,0,121.957,0z"></path>
-</g>
-</svg>
-</div>
-</div>
-<div class="mkdf-process-text-inner">
-<div class="mkdf-process-title-holder">
-<h5 class="mkdf-process-title">
-Choose a Category </h5>
-</div>
-<div class="mkdf-process-text">
-Feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent </div>
-</div>
-</div> </div>
-</div>
-</div><div class="mkdf-eh-item   mkdf-horizontal-alignment-center " data-item-class="mkdf-eh-custom-7113">
-<div class="mkdf-eh-item-inner">
-<div class="mkdf-eh-item-content mkdf-eh-custom-7113" style="padding: 63px 7% 0">
-<div class="mkdf-process-holder ">
-<div class="mkdf-process-image">
-<img width="250" height="177" src="<?= base_url('assets/images/');?>home-process-img-2.png" class="attachment-full size-full" alt="a"> <div class="mkdf-process-add-text">
-2 </div>
-<div class="mkdf-process-border">
-<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="123.535px" height="3.303px" viewBox="0 0 123.535 3.303" enable-background="new 0 0 123.535 3.303" xml:space="preserve">
-<g>
-<path d="M1.597,0C0.671,0,0,0.694,0,1.651c0,0.942,0.679,1.652,1.579,1.652c0.925,0,1.597-0.694,1.597-1.652
-                                C3.176,0.694,2.511,0,1.597,0z"></path>
-<path d="M16.642,0c-0.926,0-1.598,0.694-1.598,1.651c0,0.942,0.679,1.652,1.579,1.652c0.925,0,1.597-0.694,1.597-1.652
-                                C18.22,0.694,17.556,0,16.642,0z"></path>
-<path d="M31.687,0c-0.926,0-1.598,0.694-1.598,1.651c0,0.942,0.679,1.652,1.579,1.652c0.925,0,1.597-0.694,1.597-1.652
-                                C33.265,0.694,32.601,0,31.687,0z"></path>
-<path d="M46.732,0c-0.926,0-1.598,0.694-1.598,1.651c0,0.942,0.679,1.652,1.579,1.652c0.925,0,1.597-0.694,1.597-1.652
-                                C48.31,0.694,47.646,0,46.732,0z"></path>
-<path d="M61.777,0c-0.926,0-1.598,0.694-1.598,1.651c0,0.942,0.679,1.652,1.579,1.652c0.926,0,1.598-0.694,1.598-1.652
-                                C63.355,0.694,62.691,0,61.777,0z"></path>
-<path d="M76.822,0c-0.926,0-1.598,0.694-1.598,1.651c0,0.942,0.678,1.652,1.578,1.652c0.926,0,1.598-0.694,1.598-1.652
-                                C78.4,0.694,77.736,0,76.822,0z"></path>
-<path d="M91.867,0c-0.926,0-1.598,0.694-1.598,1.651c0,0.942,0.679,1.652,1.578,1.652c0.926,0,1.598-0.694,1.598-1.652
-                                C93.445,0.694,92.781,0,91.867,0z"></path>
-<path d="M106.912,0c-0.926,0-1.598,0.694-1.598,1.651c0,0.942,0.679,1.652,1.578,1.652c0.926,0,1.598-0.694,1.598-1.652
-                                C108.49,0.694,107.826,0,106.912,0z"></path>
-<path d="M121.957,0c-0.926,0-1.598,0.694-1.598,1.651c0,0.942,0.679,1.652,1.578,1.652c0.926,0,1.598-0.694,1.598-1.652
-                                C123.535,0.694,122.871,0,121.957,0z"></path>
-</g>
-</svg>
-</div>
-</div>
-<div class="mkdf-process-text-inner">
-<div class="mkdf-process-title-holder">
-<h5 class="mkdf-process-title">
-Find Real Estate </h5>
-</div>
-<div class="mkdf-process-text">
-Feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent </div>
-</div>
-</div> </div>
-</div>
-</div><div class="mkdf-eh-item   mkdf-horizontal-alignment-center " data-item-class="mkdf-eh-custom-1159">
-<div class="mkdf-eh-item-inner">
-<div class="mkdf-eh-item-content mkdf-eh-custom-1159" style="padding: 63px 7% 0">
-<div class="mkdf-process-holder ">
-<div class="mkdf-process-image">
-<img width="250" height="177" src="<?= base_url('assets/images/');?>home-process-img-3.png" class="attachment-full size-full" alt="a"> <div class="mkdf-process-add-text">
-3 </div>
-</div>
-<div class="mkdf-process-text-inner">
-<div class="mkdf-process-title-holder">
-<h5 class="mkdf-process-title">
-Take the Keys </h5>
-</div>
-<div class="mkdf-process-text">
-Feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent </div>
-</div>
-</div> </div>
-</div>
-</div></div></div></div></div></div></div></div>
 
 
 <!--Parallax-->
@@ -184,17 +166,17 @@ Feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui bla
         <h2>We Don’t Just Find <br> <span class="t_yellow">Great Deals</span> We Create Them</h2>
         <div class="bottom15"></div>
         <div class="row number-counters text-center">
-      <div class="col-sm-4 col-xs-4 counters-item margin40">
+      <div class="col-sm-4 col-xs-12 counters-item margin40">
         <i class="icon-icons215"></i>
         <strong data-to="4195">0</strong>
         <p>Properties Sale</p>
       </div>
-      <div class="col-sm-4 col-xs-4 counters-item margin40">
+      <div class="col-sm-4 col-xs-12 counters-item margin40">
         <i class="icon-icons230"></i>
         <strong data-to="123">0</strong>
         <p>Total Agents</p>
       </div>
-      <div class="col-sm-4 col-xs-4 counters-item margin40">
+      <div class="col-sm-4 col-xs-12 counters-item margin40">
         <i class="icon-smiling-face"></i>
         <strong data-to="100">0</strong> %
         <p>Satisfied customers</p>

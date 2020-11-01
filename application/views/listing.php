@@ -2,29 +2,19 @@
 <section id="listing1" class="listing1 padding_top">
   <div class="container">
     <div class="row">
-      <div class="col-md-8 col-sm-12 col-xs-12">
+      <div class="col-md-12 col-sm-12 col-xs-12">
         <div class="row">
           <div class="col-md-9">
             <h2 class="uppercase">PROPERTY LISTINGS</h2>
             <p class="heading_space">We have Properties in these Areas View a list of Featured Properties.</p>
           </div>
-          <!-- <div class="col-md-3">
+          <div class="col-md-3">
           <form class="callus">
             <div class="single-query">
-              <div class="intro">
-                <select>
-                  <option class="active">Default Order</option>
-                  <option>1</option>
-                  <option>2</option>
-                  <option>3</option>
-                  <option>4</option>
-                  <option>5</option>
-                  <option>6</option>
-                </select>
-              </div>
+              <div class="intro property-page"> Properties Showing 1/1150 </div>
             </div>
             </form>
-          </div> -->
+          </div>
         </div>
         <div class="row">
           <?php 
@@ -32,7 +22,7 @@
           if(count($properties)>0)
           {
           foreach ($properties as $property) { ?>
-          <div class="col-sm-6">
+          <div class="col-sm-4">
             <div class="property_item heading_space">
               <div class="image">
                 <a href="<?=site_url(url_title($property->city_name)."/".( url_title($property->area) )."/$property->slug/")?>"><img src="<?= base_url('uploads/'.$property->slug.'/'.$property->image) ?>" alt="latest property" class="img-responsive"></a>
@@ -73,19 +63,27 @@
                   <p><?php echo $property->area.", ".$property->city_name; ?></p>
                 </div>
                 <div class="property_meta transparent"> 
-                  <span><i class="icon-select-an-objecto-tool"></i><?=$property->rera_number?$property->rera_number:'Not Updated'?></span> 
+
+                  <span><i class="icon-select-an-objecto-tool"></i><?=$property->rera_number?$property->rera_number:'Type'?></span> 
                   <span><i class="icon-bed"></i><?= $property->prop_type ?></span> 
-                  <span><i class="icon-safety-shower"></i><?= $property->builder ?></span>   
+               
                 </div>
-                <div class="property_meta transparent bottom30">
-                  <span><i class="icon-old-television"></i><?php
+                
+                <div class="property_meta transparent">
+
+                  <span><i class="icon-icons100"></i><?= $property->builder ?></span>   
+                  <span><i class="icon-icons228"></i><?php
                                                     if($property->possession_date!='0000-00-00')
                                                     echo  date('M, Y', strtotime($property->possession_date));
                                                     else 
-                                                    echo "Ready"; ?></span>
+                                                    echo "Ready"; ?>
+                  </span>
                   <!-- <span><i class="icon-garage"></i>1 Garage</span> -->
-                  <span></span>
+                 
                 </div>
+                <div class="property_meta transparent">
+                <span><i class="icon-calendar2"></i>Rera:123445678990</span> 
+              </div>
                 <div class="favroute clearfix">
                    <a href="<?=site_url(url_title($property->city_name)."/".( url_title($property->area) )."/$property->slug/")?>"><p class="pull-md-left">Know More&nbsp; <i class="icon-arrow-right3"></i></p></a>
                   <ul class="pull-right">
