@@ -34,7 +34,7 @@
     <div class="row">
       <div class="col-md-4 col-sm-6">
         <div class="footer_panel bottom30">
-          <a href="<?=base_url();?>" class="logo bottom30"><img src="<?=base_url('assets/');?>images/logo-white.png" alt="logo"></a>
+          <a href="<?=base_url();?>" class="logo bottom30"><img src="<?=base_url('assets/');?>images/logo-white.JPEG" alt="logo"></a>
           <p class="bottom15">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh 
             tempor cum consectetuer 
             adipiscing.
