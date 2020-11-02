@@ -99,10 +99,10 @@
 
               </div>
               <div class="col-lg-12">
-              <b>Contact:</b> +91 84465 65216
+              <b>Contact:</b> <a href="tel:+918446565216">+91 84465 65216</a>
                 </div>
                 <div class="col-lg-12">
-                <b>Email:</b> info@propsolutionsservices.com
+                <b>Email:</b> <a href="mailto:info@propsolutionsservices.com">info@propsolutionsservices.com</a>
                 </div>
             </div>
           </div>

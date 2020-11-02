@@ -14,7 +14,7 @@
               <div class="icons"><i class="icon-telephone114"></i></div>
               <ul>
                 <li><strong>Phone Number</strong></li>
-                <li>+91 84465 65216</li>
+                <li><a href="tel:+918446565216">+91 84465 65216</a></li>
               </ul>
             </div>
             <div class="info-box hidden-sm">
