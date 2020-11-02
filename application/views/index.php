@@ -401,7 +401,7 @@ $i=0;
                     <td class="text-right"><?= $property->bedrooms ?></td>
                   </tr> 
                    <tr> 
-                   <td><div class="float-left"><button class="btn btn-property1">See Details</button></div></td>
+                   <td><div class="float-left"><a href="<?= site_url(url_title($property->city_name)."/".( url_title($property->area) )."/$property->slug") ?>"><button class="btn btn-property1">See Details</button></a></div></td>
                    <td><div class="float-right"><button class="btn btn-property2">Get Call Back</button></div> </tr> </td>
                 </tbody>
               </table>
