@@ -379,7 +379,8 @@
             </div>
             <div class="proerty_content ">
               <div class="proerty_text webkit__scroll">
-                <h3 class="bottom15"><a href="#."><?= $property->title ?></a></h3>
+                <h3 class="bottom15">
+                  <a href="#."><?= $property->title ?></a></h3>
                 <!-- <h4 class="top15"><?php
                            $flatTypes = $this->properties_model->getPropertyFlatType(null,$property->id);
                            $flatTypes = json_decode( json_encode($flatTypes), true);
@@ -401,8 +402,10 @@
                     <td class="text-right"><?= $property->bedrooms ?></td>
                   </tr> 
                    <tr> 
-                   <td><div class="float-left"><a href="<?= site_url(url_title($property->city_name)."/".( url_title($property->area) )."/$property->slug") ?>"><button class="btn btn-property1">See Details</button></a></div></td>
-                   <td><div class="float-right"><button class="btn btn-property2">Get Call Back</button></div> </tr> </td>
+                    <td><div class="float-left"><a href="<?= site_url(url_title($property->city_name)."/".( url_title($property->area) )."/$property->slug") ?>"><button class="btn btn-property1">See Details</button></a></div></td>
+                    <td><div class="float-right" ><a onclick="pricePopProjectname('<?= $property->title ?>');"><button class="btn btn-property2">Get Call Back</button></a></div></td>
+                  </tr> 
+                  
                 </tbody>
               </table>
              
@@ -425,43 +428,7 @@
 
 
 <!-- <div class="contact-opener1 slide-left">Speak to Our Expert!</div> -->
-<!-- Floating Form -->
-<div class="floating-box hidden-sm">
-  
-<div class="floating-form" id="contact_form">
-  <div class="contact-opener slide-right">Speak to Our Expert!</div>
-      <div class="floating-form-heading">Speak to Our Expert!</div>
-      <div id="contact_results"></div>
-      <form action="" method="post">
-          <div id="contact_body">
-              <div class="logo_cont text-center">
-                  <img style="display: inline-block;" src="https://propsolutionservices.com/assets/images/logo.png" alt="Propsolution">
-              </div>
-              <div class="alert alert-danger" role="alert" id="error_message" style="display:none;">...</div>
-              <div class="alert alert-success" role="alert" id="success_message" style="display:none;">...</div>
-              <label><span>Name <span class="required">*</span></span>
-                  <input type="text" class="form-control" id="username" name="name" required="">
-              </label>
-              <label><span>Email <span class="required">*</span></span>
-                  <input type="email" name="email" class="form-control" id="email" required="">
-              </label>
-              <label><span>Phone <span class="required">*</span></span>
-                  <input type="text" class="form-control" id="phone" name="phone" required="">
-              </label>
-              <label><span>Message<span class="required">*</span></span>
-                  <input type="text" class="form-control" id="Message" name="message" required="">
-              </label>
-            
-              <label>
-                  <span>&nbsp;</span>
-                  <button type="submit" class="btn btn-success">Connect Me</button>
-              </label>
 
-
-          </div>
-      </form>
-  </div>
-</div>
 <!--Deals-->
 <section id="deal" class="padding_bottom_half padding_top">
   <div class="container">
@@ -508,7 +475,7 @@
                </div>
                <div class="property-btn">
                     <div><a class="float-left"><button class="btn btn-property1">See Details</button></a></div>
-                   <div><a title="Know More" onclick="pricePopProjectname('Dummy Text');" class="float-right"><button class="btn btn-property2">Get Call Back</button></a> </div>
+                   <div><a title="Know More" onclick="pricePopProjectname('<?= $property->title ?>');" class="float-right"><button class="btn btn-property2">Get Call Back</button></a> </div>
               
                </div >
               </div>
@@ -524,6 +491,45 @@
 </section>
 <!--Deals ends-->
 
+
+<!-- Floating Form -->
+<div class="floating-box hidden-sm">
+  
+<div class="floating-form" id="contact_form">
+  <div class="contact-opener slide-right">Speak to Our Expert!</div>
+      <div class="floating-form-heading">Speak to Our Expert!</div>
+      <div id="contact_results"></div>
+      <form action="<?=base_url('sendmail');?>" method="post">
+          <div id="contact_body">
+              <div class="logo_cont text-center">
+                  <img style="display: inline-block;" src="https://propsolutionservices.com/assets/images/logo.png" alt="Propsolution">
+              </div>
+              <div class="alert alert-danger" role="alert" id="error_message" style="display:none;">...</div>
+              <div class="alert alert-success" role="alert" id="success_message" style="display:none;">...</div>
+              <label><span>Name <span class="required">*</span></span>
+                  <input type="text" class="form-control" id="username" name="name" required="">
+              </label>
+              <label><span>Email <span class="required">*</span></span>
+                  <input type="email" name="email" class="form-control" id="email" required="">
+              </label>
+              <label><span>Phone <span class="required">*</span></span>
+                  <input type="tel" class="form-control" id="phone" name="phone" required="">
+              </label>
+              <label><span>Message<span class="required">*</span></span>
+                  <input type="text" class="form-control" id="Message" name="message" required="">
+              </label>
+            
+              <label>
+                  <span>&nbsp;</span>
+                  <button type="submit" class="btn btn-success">Connect Me</button>
+              </label>
+
+
+          </div>
+      </form>
+  </div>
+</div>
+</div>
 
 <!--Parallax
 <section id="parallax_four" class="padding">
@@ -669,12 +675,12 @@
             </div>
             <div class="modal-body">
                 <!-- <p>Please enter the details below to get the detailed pricing information.</p> -->
-                <form id="price-popup" action="" name="main-popup" method="POST">
+                <form id="price-popup" action="<?=base_url('project_contact');?>" name="main-popup" method="POST">
                     <div class="form-group col-md-12 pd">
                         <input type="text" class="form-control" placeholder="Name" name="name" id="name">
                     </div>
                     <div class="form-group col-md-12 pd">
-                        <input  type="tel" pattern="^[0-9]{3,45}$" title="You can only enter numbers, with a minimal of 10 characters are accepted." minlength="10" placeholder="Phone" name="telephone" id="telephone"
+                        <input  type="phone" pattern="^[0-9]{3,45}$" title="You can only enter numbers, with a minimal of 10 characters are accepted." minlength="10" placeholder="Phone" name="phone" id="telephone"
                                required>
                     </div>
                     <div class="form-group col-md-12 pd">

@@ -166,8 +166,8 @@
 <script src="<?=base_url('assets/');?>js/revolution.extension.slideanims.min.js"></script>
 <script src="<?=base_url('assets/');?>js/revolution.extension.video.min.js"></script>
 <script src="<?=base_url('assets/');?>js/neary-by-place.js"></script> 
-<!-- <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyAOBKD6V47-g_3opmidcmFapb3kSNAR70U&amp;libraries=places"></script>  -->
-<!-- <script src="<?=base_url('assets/');?>js/google-map.js"></script>  -->
+<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyAOBKD6V47-g_3opmidcmFapb3kSNAR70U&amp;libraries=places"></script> 
+<script src="<?=base_url('assets/');?>js/google-map.js"></script> 
 <script src="<?=base_url('assets/');?>js/jquery.fancybox.js"></script>
 <!--- listing end-s-->
 
