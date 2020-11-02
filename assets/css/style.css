@@ -380,7 +380,7 @@ ul.area_search li a:hover, ul.area_search li a:focus{
 .footer_third ul.links li a:hover, .footer_third ul.links li a:focus,
 .footer_third .footer_panel .media-body a:hover, .footer_third .footer_panel .media-body a:focus,
 .footer_third .copyright p a:hover{
-	color:#9C7833;
+	color:#deddda;
 }
 
 ul.getin_touch{}
@@ -708,11 +708,12 @@ header{
 	z-index:999;
 }
 .header-upper .logo{
-	display:inline-block;
+  display:inline-block;
+  height: 80px;
 }
 .header-upper .logo a{
 	display:block;
-	padding: 15px 0;
+	padding: 5px 0;
 }
 .header-upper .right{
 	text-align:right;
@@ -774,8 +775,9 @@ header.index4 .info-box {
 .layout_dark .info-box li, 
 .layout_dark .info-box strong, 
 .header-upper.dark .info-box li, 
-.layout_dark, .header-upper.dark .info-box strong{
+.layout_dark, .header-upper.dark .info-box strong,.info-box a,.info-box a:hover{
   color: #fff;
+  font-size: 14px;
 }
 .info-box strong, header.index4 .info-box strong{
   color: #1f1f1f;
@@ -813,7 +815,7 @@ nav.navbar.bootsnav{
   margin-left:0 !important;
 }
 .navbar-brand > img{
-  width: 100px;
+  width: 125px;
 }
 .layout_boxed nav.navbar.bootsnav.navbar-sticky .navbar-brand,
 .layout_default nav.navbar.bootsnav.navbar-sticky .navbar-brand,
@@ -859,7 +861,7 @@ nav.navbar.bootsnav ul.nav > li.dropdown > a.dropdown-toggle::after {
 	display:none;
 }
 header nav.navbar.bootsnav ul.nav > li > a:before {
-  background: #fff;
+  background: #998148!important;
   content: "";
   height: 4px;
   left: 0;
@@ -2072,7 +2074,7 @@ i.icon-safety-shower{font-size:16px !important;}
 
 /* ---------------------- Best Deals ---------------------- */
 
-#deals .deal_media{}
+
 .media-body, .media-left, .media-right {
   display: table-cell;
   vertical-align: bottom;
@@ -2089,8 +2091,7 @@ i.icon-safety-shower{font-size:16px !important;}
 	margin:0;
 	vertical-align: bottom;
 }
-#deals .deal_media .media-left a > img{
-}
+
 #deals .deal_media .price{
 	padding:15px;
 	display:inline-block;
@@ -2244,8 +2245,6 @@ i.icon-safety-shower{font-size:16px !important;}
 	background:#9C7833;
 	color:#191919;
 	font-size:14px;
-}
-.feature_main .bottom h4{
 }
 #feature_property .property_meta > span{
 	text-align:left;
@@ -2603,9 +2602,29 @@ i.icon-safety-shower{font-size:16px !important;}
   color: #bab7b7;
 }
 @media only screen and (min-width: 768px) {
-  .feature_item .image img{
-    /* height: 200px; */
+  .table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
+    padding: 8px 2px;
   }
+  .feature_item .image img{
+    height: auto;
+    max-height: 200px;
+    width: 100%;
+  }
+  .feature_item .image a {
+   height: 200px;
+    max-height: 200px;
+}
+  /* .feature_item .proerty_text {
+    max-height: 297px;
+    padding: 16px;
+    overflow-y: auto;
+    margin: 10px;
+}
+.webkit__scroll::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+  background-color: #071d27;
+} */
   .padding{
     padding:80px 0;
   }
@@ -2615,7 +2634,7 @@ i.icon-safety-shower{font-size:16px !important;}
     table-layout: fixed;
   }
   .proerty_content .proerty_text {
-    height: 115px;
+    height: 90px;
 }
   #property-d-1-2 .item > img {
     height: 120px;
@@ -2631,8 +2650,12 @@ i.icon-safety-shower{font-size:16px !important;}
    
     height: 167px;
   }
+  #deal .image img{
+    height: auto;
+    max-height: 200px;
+  }
   .container1 .property-query-area {
-    margin-top: 166px;
+    margin-top: 165px;
   }
   .fixed-container .property-query-area {
     margin-top: 0px;
@@ -4161,6 +4184,7 @@ header nav.navbar.bootsnav ul.nav > li > a:before, nav.navbar.bootsnav ul.nav > 
 .banner h1 > span{ font-size:24px}
 }
 @media screen and (max-width: 800px) {
+
   html,body{
     
     overflow-x:hidden;
@@ -4369,6 +4393,7 @@ svg:not(:root) {
 }
 .logo img{
   width: 150px;
+  margin-top: 3px;
 }
 .text-uppercase {
   text-transform: uppercase;
@@ -4414,7 +4439,28 @@ svg:not(:root) {
   border-bottom: 0px solid #ddd;
   margin: 0 auto;
 }
-
+.feature_item .proerty_content,.feature_item{
+  background: white;
+}
 .mb-30{
   margin-bottom: 30px;
+}
+.float-left{
+  float: left!important;
+}
+.float-right{
+  float: right!important;
+}
+.btn-property1{
+   background: #0c83e7;
+   color: white;
+   padding: 8px 20px;
+}
+.btn-property2{
+  background: #ae2006;
+  color: white;
+  padding: 8px 20px;
+}
+.btn-property1:hover ,.btn-property2:hover{
+  color: rgb(230, 228, 228);
 }

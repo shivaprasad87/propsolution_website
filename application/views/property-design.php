@@ -990,7 +990,7 @@ if (($images = $this->properties_model->getWhere(array('property_id' => $propert
 
 			function myFunction() {
         console.log("here" +window.pageYOffset)
-				if (window.pageYOffset > 190) {
+				if (window.pageYOffset > 320) {
 					document.getElementById("contactSideForm").classList.remove("container1")
 					document.getElementById("contactSideForm").classList.add("fixed-container")
 					

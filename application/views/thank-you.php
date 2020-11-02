@@ -21,12 +21,15 @@ body{
   background:rgb(243 244 239);
 	padding-bottom: 0px;
 }
-p ,a ,a:hover{
+.thank-flex p ,.thank-flex a ,.thank-flex a:hover{
     margin: 0 0 10px;
 	font-size: 20px;
     color: #000000;
     font-weight: 600;
 	text-decoration: none;
+}
+a{
+	color:black
 }
 	@media screen and (min-width: 750px){
 		.card {
@@ -63,10 +66,8 @@ p ,a ,a:hover{
 	}
 	.htlfndr-thanks-page .htlfndr-more-link {
 		text-transform: capitalize;
-		font: 18px/50px 'Open Sans Light';
-		margin: 0 0 10px 18px;
-		width: 172px;
-		padding: 0;
+		
+		
 	}
 	.htlfndr-wrapper a ,.htlfndr-wrapper a:hover{
 		color: #ffffff;
@@ -76,26 +77,21 @@ p ,a ,a:hover{
 		width: 27%;
     
 	}
-	.htlfndr-more-link {
+	.htlfndr-more-link,.htlfndr-more-link:hover {
 		display: inline-block;
-		border: 1px solid #fbff00;
+		color: white!important;
 		border-radius: 3px;
-		background: #fbff00;
-		color: #000000;
-		font-size: 16px;
+	    border: 1px solid #246ba9;
+    border-radius: 3px;
+    background: #2771b2;
+		font-size: 16px!important;
 		line-height: 50px;
 		margin-top: 21px;
-		padding: 0 25px;
-		text-transform: uppercase;
-		-webkit-transition: all .3s ease-in 0s;
-		-moz-transition: all .3s ease-in 0s;
-		-o-transition: all .3s ease-in 0s;
-		transition: all .3s ease-in 0s;
+		padding: 3px 20px;
+	
+	
 	}
-	.htlfndr-more-link:hover{
-		background-color: #fbff00;
-		color: rgb(0, 0, 0);
-	}
+	
 	}
 	
 	@media (max-width: 749px){
@@ -145,26 +141,21 @@ p ,a ,a:hover{
 		width: 20%;
     background: black;
 	}
-	.htlfndr-more-link {
+	.htlfndr-more-link,.htlfndr-more-link:hover {
 		display: inline-block;
-		border: 1px solid #fbff00;
+		padding: 3px 20px;
 		border-radius: 3px;
-		background: #fbff00;
-		color: #000000;
+		border: 1px solid #246ba9;
+		border-radius: 3px;
+		background: #2771b2;
 		font-size: 16px;
+		color: white!important;
 		line-height: 50px;
 		margin-top: 21px;
-		padding: 0 25px;
-		text-transform: uppercase;
-		-webkit-transition: all .3s ease-in 0s;
-		-moz-transition: all .3s ease-in 0s;
-		-o-transition: all .3s ease-in 0s;
-		transition: all .3s ease-in 0s;
+		
+		
 	}
-	.htlfndr-more-link:hover{
-		background-color: #91cc1b;
-		color: rgb(0, 0, 0);
-	}
+	
 	}
 
 

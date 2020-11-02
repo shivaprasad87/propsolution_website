@@ -50,11 +50,11 @@
               <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
                   <i class="fa fa-bars"></i>
               </button>
-              <a class="navbar-brand sticky_logo" href="<?=base_url();?>"><img src="<?=base_url('assets/')?>images/logo.png" class="logo" alt=""></a>
+              <a class="navbar-brand sticky_logo" href="<?=base_url();?>"><img src="<?=base_url('assets/')?>images/logo-white.png" class="logo" alt=""></a>
           </div><!-- End Header Navigation -->
             <div class="collapse navbar-collapse" id="navbar-menu">
             <ul class="nav navbar-nav" data-in="fadeIn" data-out="fadeOut">
-              <li><a href="<?= base_url();?>">Home</a></li>
+              <li class="active"><a href="<?= base_url();?>">Home</a></li>
               
                 <li>
                   <a href="<?= base_url('listing');?>" s>Listing</a>
