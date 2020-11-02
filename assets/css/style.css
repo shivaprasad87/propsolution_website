@@ -4517,7 +4517,7 @@ svg:not(:root) {
   box-shadow: -2px 0px 8px rgba(43, 33, 33, 0.06);
   -moz-box-shadow: -2px -0px 8px rgba(43, 33, 33, 0.06);
   -webkit-box-shadow: -2px 0px 8px rgba(43, 33, 33, 0.06);
-  top: 121px;
+  top: 15%;
 }
 .floating-form-hide {
   width: 1px;

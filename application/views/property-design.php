@@ -985,36 +985,7 @@ if (($images = $this->properties_model->getWhere(array('property_id' => $propert
   </div>
 </section>
 
-<script>
-			window.onscroll = function () { myFunction() };
 
-			function myFunction() {
-        var scrollheight = window.pageYOffset;
-        console.log("here" +window.pageYOffset)
-				if (scrollheight > 320 && scrollheight < 2100) {
-          document.getElementById("contactSideForm").classList.remove("container1")
-          
-          document.getElementById("contactSideForm").classList.remove("fixed1-container")
-          document.getElementById("contactSideForm").classList.add("fixed-container")
-					
-        }
-        else if(scrollheight > 2100){
-          document.getElementById("contactSideForm").classList.remove("fixed-container")
-          document.getElementById("contactSideForm").classList.remove("container1")
-					document.getElementById("contactSideForm").classList.add("fixed1-container")
-        }
-        else{
-          document.getElementById("contactSideForm").classList.remove("fixed-container")
-          document.getElementById("contactSideForm").classList.remove("fixed1-container")
-					document.getElementById("contactSideForm").classList.add("container1")
-					
-				}
-
-
-			}
-
-
-		</script>
 <!-- Property Detail End -->
 <?php
 $this->load->view('inc/footer'); 

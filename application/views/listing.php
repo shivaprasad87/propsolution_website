@@ -393,5 +393,44 @@
     </div>
   </div>
 </section>
+
+<!-- Floating Form -->
+<div class="floating-box hidden-sm">
+  
+<div class="floating-form float-inner" id="contact_form">
+  <div class="contact-opener ">Speak to Our Expert!</div>
+      <div class="floating-form-heading">Speak to Our Expert!</div>
+      <div id="contact_results"></div>
+      <form action="<?=base_url('sendmail');?>" method="post">
+          <div id="contact_body">
+              <div class="logo_cont text-center">
+                  <img style="display: inline-block;" src="https://propsolutionservices.com/assets/images/logo.png" alt="Propsolution">
+              </div>
+              <div class="alert alert-danger" role="alert" id="error_message" style="display:none;">...</div>
+              <div class="alert alert-success" role="alert" id="success_message" style="display:none;">...</div>
+              <label><span>Name <span class="required">*</span></span>
+                  <input type="text" class="form-control" id="username" name="name" required="">
+              </label>
+              <label><span>Email <span class="required">*</span></span>
+                  <input type="email" name="email" class="form-control" id="email" required="">
+              </label>
+              <label><span>Phone <span class="required">*</span></span>
+                  <input type="tel" class="form-control" id="phone" name="phone" required="">
+              </label>
+              <label><span>Message<span class="required">*</span></span>
+                  <input type="text" class="form-control" id="Message" name="message" required="">
+              </label>
+            
+              <label>
+                  <span>&nbsp;</span>
+                  <button type="submit" class="btn btn-success">Connect Me</button>
+              </label>
+
+
+          </div>
+      </form>
+  </div>
+</div>
+</div>
 <div class="clearfix"></div>
 <!-- Listing end -->
