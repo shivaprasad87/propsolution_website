@@ -380,7 +380,6 @@ $i=0;
             <div class="proerty_content">
               <div class="proerty_text">
                 <h3 class="bottom15"><a href="#."><?= $property->title ?></a></h3>
-                <p><?= lt( $property->description, 10); ?></p>
                 <h4 class="top15"><?php
                            $flatTypes = $this->properties_model->getPropertyFlatType(null,$property->id);
                            $flatTypes = json_decode( json_encode($flatTypes), true);
@@ -388,6 +387,8 @@ $i=0;
                             echo number_format_short($row->amount) ? number_format_short($row->amount) : 0 ;
                              
                             ?> /-</h4>
+               <?= lt( $property->description, 10); ?>
+                
               </div>
               <table class="table table-responsive">
                 <tbody>
