@@ -209,6 +209,7 @@ class Home extends Public_Controller
         debug($this->email->print_debugger());
     }
 
+
     public function send()
     {
         // if (!verify_captcha()) {
@@ -268,6 +269,28 @@ class Home extends Public_Controller
 
         $this->load->library('email');
         $this->email->initialize($config);
+    }
+        public function sendmail()
+    {
+         
+        $this->config_email();
+        $name = trim(stripslashes($_POST['name']));
+        $email = trim(stripslashes($_POST['email']));
+        $phone = trim(stripslashes($_POST['phone']));
+        $project = trim(stripslashes($_POST['project']));
+
+        $this->email->from($name, $email); 
+        $this->email->to('shivas8787@gmail.com');
+
+        $this->email->subject($project.' Enquiry for you');
+        $data = array('post' => array('name' => $name, 'email' => $email, 'phone' => $phone, 'Project' => $project));
+        $this->email->message($this->load->view('mail_template.php', $data, true));
+
+        if ($this->email->send()) {
+            $this->session->set_flashdata('message', 'Your enquiry has been sent successfully');
+            redirect(base_url('thankyou?type=home')); 
+        }
+        debug($this->email->print_debugger());
     }
 
     public function city($city)
