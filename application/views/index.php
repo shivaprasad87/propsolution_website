@@ -372,35 +372,40 @@
               }
 $i=0;
              foreach ($properties as $property) { ?>
-          <div class="col-lg-4">
-          <div class="item feature_item">
+          <div class="col-lg-4 white-bg">
+          <div class="item feature_item ">
             <div class="image"><a href="<?= site_url(url_title($property->city_name)."/".( url_title($property->area) )."/$property->slug") ?>"> <img src="<?= base_url('uploads/' . $property->slug . '/' . $property->image) ?>" alt="Featured Property"></a> 
               <span class="price default_clr">Exclusive</span>
             </div>
-            <div class="proerty_content">
-              <div class="proerty_text">
+            <div class="proerty_content ">
+              <div class="proerty_text webkit__scroll">
                 <h3 class="bottom15"><a href="#."><?= $property->title ?></a></h3>
-                <p><?= lt( $property->description, 10); ?></p>
-                <h4 class="top15"><?php
+                <!-- <h4 class="top15"><?php
                            $flatTypes = $this->properties_model->getPropertyFlatType(null,$property->id);
                            $flatTypes = json_decode( json_encode($flatTypes), true);
                             $row = $this->properties_model->getPropertyParam(array('property_id' => $property->id, 'flat_type_id' => $flatTypes[0]['flat_type_id']), 'property_flat_types', null, 'MIN(total) as amount');
                             echo number_format_short($row->amount) ? number_format_short($row->amount) : 0 ;
                              
-                            ?> /-</h4>
+                            ?> /-</h4> -->
+               <!-- <?= lt( $property->description, 10); ?> -->
+                
               </div>
               <table class="table table-responsive">
                 <tbody>
                   <tr>
-                    <td><i class="icon-select-an-objecto-tool"></i>Avg Sqft</td>
+                    <td><i class="icon-ruppees"></i>Price</td>
                     <td class="text-right">Rs. <?=$property->budget?></td>
                   </tr>
                   <tr>
                     <td><i class="icon-bed"></i>BedRooms</td>
                     <td class="text-right"><?= $property->bedrooms ?></td>
                   </tr> 
+                   <tr> 
+                   <td><div class="float-left"><button class="btn btn-property1">See Details</button></div></td>
+                   <td><div class="float-right"><button class="btn btn-property2">Get Call Back</button></div> </tr> </td>
                 </tbody>
               </table>
+             
             </div>
           </div>
         </div>

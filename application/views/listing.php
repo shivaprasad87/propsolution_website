@@ -11,7 +11,7 @@
           <div class="col-md-3">
           <form class="callus">
             <div class="single-query">
-              <div class="intro property-page"> Properties Showing 1/1150 </div>
+              <div class="intro property-page"> Properties Showing (<?= isset($total) ? $total : 0 ?>) </div>
             </div>
             </form>
           </div>
@@ -63,9 +63,23 @@
                   <p><?php echo $property->area.", ".$property->city_name; ?></p>
                 </div>
                 <div class="property_meta transparent"> 
+                  <?php
+                  if (($flatTypes = $this->properties_model->getPropertyFlatType(null, $property->id)) != null) {
+                                                    $bhk='';
+                                                    $i=0;
+                                                    foreach ($flatTypes as $flatType) {
+                                                        if($i==0)
+                                                            $bhk.=$flatType->flat_type;
+                                                        else
+                                                        $bhk.=', '.$flatType->flat_type;
+                                                    $i++;
+                                                    }
+                                                } 
+                                               $propType   = $this->properties_model->getPropertyType(['id'=>$property->property_type_id]);
+                                               ?>
 
-                  <span><i class="icon-select-an-objecto-tool"></i><?=$property->rera_number?$property->rera_number:'Type'?></span> 
-                  <span><i class="icon-bed"></i><?= $property->prop_type ?></span> 
+                  <span><i class="icon-bed" ></i><?php echo $bhk; $bhk='';/*.' '.$propType['name']*/ ?></span> 
+                  <span><i class="icon-select-an-objecto-tool"></i><?= $property->prop_type ?></span> 
                
                 </div>
                 
@@ -82,7 +96,7 @@
                  
                 </div>
                 <div class="property_meta transparent">
-                <span><i class="icon-calendar2"></i>Rera:123445678990</span> 
+                <span><i class="icon-calendar2"></i>Rera:<?=$property->rera_number?$property->rera_number:'-'?></span> 
               </div>
                 <div class="favroute clearfix">
                    <a href="<?=site_url(url_title($property->city_name)."/".( url_title($property->area) )."/$property->slug/")?>"><p class="pull-md-left">Know More&nbsp; <i class="icon-arrow-right3"></i></p></a>

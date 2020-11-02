@@ -107,7 +107,7 @@ if (($images = $this->properties_model->getWhere(array('property_id' => $propert
         <!-- <div class="text-it-p bottom40">
           <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam power nonummy nibh tempor cum soluta nobis eleifend option congue nihil imperdiet doming Lorem ipsum dolor sit amet. consectetuer elit sed diam power nonummy</p>
         </div> -->
-        <h2 class="text-uppercase bottom20">Project Highlights</h2>
+        <h2 class="text-uppercase bottom20">Project Highlights</h2> 
         <div class="row property-d-table bottom40">
           <div class="col-md-6 col-sm-6 col-xs-12">
             <table class="table table-striped table-responsive">
@@ -121,13 +121,8 @@ if (($images = $this->properties_model->getWhere(array('property_id' => $propert
                                 $property->id)) != null) {
                             foreach ($flatTypes as $flatType) {
                                 ?>
-
-                        <tr>
-                          <td><b>Type</b></td>
-                          <td class="text-right"><?= $bhk?></td>
-                        </tr>
                                 <tr>
-                                  <td><b>Configuration</b></td>
+                                  <td><b><?= $flatType->flat_type ?></b></td>
                                   <td class="text-right">
                                     <?= $this->properties_model->getPropertyRange(array(
                     'property_id' => $property->id,
@@ -166,22 +161,21 @@ if (($images = $this->properties_model->getWhere(array('property_id' => $propert
 
                                 
                             </tr>
-                            <tr>
-                  <td><b>Location</b></td>
-                  <td class="text-right"><?= $property->location . ', ' . $property->city_name ?></td>
-                </tr>  
                             <?php
     }
 }  
 ?> 
-                <!-- <tr>
+                <tr>
                   <td><b>Bedrooms</b></td>
                   <td class="text-right"><?=$property->bedrooms;?></td>
-                </tr>  -->
-               
+                </tr> 
+                <tr>
+                  <td><b>No. Floors</b></td>
+                  <td class="text-right"><?=$property->floors;?></td>
+                </tr>
                 
-                <!-- <tr>
-                  <td><b>possession_date</b></td>
+                <tr>
+                  <td><b>Available From</b></td>
                   <td class="text-right"><?php
                 if($property->possession_date!='0000-00-00')
                 {
@@ -195,32 +189,31 @@ if (($images = $this->properties_model->getWhere(array('property_id' => $propert
                 else 
                 echo "Ready"; 
                 ?></td>
-                </tr> -->
-               
+                </tr>
               </tbody>
             </table>
           </div>
           <div class="col-md-6 col-sm-6 col-xs-12">
             <table class="table table-striped table-responsive">
               <tbody>
-               
-              <tr>
-                  <td><b>No. Of Floors</b></td>
-                  <td class="text-right"><?=$property->floors;?></td>
-                </tr>
-
-                <tr>
-                  <td><b>No. Of Towers</b></td>
-                  <td class="text-right"> <?=$property->towers?></td>
-                </tr>
                 <tr>
                   <td><b>Status</b></td>
                   <td class="text-right"><?=$property->issue_date;?></td>
                 </tr>
-               
-              
                 <tr>
-                  <td><b>RERA No.</b></td>
+                  <td><b>Type</b></td>
+                  <td class="text-right"><?= $bhk?></td>
+                </tr> 
+                <tr>
+                  <td><b>Towers</b></td>
+                  <td class="text-right"> <?=$property->towers?></td>
+                </tr>
+                <tr>
+                  <td><b>Location</b></td>
+                  <td class="text-right"><?= $property->location . ', ' . $property->city_name ?></td>
+                </tr>  
+                <tr>
+                  <td><b>RERA</b></td>
                   <td class="text-right"><?=$property->rera_number?$property->rera_number:'Not Updated'?></td>
                 </tr> 
              <!--    <tr>
@@ -944,17 +937,17 @@ if (($images = $this->properties_model->getWhere(array('property_id' => $propert
           </div>
           <form class="callus" action="" method="post">
             <div class="single-query form-group col-sm-12">
-              <input type="text" class="keyword-input" placeholder="Your Name">
+              <input type="text" name="name" class="keyword-input" placeholder="Your Name">
             </div>
             <div class="single-query form-group col-sm-12">
-              <input type="tel" class="keyword-input" placeholder="Your Phone Number">
+              <input type="tel" name="phone" class="keyword-input" placeholder="Your Phone Number">
             </div>
             <div class="single-query form-group col-sm-12">
-              <input type="email" class="keyword-input" placeholder="Your Email">
+              <input type="email" name="email" class="keyword-input" placeholder="Your Email">
             </div>
           
             <div class="single-query form-group col-sm-12">
-              <textarea type="subject" class="keyword-input" name="sugg" placeholder="Your Message"></textarea>
+              <textarea type="subject" name="message" class="keyword-input" placeholder="Your Message"></textarea>
             </div>
             
            

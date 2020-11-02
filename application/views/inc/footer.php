@@ -95,14 +95,14 @@
           <div class="heading-footer">
             <div class="row">
               <div class="col-lg-12">
-              <b>Address:</b> Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh tempor cum consectetuer adipiscing. 
+              <b>Office address:</b> Kolte Patil City Avenue, M-207, Near Jaguar Showroom, Wakad, Pune- 411057
 
               </div>
               <div class="col-lg-12">
-              <b>Contact:</b> 1234567890
+              <b>Contact:</b> <a href="tel:+918446565216">+91 84465 65216</a>
                 </div>
                 <div class="col-lg-12">
-                <b>Email:</b> info@propsolutions.com
+                <b>Email:</b> <a href="mailto:info@propsolutionsservices.com">info@propsolutionsservices.com</a>
                 </div>
             </div>
           </div>
