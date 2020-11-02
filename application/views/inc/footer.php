@@ -95,7 +95,7 @@
           <div class="heading-footer">
             <div class="row">
               <div class="col-lg-12">
-              <b>Office address:</b> Kolte patil City Avenu M-207 near jaguar showroom wakad pune -411057 
+              <b>Office address:</b> Kolte Patil City Avenue, M-207, Near Jaguar Showroom, Wakad, Pune- 411057
 
               </div>
               <div class="col-lg-12">
