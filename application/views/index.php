@@ -370,7 +370,7 @@
                   }
                   return $text;
               }
-$i=0;
+          $i=0;
              foreach ($properties as $property) { ?>
           <div class="col-lg-4 white-bg">
           <div class="item feature_item ">
@@ -393,7 +393,7 @@ $i=0;
               <table class="table table-responsive">
                 <tbody>
                   <tr>
-                    <td><i class="icon-ruppees"></i>Price</td>
+                    <td><i class="fa fa-rupee"></i>Price</td>
                     <td class="text-right">Rs. <?=$property->budget?></td>
                   </tr>
                   <tr>
@@ -424,6 +424,44 @@ $i=0;
 <!-- Latest Property Ends -->
 
 
+<!-- <div class="contact-opener1 slide-left">Speak to Our Expert!</div> -->
+<!-- Floating Form -->
+<div class="floating-box hidden-sm">
+  
+<div class="floating-form" id="contact_form">
+  <div class="contact-opener slide-right">Speak to Our Expert!</div>
+      <div class="floating-form-heading">Speak to Our Expert!</div>
+      <div id="contact_results"></div>
+      <form action="" method="post">
+          <div id="contact_body">
+              <div class="logo_cont text-center">
+                  <img style="display: inline-block;" src="https://propsolutionservices.com/assets/images/logo.png" alt="Propsolution">
+              </div>
+              <div class="alert alert-danger" role="alert" id="error_message" style="display:none;">...</div>
+              <div class="alert alert-success" role="alert" id="success_message" style="display:none;">...</div>
+              <label><span>Name <span class="required">*</span></span>
+                  <input type="text" class="form-control" id="username" name="name" required="">
+              </label>
+              <label><span>Email <span class="required">*</span></span>
+                  <input type="email" name="email" class="form-control" id="email" required="">
+              </label>
+              <label><span>Phone <span class="required">*</span></span>
+                  <input type="text" class="form-control" id="phone" name="phone" required="">
+              </label>
+              <label><span>Message<span class="required">*</span></span>
+                  <input type="text" class="form-control" id="Message" name="message" required="">
+              </label>
+            
+              <label>
+                  <span>&nbsp;</span>
+                  <button type="submit" class="btn btn-success">Connect Me</button>
+              </label>
+
+
+          </div>
+      </form>
+  </div>
+</div>
 <!--Deals-->
 <section id="deal" class="padding_bottom_half padding_top">
   <div class="container">
@@ -462,8 +500,17 @@ $i=0;
                             $row = $this->properties_model->getPropertyParam(array('property_id' => $property->id, 'flat_type_id' => $flatTypes[0]['flat_type_id']), 'property_flat_types', null, 'MIN(total) as amount');
                             echo number_format_short($row->amount) ? number_format_short($row->amount) : 0 ;
                              
-                            ?> /-</span></div>
-                </div>
+                            ?> /-</span>
+                            
+                          
+                 
+                   </div>
+               </div>
+               <div class="property-btn">
+                    <div><a class="float-left"><button class="btn btn-property1">See Details</button></a></div>
+                   <div><a title="Know More" onclick="pricePopProjectname('Dummy Text');" class="float-right"><button class="btn btn-property2">Get Call Back</button></a> </div>
+              
+               </div >
               </div>
             </div>
           </div>
@@ -608,6 +655,65 @@ $i=0;
 
 <!--Footer-->
 
+
+
+<div class="modal fade in" tabindex="-1" role="dialog" id="price-pop" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                        aria-hidden="true">×</span></button>
+
+
+                <h4 class="modal-title pricepopupTit">Price </h4>
+            </div>
+            <div class="modal-body">
+                <!-- <p>Please enter the details below to get the detailed pricing information.</p> -->
+                <form id="price-popup" action="" name="main-popup" method="POST">
+                    <div class="form-group col-md-12 pd">
+                        <input type="text" class="form-control" placeholder="Name" name="name" id="name">
+                    </div>
+                    <div class="form-group col-md-12 pd">
+                        <input  type="tel" pattern="^[0-9]{3,45}$" title="You can only enter numbers, with a minimal of 10 characters are accepted." minlength="10" placeholder="Phone" name="telephone" id="telephone"
+                               required>
+                    </div>
+                    <div class="form-group col-md-12 pd">
+                        <input type="email" class="form-control" name="email" placeholder="Email">
+                    </div>
+                 
+                    <input type="hidden" name="enqproject" id="enqproject" value=""/>
+                    <button type="submit" class="btn btn-default price-btn" value="proceed">SUBMIT</button>
+                </form>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div>
+
+
+
+<script>
+
+function pricePopProjectname(project) {
+        var projname = project;
+        jQuery('.pricepopupTit').html(projname);
+        jQuery('#enqproject').val(projname);
+        jQuery('#price-pop').modal('show');
+    }
+
+    $(document).ready(function(){
+        var boxWidth = $(".floating-box").width();
+        $(".slide-left").click(function(){
+            $(".floating-box").animate({
+                width: 0
+            });
+        });
+        $(".slide-right").click(function(){
+            $(".floating-box").animate({
+                width: boxWidth
+            });
+        });
+    });
+</script>
 
 
 
