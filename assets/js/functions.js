@@ -204,8 +204,8 @@ jQuery(function($) {
     navigationText: ["<i class='fa fa-angle-left'></i>", "<i class='fa fa-angle-right'></i>"],
     stopOnHover: true,
     navigation: true,
-    items: 2,
-    itemsDesktop: [1199, 2],
+    items: 3,
+    itemsDesktop: [1199, 3],
     itemsDesktopSmall: [979, 2],
     itemsMobile: [480, 1],
   });
