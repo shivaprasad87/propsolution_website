@@ -2602,6 +2602,10 @@ i.icon-safety-shower{font-size:16px !important;}
   color: #bab7b7;
 }
 @media only screen and (min-width: 768px) {
+  .wpf-demo-gallery img {
+    height: 230px;
+    
+}
   .table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
     padding: 8px 2px;
   }
@@ -4341,6 +4345,11 @@ ul.social_share {
 
 }
 @media screen and (max-width: 640px){ 
+  .social-networks .social-icons-2 .fa {
+   
+    margin-right: 16px;
+   
+}
 
 .agent_media .agents > img{ width:100%;}
 .agent_media .agents, .agent_media .agents_white {
