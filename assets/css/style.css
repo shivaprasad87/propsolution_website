@@ -2684,7 +2684,17 @@ nav.navbar.bootsnav ul.nav li.megamenu-fw > a:hover, nav.navbar.bootsnav ul.nav 
     background: #191919;
     width: 26.5%;
 }
-
+.fixed1-container {
+  position: fixed;
+  z-index: 2!important;
+  right: 105px;
+  overflow: hidden;
+  bottom: 67%;
+  /* margin: 30px; */
+  padding: 0px;
+  background: #191919;
+  width: 26.5%;
+}
   .wpf-demo-gallery {
     /* width: 30%; */
     margin-top: 15px;
