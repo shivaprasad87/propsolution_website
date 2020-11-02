@@ -54,14 +54,14 @@
           </div><!-- End Header Navigation -->
             <div class="collapse navbar-collapse" id="navbar-menu">
             <ul class="nav navbar-nav" data-in="fadeIn" data-out="fadeOut">
-              <li class="active"><a href="<?= base_url();?>">Home</a></li>
+              <li class="<?=$this->uri->segment(1)=='' ? 'active' : '' ?>"><a href="<?= base_url();?>">Home</a></li>
               
-                <li>
+                <li class="<?=$this->uri->segment(1)=='listing' ? 'active' : '' ?>">
                   <a href="<?= base_url('listing');?>" s>Listing</a>
                 
                 </li>
 
-                <li>
+                <li class="<?=$this->uri->segment(1)=='about' ? 'active' : '' ?>">
                   <a href="<?= base_url('about');?>" >About Us</a>
                 
                 </li>
@@ -200,7 +200,7 @@
                       <li><a href="404.html">404 Error </a></li>
                   </ul>
                 </li> -->
-                <li><a href="<?= base_url('contact');?>">Contact Us</a></li>
+                <li class="<?=$this->uri->segment(1)=='contact' ? 'active' : '' ?>"><a href="<?= base_url('contact');?>">Contact Us</a></li>
                
               </ul>
           </div>

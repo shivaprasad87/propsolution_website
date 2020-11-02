@@ -495,8 +495,8 @@
 <!-- Floating Form -->
 <div class="floating-box hidden-sm">
   
-<div class="floating-form" id="contact_form">
-  <div class="contact-opener slide-right">Speak to Our Expert!</div>
+<div class="floating-form float-inner" id="contact_form">
+  <div class="contact-opener ">Speak to Our Expert!</div>
       <div class="floating-form-heading">Speak to Our Expert!</div>
       <div id="contact_results"></div>
       <form action="<?=base_url('sendmail');?>" method="post">
@@ -706,19 +706,8 @@ function pricePopProjectname(project) {
         jQuery('#price-pop').modal('show');
     }
 
-    $(document).ready(function(){
-        var boxWidth = $(".floating-box").width();
-        $(".slide-left").click(function(){
-            $(".floating-box").animate({
-                width: 0
-            });
-        });
-        $(".slide-right").click(function(){
-            $(".floating-box").animate({
-                width: boxWidth
-            });
-        });
-    });
+  
+ 
 </script>
 
 

@@ -651,3 +651,15 @@ jQuery(function($) {
   
   $('.fancybox').fancybox();
 });
+
+$(document).ready(function () {
+  var expanded = false;
+  $(".contact-opener").click(function () {
+      if (expanded = !expanded) {
+          $(".floating-form").animate({ "margin-right": 0 },    "slow");
+      } else {
+          $(".floating-form").animate({ "margin-right": -250 }, "slow");
+      }
+  });
+});
+  

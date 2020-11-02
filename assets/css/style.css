@@ -4531,6 +4531,14 @@ svg:not(:root) {
   text-decoration: none;
   font: 15px Arial, Helvetica, sans-serif;
 }
+.floating-form label {
+  display: grid;
+  max-width: 100%;
+  margin-bottom: 5px;
+  margin: auto;
+  padding: 4px 0px;
+  font-weight: 700;
+}
 .contact-opener {
   position: absolute;
   left: -100px;
@@ -4579,14 +4587,17 @@ svg:not(:root) {
   width: 70px;
   font-weight: bold;
   float: left;
-  padding-top: 8px;
+  padding-top: 5px;
+  padding-bottom: 5px;
   padding-right: 5px;
   color: #000;
 }
 .floating-form span.required {
   color: red;
 }
-
+.float-inner{
+  width: 250px;
+}
 .modal-header {
   padding: 15px;
   border-bottom: 1px solid #e5e5e5;
