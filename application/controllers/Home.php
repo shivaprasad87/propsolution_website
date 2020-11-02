@@ -270,7 +270,7 @@ class Home extends Public_Controller
         $this->load->library('email');
         $this->email->initialize($config);
     }
-        public function sendmail()
+        public function project_contact()
     {
          
         $this->config_email();
