@@ -380,7 +380,7 @@ ul.area_search li a:hover, ul.area_search li a:focus{
 .footer_third ul.links li a:hover, .footer_third ul.links li a:focus,
 .footer_third .footer_panel .media-body a:hover, .footer_third .footer_panel .media-body a:focus,
 .footer_third .copyright p a:hover{
-	color:#9C7833;
+	color:#deddda;
 }
 
 ul.getin_touch{}
@@ -708,11 +708,12 @@ header{
 	z-index:999;
 }
 .header-upper .logo{
-	display:inline-block;
+  display:inline-block;
+  height: 80px;
 }
 .header-upper .logo a{
 	display:block;
-	padding: 15px 0;
+	padding: 5px 0;
 }
 .header-upper .right{
 	text-align:right;
@@ -774,8 +775,9 @@ header.index4 .info-box {
 .layout_dark .info-box li, 
 .layout_dark .info-box strong, 
 .header-upper.dark .info-box li, 
-.layout_dark, .header-upper.dark .info-box strong{
+.layout_dark, .header-upper.dark .info-box strong,.info-box a,.info-box a:hover{
   color: #fff;
+  font-size: 14px;
 }
 .info-box strong, header.index4 .info-box strong{
   color: #1f1f1f;
@@ -813,7 +815,7 @@ nav.navbar.bootsnav{
   margin-left:0 !important;
 }
 .navbar-brand > img{
-  width: 100px;
+  width: 125px;
 }
 .layout_boxed nav.navbar.bootsnav.navbar-sticky .navbar-brand,
 .layout_default nav.navbar.bootsnav.navbar-sticky .navbar-brand,
@@ -2632,7 +2634,7 @@ i.icon-safety-shower{font-size:16px !important;}
     height: 167px;
   }
   .container1 .property-query-area {
-    margin-top: 85px;
+    margin-top: 165px;
   }
   .fixed-container .property-query-area {
     margin-top: 0px;
@@ -4369,6 +4371,7 @@ svg:not(:root) {
 }
 .logo img{
   width: 150px;
+  margin-top: 3px;
 }
 .text-uppercase {
   text-transform: uppercase;
