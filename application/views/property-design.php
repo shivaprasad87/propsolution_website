@@ -314,27 +314,35 @@ if (($images = $this->properties_model->getWhere(array('property_id' => $propert
         <div class="row">
 
           <ul class="nav nav-tabs mytab" role="tablist" style="margin-top: 20px;">
-
-              <li role="presentation" class="active">
-                  <a href="#General" aria-controls="settings" role="tab"
-                      data-toggle="tab" aria-expanded="false">Elevation
-                  </a>
-              </li>
-
-             
-
-              <li role="presentation" class="">
-                  <a href="#floorplan" aria-controls="profile" role="tab"
-                      data-toggle="tab" aria-expanded="true"> Floorplan
-                  </a>
-              </li>
-
-              <li role="presentation" class="">
+ <li role="presentation" class="active">
+          <a href="#General" aria-controls="settings" role="tab"
+              data-toggle="tab" aria-expanded="false">Elevation
+          </a>
+</li>
+                                                                                </li>
+<?php if (($images = $this->properties_model->getWhere(array('property_id' => $property->id),
+                                                                                 'property_master_plans')))
+    {
+?>
+<li role="presentation" class="">
                   <a href="#Masterplan" aria-controls="profile" role="tab"
                       data-toggle="tab" aria-expanded="true">Masterplan
                   </a>
-              </li>
+</li>
+<?php } 
+ if (($images = $this->properties_model->getWhere(array('property_id' => $property->id),
+  'property_floor_plans')))
+{
+?>
+<li role="presentation" class="">
+  <a href="#floorplan" aria-controls="profile" role="tab"
+      data-toggle="tab" aria-expanded="true"> Floorplan
+  </a>
+</li>
 
+    <?php
+}
+?>
           </ul>
 
           <div class="tab-content delay-09s animated animated" style="visibility: visible; ">
@@ -342,36 +350,29 @@ if (($images = $this->properties_model->getWhere(array('property_id' => $propert
               <div role="tabpanel" class="tab-pane fade active in" id="General">
 
                 <div class="row">
+                  <?php
+             if (($images = $this->properties_model->getWhere(array('property_id' => $property->id),
+               'property_elevations')) != null) {
+                  foreach ($images as $i => $image) {
+                    ?>
                   <div class="col-md-4 col-sm-4 col-xs-12">
                     <div class="pro-img">
                       <figure class="wpf-demo-gallery">
-                        <img src="../../../../assets/images/property-details/property-d-1-f-1.jpg" alt="image"/>
+                        <img src="<?= base_url($image->image) ?>" alt="image"/>
                         <figcaption class="view-caption">    
-                          <a data-fancybox-group="gallery" class="fancybox" href="../../../../assets/images/property-details/property-d-1-f-1.jpg"><i class="icon-focus"></i></a>
+                          <a data-fancybox-group="gallery" class="fancybox" href="<?= base_url($image->image) ?>"><i class="icon-focus"></i></a>
                         </figcaption>
                       </figure>
                     </div>
-                  </div>
-                  <div class="col-md-4 col-sm-4 col-xs-12">
-                    <div class="pro-img">
-                      <figure class="wpf-demo-gallery">
-                        <img src="../../../../assets/images/property-details/property-d-1-f-2.jpg" alt="image"/>
-                        <figcaption class="view-caption">    
-                          <a data-fancybox-group="gallery" class="fancybox" href="../../../../assets/images/property-details/property-d-1-f-1.jpg"><i class="icon-focus"></i></a>
-                        </figcaption>
-                      </figure>
-                    </div>
-                  </div>
-                  <div class="col-md-4 col-sm-4 col-xs-12">
-                    <div class="pro-img">
-                      <figure class="wpf-demo-gallery">
-                        <img src="../../../../assets/images/property-details/property-d-1-f-3.jpg" alt="image"/>
-                        <figcaption class="view-caption">    
-                          <a data-fancybox-group="gallery" class="fancybox" href="../../../../assets/images/property-details/property-d-1-f-1.jpg"><i class="icon-focus"></i></a>
-                        </figcaption>
-                      </figure>
-                    </div>
-                  </div>
+                  </div> 
+                      <?php
+                      }
+                      }
+                      else
+                      {
+                      echo  "<center>No Image Found<center>";
+                      }
+                      ?>
                   
                 </div>
               </div>
@@ -380,16 +381,27 @@ if (($images = $this->properties_model->getWhere(array('property_id' => $propert
               <div role="tabpanel" class="tab-pane fade  " id="Masterplan">
                 <div class="row">
 
+                  <?php
+               if (($images = $this->properties_model->getWhere(array('property_id' => $property->id),
+                'property_master_plans'))) {
+
+                 foreach ($images as $i => $image) {
+                  ?>
                     <div class="col-md-6 col-sm-4 col-xs-12">
                       <div class="pro-img">
                         <figure class="wpf-demo-gallery">
-                          <img src="../../../../assets/images/property-details/property-d-1-f-3.jpg" alt="image"/>
+                          <img src="<?= base_url($image->image) ?>" alt="image"/>
                           <figcaption class="view-caption">    
-                            <a data-fancybox-group="gallery" class="fancybox" href="../../../../assets/images/property-details/property-d-1-f-1.jpg"><i class="icon-focus"></i></a>
+                            <a data-fancybox-group="gallery" class="fancybox" href="<?= base_url($image->image) ?>"><i class="icon-focus"></i></a>
                           </figcaption>
                         </figure>
                       </div>
                     </div>
+                            <?php
+                            }
+                            }
+
+                            ?>
 
                 </div>
               </div>
@@ -397,16 +409,24 @@ if (($images = $this->properties_model->getWhere(array('property_id' => $propert
             <!-- floorplan -->
               <div role="tabpanel" class="tab-pane fade  " id="floorplan">
                  <div class="row">
+    <?php
+      if (($images =  $this->properties_model->getWhere(array('property_id' => $property->id),'property_floor_plans'))) {
+          foreach ($images as $i => $image) {
+              ?>
                     <div class="col-md-6 col-sm-4 col-xs-12">
                       <div class="pro-img">
                         <figure class="wpf-demo-gallery">
-                          <img src="../../../../assets/images/property-details/property-d-1-f-3.jpg" alt="image"/>
+                          <img src="<?= base_url($image->image) ?>" alt="image"/>
                           <figcaption class="view-caption">    
-                            <a data-fancybox-group="gallery" class="fancybox" href="../../../../assets/images/property-details/property-d-1-f-1.jpg"><i class="icon-focus"></i></a>
+                            <a data-fancybox-group="gallery" class="fancybox" href="<?= base_url($image->image) ?>"><i class="icon-focus"></i></a>
                           </figcaption>
                         </figure>
                       </div>
                     </div>
+    <?php
+        }
+    }
+    ?>
                  </div>
 
               </div>
@@ -423,7 +443,7 @@ if (($images = $this->properties_model->getWhere(array('property_id' => $propert
       <!-- End of Gallery -->
       <div class="clearflix"></div>
 
-
+        <?php if($property->map){?>
         <h2 class="text-uppercase bottom20">Location Map</h2>
         <div class="row bottom40">
           <div class="col-md-12 bottom20">
@@ -444,6 +464,7 @@ if (($images = $this->properties_model->getWhere(array('property_id' => $propert
           </div>
         </div>
         <div class="clearfix"></div>
+      <?php } ?>
         <!-- <h2 class="text-uppercase bottom20">Contact Us</h2>
        
         <div class="col-sm-12 bottom40">

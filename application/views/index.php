@@ -401,10 +401,8 @@
                     <td class="text-right"><?= $property->bedrooms ?></td>
                   </tr> 
                    <tr> 
-                   <td><a class="float-left"><button class="btn btn-property1">See Details</button></a></td>
-                   <td><a title="Know More" onclick="pricePopProjectname('Dummy Text');" class="float-right"><button class="btn btn-property2">Get Call Back</button></a> </td>
-                   </tr>
-                   
+                   <td><div class="float-left"><a href="<?= site_url(url_title($property->city_name)."/".( url_title($property->area) )."/$property->slug") ?>"><button class="btn btn-property1">See Details</button></a></div></td>
+                   <td><div class="float-right"><button class="btn btn-property2">Get Call Back</button></div> </tr> </td>
                 </tbody>
               </table>
              
