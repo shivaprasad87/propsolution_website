@@ -2610,13 +2610,13 @@ i.icon-safety-shower{font-size:16px !important;}
     padding: 8px 2px;
   }
   .feature_item .image img{
-    height: initial;
+    height: 250px;
     max-height: 300px;
     width: 100%;
   }
   .feature_item .image a {
-    height: 250px;
-    max-height: max-content;
+    height: fit-content;
+    
     border: 1px solid #f3f3f3;
 }
 nav.navbar.bootsnav ul.nav li.megamenu-fw > a:hover, nav.navbar.bootsnav ul.nav li.megamenu-fw > a:focus, nav.navbar.bootsnav ul.nav li.active > a:hover, nav.navbar.bootsnav ul.nav li.active > a:focus, nav.navbar.bootsnav ul.nav li.active > a {
