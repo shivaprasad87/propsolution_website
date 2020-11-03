@@ -17,7 +17,7 @@
 <!-- Page Banner End --> 
 
 
-<!--Featured Property-->
+<!--Featured Property--
 <section id="feature_property" class="padding">
   <div class="container feature3">
     <div class="row">
