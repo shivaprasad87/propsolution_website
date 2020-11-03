@@ -5,12 +5,12 @@
 <meta NAME="DESCRIPTION" CONTENT="">
 <META NAME="Keywords" CONTENT="">
 <meta NAME="KEYWORDS" CONTENT=""> 
-<link rel="icon" href="images/favicon.png">
+<link rel="icon" href="<?=base_url('assets/');?>images/favicon.png">
 
-<link rel="stylesheet" type="text/css" href="../../assets/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="<?=base_url();?>assets/css/bootstrap.min.css">
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-<script src="../../assets/js/bootstrap.min.js"></script> 
+<script src="<?=base_url();?>assets/js/bootstrap.min.js"></script> 
 
 <link rel="icon" href="images/favicon.ico">
  
@@ -157,15 +157,10 @@ a{
 	}
 	
 	}
-
-
-	
-
-
 		</style>
 
 </head>
-<body style="background-image: url(../../assets/images/parallax-three.jpg);    background-size: cover;">
+<body style="background-image: url(<?=base_url('assets/images/parallax-three.jpg');?>);    background-size: cover;">
 
 	<div class="thank-flex">
 <div id="htlfndr-main-content" class="htlfndr-main-content" style=" "> 
@@ -176,12 +171,12 @@ a{
 			  <span class="htlfndr-logo-text" title="Prop Solution"> <span> Prop Solution</span></span> </a>
 		 </h3> 
 		 
-		 <img src="../../assets/images/logo-white.jpg" alt="logo">
+		 <img src="<?=base_url('assets/images/logo-white.jpg');?>" alt="logo">
 		  <div>
 			  <h4> Thanks for your interest.! We will respond to your enquiry soon.</h4>
 		 </div> 
 		 <p>For assistance please call</p>
-		 <a href="tel:888888888"><p>+91 88888888888</p></a>
+		 <a href="tel:+918446565216"><p>+91 84465 65216</p></a>
 		 <a class="htlfndr-more-link text-center" href="<?=base_url();?>">Back to homepage</a>
 		 
  </div> 

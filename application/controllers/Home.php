@@ -179,37 +179,22 @@ class Home extends Public_Controller
 
     public function sendmail()
     {
-        //echo '<pre>'; print_r($_POST);echo '</pre>';die;
-        
-        // if (!verify_captcha()) {
-        //     $this->session->set_flashdata('error', 'Invalid Captcha');
-        //     redirect($this->input->post('redirect', site_url()));
-        // }
-
         $this->config_email();
-
         $name = trim(stripslashes($_POST['name']));
         $email = trim(stripslashes($_POST['email']));
         $phone = trim(stripslashes($_POST['phone']));
         $message = trim(stripslashes($_POST['message']));
-
-        $this->email->from($name, $email);
-//         $this->email->to('vineeth@soarmorrow.com');
+        $this->email->from($name, $email); 
         $this->email->to('shivas8787@gmail.com');
-
         $this->email->subject('Enquiry for you');
         $data = array('post' => array('name' => $name, 'email' => $email, 'phone' => $phone, 'message' => $message));
         $this->email->message($this->load->view('mail_template.php', $data, true));
-
         if ($this->email->send()) {
             $this->session->set_flashdata('message', 'Your enquiry has been sent successfully');
-            redirect(base_url('thankyou?type=home'));
-            //redirect($this->input->post('redirect', site_url()));
+            redirect(base_url('thankyou?type=home')); 
         }
         debug($this->email->print_debugger());
     }
-
-
     public function send()
     {
         // if (!verify_captcha()) {
