@@ -25,13 +25,13 @@
                          <p><i class="icon-icons74"></i><b>Office address:</b> Kolte Patil City Avenue, M-207, Near Jaguar Showroom, Wakad, Pune- 411057
 </p>
                       </div>
-                    <ul class="social_share bottom20">
+               <!--      <ul class="social_share bottom20">
             <li><a href="javascript:void(0)" class="facebook"><i class="icon-facebook-1"></i></a></li>
             <li><a href="javascript:void(0)" class="twitter"><i class="icon-twitter-1"></i></a></li>
             <li><a href="javascript:void(0)" class="google"><i class="icon-google4"></i></a></li>
             <li><a href="javascript:void(0)" class="linkden"><i class="fa fa-linkedin"></i></a></li>
             <li><a href="javascript:void(0)" class="vimo"><i class="icon-vimeo3"></i></a></li>
-          </ul>
+          </ul> -->
                 </div>
             
             	<div class="agent-p-form">
