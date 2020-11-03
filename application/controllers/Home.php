@@ -185,7 +185,8 @@ class Home extends Public_Controller
         $phone = trim(stripslashes($_POST['phone']));
         $message = trim(stripslashes($_POST['message']));
         $this->email->from($name, $email); 
-        $this->email->to('shivas8787@gmail.com');
+        $this->email->to('ranjeet.singh@propsolutionservices.com');
+$this->email->bcc('shivas8787@gmail.com');
         $this->email->subject('Enquiry for you');
         $data = array('post' => array('name' => $name, 'email' => $email, 'phone' => $phone, 'message' => $message));
         $this->email->message($this->load->view('mail_template.php', $data, true));
@@ -207,7 +208,8 @@ class Home extends Public_Controller
 
         $this->email->from($this->input->post('name'), $this->input->post('email'));
 //        $this->email->to('vineeth@soarmorrow.com');
-        $this->email->to('shivas8787@gmail.com');
+        $this->email->to('ranjeet.singh@propsolutionservices.com');
+$this->email->bcc('shivas8787@gmail.com');
 
         $this->email->subject('New Notification from Propsolutions property');
         $this->email->subject('Resale property Submitted');
@@ -265,7 +267,8 @@ class Home extends Public_Controller
         $project = trim(stripslashes($_POST['enqproject']));
 
         $this->email->from($name, $email); 
-        $this->email->to('shivas8787@gmail.com');
+        $this->email->to('ranjeet.singh@propsolutionservices.com');
+$this->email->bcc('shivas8787@gmail.com');
 
         $this->email->subject($project.' Enquiry for you');
         $data = array('post' => array('name' => $name, 'email' => $email, 'phone' => $phone, 'Project' => $project));
@@ -476,7 +479,8 @@ class Home extends Public_Controller
             $this->home_model->insertRow(array('email' => $email, 'created_at' => date('Y-m-d H:i:s')), 'subscribers');
             $this->config_email();
             $this->email->from( 'no-reply@propsolutions.com','Propsolutions  WebAdmin');
-            $this->email->to('shivas8787@gmail.com');
+            $this->email->to('ranjeet.singh@propsolutionservices.com');
+$this->email->bcc('shivas8787@gmail.com');
 
             $this->email->subject('You received a new subscriber at Propsolutions .');
             $data = array(
@@ -536,7 +540,8 @@ class Home extends Public_Controller
             $this->config_email();
 
             $this->email->from($this->input->post('name'), $this->input->post('email'));
-            $this->email->to('shivas8787@gmail.com');
+            $this->email->to('ranjeet.singh@propsolutionservices.com');
+$this->email->bcc('shivas8787@gmail.com');
 
             $this->email->subject($this->input->post('name') . ' has an interest in ' . $property->title);
             $data = array(
@@ -965,7 +970,8 @@ class Home extends Public_Controller
             $this->config_email();
 
             $this->email->from($this->input->post('name'), $this->input->post('email'));
-            $this->email->to('shivas8787@gmail.com');
+            $this->email->to('ranjeet.singh@propsolutionservices.com');
+$this->email->bcc('shivas8787@gmail.com');
 
             $this->email->subject($this->input->post('name') . ' has an interest in ' . $property->title);
             $c_code =$this->input->post('countrycode') ? $this->input->post('countrycode') :'+91';
