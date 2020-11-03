@@ -176,7 +176,7 @@ a{
 			  <span class="htlfndr-logo-text" title="Prop Solution"> <span> Prop Solution</span></span> </a>
 		 </h3> 
 		 
-		 <img src="../../assets/images/logo.png" alt="logo">
+		 <img src="../../assets/images/logo-white.jpg" alt="logo">
 		  <div>
 			  <h4> Thanks for your interest.! We will respond to your enquiry soon.</h4>
 		 </div> 

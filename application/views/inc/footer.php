@@ -34,7 +34,7 @@
     <div class="row">
       <div class="col-md-4 col-sm-6">
         <div class="footer_panel bottom30">
-          <a href="<?=base_url();?>" class="logo bottom30"><img src="<?=base_url('assets/');?>images/logo-white.png" alt="logo"></a>
+          <a href="<?=base_url();?>" class="logo bottom30"><img src="<?=base_url('assets/');?>images/logo-white.jpeg" alt="logo"></a>
           <p class="bottom15">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh 
             tempor cum consectetuer 
             adipiscing.
@@ -166,8 +166,8 @@
 <script src="<?=base_url('assets/');?>js/revolution.extension.slideanims.min.js"></script>
 <script src="<?=base_url('assets/');?>js/revolution.extension.video.min.js"></script>
 <script src="<?=base_url('assets/');?>js/neary-by-place.js"></script> 
-<!-- <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyAOBKD6V47-g_3opmidcmFapb3kSNAR70U&amp;libraries=places"></script>  -->
-<!-- <script src="<?=base_url('assets/');?>js/google-map.js"></script>  -->
+<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyAOBKD6V47-g_3opmidcmFapb3kSNAR70U&amp;libraries=places"></script> 
+<script src="<?=base_url('assets/');?>js/google-map.js"></script> 
 <script src="<?=base_url('assets/');?>js/jquery.fancybox.js"></script>
 <!--- listing end-s-->
 

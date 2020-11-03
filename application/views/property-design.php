@@ -985,26 +985,7 @@ if (($images = $this->properties_model->getWhere(array('property_id' => $propert
   </div>
 </section>
 
-<script>
-			window.onscroll = function () { myFunction() };
 
-			function myFunction() {
-        console.log("here" +window.pageYOffset)
-				if (window.pageYOffset > 320) {
-					document.getElementById("contactSideForm").classList.remove("container1")
-					document.getElementById("contactSideForm").classList.add("fixed-container")
-					
-        }else{
-					document.getElementById("contactSideForm").classList.remove("fixed-container")
-					document.getElementById("contactSideForm").classList.add("container1")
-					
-				}
-
-
-			}
-
-
-		</script>
 <!-- Property Detail End -->
 <?php
 $this->load->view('inc/footer'); 

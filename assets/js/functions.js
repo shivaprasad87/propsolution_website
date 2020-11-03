@@ -651,3 +651,43 @@ jQuery(function($) {
   
   $('.fancybox').fancybox();
 });
+
+$(document).ready(function () {
+  var expanded = false;
+  $(".contact-opener").click(function () {
+      if (expanded = !expanded) {
+          $(".floating-form").animate({ "margin-right": 0 },    "slow");
+      } else {
+          $(".floating-form").animate({ "margin-right": -250 }, "slow");
+      }
+  });
+});
+  
+
+			window.onscroll = function () { myFunction() };
+
+			function myFunction() {
+        var scrollheight = window.pageYOffset;
+        console.log("here" +window.pageYOffset)
+				if (scrollheight > 320 && scrollheight < 2100) {
+          document.getElementById("contactSideForm").classList.remove("container1")
+          
+          document.getElementById("contactSideForm").classList.remove("fixed1-container")
+          document.getElementById("contactSideForm").classList.add("fixed-container")
+					
+        }
+        else if(scrollheight > 2100){
+          document.getElementById("contactSideForm").classList.remove("fixed-container")
+          document.getElementById("contactSideForm").classList.remove("container1")
+					document.getElementById("contactSideForm").classList.add("fixed1-container")
+        }
+        else{
+          document.getElementById("contactSideForm").classList.remove("fixed-container")
+          document.getElementById("contactSideForm").classList.remove("fixed1-container")
+					document.getElementById("contactSideForm").classList.add("container1")
+					
+				}
+
+
+			}
+

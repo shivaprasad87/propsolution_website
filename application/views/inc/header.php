@@ -5,7 +5,7 @@
         <div class="row">
           <div class="col-md-3 col-sm-12">
             <div class="logo">
-            <a href="<?= base_url();?>"><img alt="" src="<?=base_url('assets/')?>images/logo-white.png" class="img-responsive"></a>
+            <a href="<?= base_url();?>"><img alt="" src="<?=base_url('assets/')?>images/logo.jpeg" class="img-responsive"></a>
             </div>
           </div>
         <!--Info Box-->
@@ -50,18 +50,18 @@
               <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
                   <i class="fa fa-bars"></i>
               </button>
-              <a class="navbar-brand sticky_logo" href="<?=base_url();?>"><img src="<?=base_url('assets/')?>images/logo-white.png" class="logo" alt=""></a>
+              <a class="navbar-brand sticky_logo" href="<?=base_url();?>"><img src="<?=base_url('assets/')?>images/logo-white.jpeg" class="logo" alt=""></a>
           </div><!-- End Header Navigation -->
             <div class="collapse navbar-collapse" id="navbar-menu">
             <ul class="nav navbar-nav" data-in="fadeIn" data-out="fadeOut">
-              <li class="active"><a href="<?= base_url();?>">Home</a></li>
+              <li class="<?=$this->uri->segment(1)=='' ? 'active' : '' ?>"><a href="<?= base_url();?>">Home</a></li>
               
-                <li>
+                <li class="<?=$this->uri->segment(1)=='listing' ? 'active' : '' ?>">
                   <a href="<?= base_url('listing');?>" s>Listing</a>
                 
                 </li>
 
-                <li>
+                <li class="<?=$this->uri->segment(1)=='about' ? 'active' : '' ?>">
                   <a href="<?= base_url('about');?>" >About Us</a>
                 
                 </li>
@@ -200,7 +200,7 @@
                       <li><a href="404.html">404 Error </a></li>
                   </ul>
                 </li> -->
-                <li><a href="<?= base_url('contact');?>">Contact Us</a></li>
+                <li class="<?=$this->uri->segment(1)=='contact' ? 'active' : '' ?>"><a href="<?= base_url('contact');?>">Contact Us</a></li>
                
               </ul>
           </div>
