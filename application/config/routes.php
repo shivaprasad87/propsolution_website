@@ -85,6 +85,7 @@ $route['subscribers'] 		   = "home/subscribers";
 $route['listing'] 		   	   = "home/listing";
 $route['listing/(:any)']       = "home/listing/$1";
 $route['home/propertyDetails']				= "home/propertyDetails";
+$route['sendmail']				= "home/sendmail";
 /**
  * In home page under top submitted properties, then you have show all properties in that now when clicked on that the url changes to http://fullbasketproperty.com/listing but it should be http://fullbasketproperty.com/allcities .
  * Ref : http://trello.com/c/AB7L96Wn/20-in-home-page-under-top-submitted-properties-then-you-have-show-all-properties-in-that-now-when-clicked-on-that-the-url-changes-t
