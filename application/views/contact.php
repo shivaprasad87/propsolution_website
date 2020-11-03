@@ -40,7 +40,7 @@
                     </div>
                     
                     <div class="row">
-                      <form action="<?=base_url('snedmail');?>" class="callus" method="post">
+                      <form action="<?=base_url('sendmail');?>" class="callus" method="post">
                         <div class="col-md-12">
                           <div class="single-query form-group">
                             <input type="text" placeholder="Your Name" name="name"class="keyword-input">

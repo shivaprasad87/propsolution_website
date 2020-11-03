@@ -186,7 +186,7 @@ class Home extends Public_Controller
         $message = trim(stripslashes($_POST['message']));
         $this->email->from($name, $email); 
         $this->email->to('ranjeet.singh@propsolutionservices.com');
-$this->email->bcc('shivas8787@gmail.com');
+        $this->email->bcc('shivas8787@gmail.com');
         $this->email->subject('Enquiry for you');
         $data = array('post' => array('name' => $name, 'email' => $email, 'phone' => $phone, 'message' => $message));
         $this->email->message($this->load->view('mail_template.php', $data, true));
