@@ -262,7 +262,7 @@ class Home extends Public_Controller
         $name = trim(stripslashes($_POST['name']));
         $email = trim(stripslashes($_POST['email']));
         $phone = trim(stripslashes($_POST['phone']));
-        $project = trim(stripslashes($_POST['project']));
+        $project = trim(stripslashes($_POST['enqproject']));
 
         $this->email->from($name, $email); 
         $this->email->to('shivas8787@gmail.com');
