@@ -18,11 +18,12 @@
                         <h2>get in touch</h2>
                     </div>
                     <div class="agetn-contact-2 bottom30">
-                      	 <p><i class="icon-telephone114"></i> +91 123456789</p>
-                         <p><i class=" icon-icons142"></i> info@test.com</p>
+                      	 <p><i class="icon-telephone114"></i><a href="tel:+918446565216">+91 84465 65216</a></p>
+                         <p><i class=" icon-icons142"></i><a href="mailto:info@propsolutionsservices.com">info@propsolutionsservices.com</a></p>
                          
-                         <p><i class="icon-browser2"></i>www.test.com</p>
-                         <p><i class="icon-icons74"></i>Lorem Ipsum ,Bangalore</p>
+                         <!-- <p><i class="icon-browser2"></i>www.test.com</p> -->
+                         <p><i class="icon-icons74"></i><b>Office address:</b> Kolte Patil City Avenue, M-207, Near Jaguar Showroom, Wakad, Pune- 411057
+</p>
                       </div>
                     <ul class="social_share bottom20">
             <li><a href="javascript:void(0)" class="facebook"><i class="icon-facebook-1"></i></a></li>
@@ -39,19 +40,19 @@
                     </div>
                     
                     <div class="row">
-                      <form action="#" class="callus">
+                      <form action="<?=base_url('snedmail');?>" class="callus" method="post">
                         <div class="col-md-12">
                           <div class="single-query form-group">
-                            <input type="text" placeholder="Your Name" class="keyword-input">
+                            <input type="text" placeholder="Your Name" name="name"class="keyword-input">
                             </div>
                             <div class="single-query form-group">
-                            <input type="text" placeholder="Phone Number" class="keyword-input">
+                            <input type="text" placeholder="Phone Number" name="phone" class="keyword-input">
                           </div>
                           <div class="single-query form-group">
-                            <input type="text" placeholder="Email Adress" class="keyword-input">
+                            <input type="text" placeholder="Email Adress" name="email" class="keyword-input">
                           </div>
                           <div class="single-query form-group">
-                            <textarea placeholder="Massege" class="form-control"></textarea>
+                            <textarea placeholder="Massege"name="message" class="form-control"></textarea>
                           </div>
                           <input type="submit" value="submit now" class="btn-blue">
                           </div>
