@@ -956,7 +956,7 @@ if (($images = $this->properties_model->getWhere(array('property_id' => $propert
           <div class="col-md-12">
             <h3 class="text-uppercase text-center bottom20 top15">Contact Us</h3>
           </div>
-          <form class="callus" action="" method="post">
+          <form class="callus" action="<?=base_url('sendmail');?>" method="post">
             <div class="single-query form-group col-sm-12">
               <input type="text" name="name" class="keyword-input" placeholder="Your Name">
             </div>
